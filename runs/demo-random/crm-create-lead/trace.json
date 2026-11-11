@@ -1,0 +1,69 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:37781/crm/",
+      "title": "CRM",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "Ada Lovelace",
+            "href": "/crm/leads/1"
+          },
+          {
+            "text": "Grace Hopper",
+            "href": "/crm/leads/2"
+          },
+          {
+            "text": "New lead",
+            "href": "/crm/leads/new"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "CRM Shop | CRM | Scheduling | Support CRM Ada Lovelace \u2014 New Grace Hopper \u2014 New New lead"
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:37781/__reset__",
+      "status": 200,
+      "latency_ms": 1.4
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:37781/crm/",
+      "status": 200,
+      "latency_ms": 1.0
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:37781/__state__?site=crm",
+      "status": 200,
+      "latency_ms": 1.0
+    }
+  ]
+}

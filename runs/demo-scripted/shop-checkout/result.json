@@ -1,0 +1,28 @@
+{
+  "task_id": "shop-checkout",
+  "evaluation": {
+    "success": true,
+    "partial": 1.0,
+    "passed": 1,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "customer": "Ada Lovelace",
+          "product": "Gadget Gamma",
+          "type": "order_exists"
+        },
+        "passed": true,
+        "explanation": "order #1 for Gadget Gamma exists"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 6,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.013,
+    "finished_by_agent": true
+  }
+}

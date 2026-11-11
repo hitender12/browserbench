@@ -1,0 +1,28 @@
+id: sched-cancel-appointment
+version: 1.0.0
+site: sched
+title: Cancel an existing appointment
+goal: Cancel Alan Turing's appointment on 2026-11-20 at 09:00.
+seed: 1
+max_steps: 10
+start_url: /sched/
+allowed_actions:
+  - navigate
+  - click
+  - fill
+  - submit
+  - done
+allowed_prefixes:
+  - /sched
+params:
+  appointment_id: 1
+reference_plan:
+  - action: link
+    text: Alan Turing
+  - action: submit
+    button: Cancel appointment
+  - action: expect
+    text: Appointment cancelled
+success:
+  - type: appointment_absent
+    id: 1

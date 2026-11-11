@@ -1,0 +1,232 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "href": "/crm/leads/new"
+      },
+      "url": "http://127.0.0.1:35355/crm/leads/new",
+      "title": "New lead",
+      "http_status": 200,
+      "latency_ms": 3.2,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/new",
+            "method": "post",
+            "fields": [
+              "name",
+              "email",
+              "company"
+            ],
+            "submit": "Create lead"
+          }
+        ]
+      },
+      "text_excerpt": "New lead Shop | CRM | Scheduling | Support New lead Name Email Company"
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "fill",
+        "form": 0,
+        "values": {
+          "company": "Bletchley Park",
+          "email": "alan@example.com",
+          "name": "Alan Turing"
+        }
+      },
+      "url": "http://127.0.0.1:35355/crm/leads/new",
+      "title": "New lead",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/new",
+            "method": "post",
+            "fields": [
+              "name",
+              "email",
+              "company"
+            ],
+            "submit": "Create lead"
+          }
+        ]
+      },
+      "text_excerpt": "New lead Shop | CRM | Scheduling | Support New lead Name Email Company"
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "submit",
+        "form": 0
+      },
+      "url": "http://127.0.0.1:35355/crm/leads/3?created=1",
+      "title": "Alan Turing",
+      "http_status": 200,
+      "latency_ms": 3.9,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/3/status",
+            "method": "post",
+            "fields": [
+              "status"
+            ],
+            "submit": "Update lead"
+          },
+          {
+            "action": "/crm/leads/3/note",
+            "method": "post",
+            "fields": [
+              "note"
+            ],
+            "submit": "Add note"
+          }
+        ]
+      },
+      "text_excerpt": "Alan Turing Shop | CRM | Scheduling | Support Alan Turing Email: alan@example.com Company: Bletchley Park Status: New Status New Contacted Qualified Lost Note Notes"
+    },
+    {
+      "step": 4,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:35355/crm/leads/3?created=1",
+      "title": "Alan Turing",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/3/status",
+            "method": "post",
+            "fields": [
+              "status"
+            ],
+            "submit": "Update lead"
+          },
+          {
+            "action": "/crm/leads/3/note",
+            "method": "post",
+            "fields": [
+              "note"
+            ],
+            "submit": "Add note"
+          }
+        ]
+      },
+      "text_excerpt": "Alan Turing Shop | CRM | Scheduling | Support Alan Turing Email: alan@example.com Company: Bletchley Park Status: New Status New Contacted Qualified Lost Note Notes"
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:35355/__reset__",
+      "status": 200,
+      "latency_ms": 1.2
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:35355/crm/",
+      "status": 200,
+      "latency_ms": 1.8
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:35355/crm/leads/new",
+      "status": 200,
+      "latency_ms": 2.8
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:35355/crm/leads/new",
+      "status": 200,
+      "latency_ms": 3.4
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:35355/__state__?site=crm",
+      "status": 200,
+      "latency_ms": 1.2
+    }
+  ]
+}

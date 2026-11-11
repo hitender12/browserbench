@@ -1,0 +1,28 @@
+{
+  "task_id": "crm-add-note",
+  "evaluation": {
+    "success": true,
+    "partial": 1.0,
+    "passed": 1,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "name": "Ada Lovelace",
+          "text": "interested in a demo",
+          "type": "lead_note_contains"
+        },
+        "passed": true,
+        "explanation": "lead Ada Lovelace notes contain 'interested in a demo': True"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 4,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.007,
+    "finished_by_agent": true
+  }
+}
