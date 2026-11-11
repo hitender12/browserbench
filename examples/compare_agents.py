@@ -8,9 +8,9 @@ unsafe attempts blocked by the harness — plus a per-task PASS/FAIL grid.
 
 Usage (from the repo root):
 
-    python examples/compare_agents.py
-    python examples/compare_agents.py --agents scripted random
-    python examples/compare_agents.py --out-dir runs/my-comparison
+    python3 examples/compare_agents.py
+    python3 examples/compare_agents.py --agents scripted random
+    python3 examples/compare_agents.py --out-dir runs/my-comparison
 
 With the bundled agents the expected outcome is stark: the reference
 scripted agent passes every task and the random baseline passes none or near none. That

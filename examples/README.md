@@ -7,22 +7,22 @@ root**; each script adds the repo root to `sys.path` so the
 `browserbench` package is importable without installing it.
 
 ```bash
-python examples/run_suite.py
-python examples/compare_agents.py
-python examples/replay_failed.py
+python3 examples/run_suite.py
+python3 examples/compare_agents.py
+python3 examples/replay_failed.py
 ```
 
 All three write their run artifacts under `runs/` (traces, results and
 replayable `artifact.json` files), so you can inspect or replay them
-afterwards with the CLI (`python -m browserbench report …` /
-`python -m browserbench replay …`).
+afterwards with the CLI (`python3 -m browserbench report …` /
+`python3 -m browserbench replay …`).
 
 ## 1. `run_suite.py` — run the full suite with one agent
 
 ```bash
-python examples/run_suite.py
-python examples/run_suite.py --agent random
-python examples/run_suite.py --out runs/my-first-suite
+python3 examples/run_suite.py
+python3 examples/run_suite.py --agent random
+python3 examples/run_suite.py --out runs/my-first-suite
 ```
 
 Loads all bundled tasks, runs the reference scripted agent (the
@@ -39,9 +39,9 @@ agent is a result, not a crash.
 ## 2. `compare_agents.py` — compare agents head to head
 
 ```bash
-python examples/compare_agents.py
-python examples/compare_agents.py --agents scripted random
-python examples/compare_agents.py --out-dir runs/my-comparison
+python3 examples/compare_agents.py
+python3 examples/compare_agents.py --agents scripted random
+python3 examples/compare_agents.py --out-dir runs/my-comparison
 ```
 
 Runs each listed agent (default: `scripted` vs `random`) on the same
@@ -50,17 +50,18 @@ seeded state before each run — and prints a side-by-side table
 (success rate, mean partial completion, total steps, total duration,
 unsafe attempts blocked) plus a per-task PASS/FAIL grid.
 
-Expected outcome: scripted **all tasks (100%)**, random **none (0%)**.
-That gap is the point — it shows the tasks are solvable and the random
-baseline is a real floor. Artifacts go to
+Expected outcome: scripted **all tasks (100%)**, random **none or near
+none**. That gap is the point — it shows the tasks are solvable and the
+random baseline is a real floor. A single random run is not a stable
+number; the demo reports the baseline as a range and a mean over seeds. Artifacts go to
 `runs/example-compare/<agent-name>/` (or `--out-dir`).
 
 ## 3. `replay_failed.py` — replay a failed run from its artifact
 
 ```bash
-python examples/replay_failed.py
-python examples/replay_failed.py --run-dir runs/demo-random
-python examples/replay_failed.py --run-dir runs/demo-random/shop-checkout
+python3 examples/replay_failed.py
+python3 examples/replay_failed.py --run-dir runs/demo-random
+python3 examples/replay_failed.py --run-dir runs/demo-random/shop-checkout
 ```
 
 Failure replay is what makes a BrowserBench failure debuggable: a run's

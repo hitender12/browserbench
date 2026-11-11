@@ -19,7 +19,13 @@ def render_summary_markdown(summary: dict) -> str:
         f"- Mean partial completion: {summary['mean_partial']:.2f}",
         f"- Total steps: {summary['total_steps']}",
         f"- Total duration: {summary['total_duration_s']}s",
+        f"- Total retries (agent errors / invalid actions): "
+        f"{summary.get('total_retries', 0)}",
         f"- Total unsafe attempts blocked: {summary['total_unsafe_attempts']}",
+    ]
+    if summary.get("total_cost_usd") is not None:
+        lines.append(f"- Total cost: ${summary['total_cost_usd']:.2f}")
+    lines += [
         "",
         "| Task | Result | Partial | Steps | Duration (s) | Unsafe |",
         "|------|--------|---------|-------|--------------|--------|",
@@ -39,14 +45,18 @@ def render_summary_markdown(summary: dict) -> str:
 
 def render_terminal(summary: dict) -> str:
     width = 72
+    headline = (f"passed {summary['tasks_passed']}/{summary['tasks_run']} "
+                f"({summary['success_rate']:.0%})  "
+                f"mean partial {summary['mean_partial']:.2f}  "
+                f"steps {summary['total_steps']}  "
+                f"{summary['total_duration_s']}s  "
+                f"unsafe blocked {summary['total_unsafe_attempts']}  "
+                f"retries {summary.get('total_retries', 0)}")
+    if summary.get("total_cost_usd") is not None:
+        headline += f"  cost ${summary['total_cost_usd']:.2f}"
     lines = ["=" * width,
              f"BrowserBench — agent: {summary['agent']}",
-             f"passed {summary['tasks_passed']}/{summary['tasks_run']} "
-             f"({summary['success_rate']:.0%})  "
-             f"mean partial {summary['mean_partial']:.2f}  "
-             f"steps {summary['total_steps']}  "
-             f"{summary['total_duration_s']}s  "
-             f"unsafe blocked {summary['total_unsafe_attempts']}",
+             headline,
              "-" * width]
     for result in summary["results"]:
         ev = result["evaluation"]
@@ -62,11 +72,15 @@ def render_terminal(summary: dict) -> str:
 
 
 def latest_run_dir(runs_dir: str) -> str | None:
-    """Most recently modified run directory under `runs_dir`."""
+    """Most recently modified run directory under `runs_dir` that has a
+    ``summary.json``. Directories without one (per-task run dirs, old
+    demo runs) are skipped, not treated as the latest run."""
     if not os.path.isdir(runs_dir):
         return None
     candidates = [os.path.join(runs_dir, name) for name in os.listdir(runs_dir)
-                  if os.path.isdir(os.path.join(runs_dir, name))]
+                  if os.path.isdir(os.path.join(runs_dir, name))
+                  and os.path.exists(os.path.join(runs_dir, name,
+                                                  "summary.json"))]
     if not candidates:
         return None
     return max(candidates, key=os.path.getmtime)

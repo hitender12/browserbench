@@ -4,7 +4,7 @@ Picks a random allowed action each step. Any real agent should beat it;
 the demo compares the two on identical tasks.
 
 Run it with:
-    python -m browserbench run --agent ./agents/random_agent.py
+    python3 -m browserbench run --agent ./agents/random_agent.py
 """
 
 import os

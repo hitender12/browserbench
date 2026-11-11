@@ -7,9 +7,9 @@ task, plus ``summary.json`` / ``report.md``) are written under ``runs/``.
 
 Usage (from the repo root):
 
-    python examples/run_suite.py
-    python examples/run_suite.py --agent random
-    python examples/run_suite.py --out runs/my-first-suite
+    python3 examples/run_suite.py
+    python3 examples/run_suite.py --agent random
+    python3 examples/run_suite.py --out runs/my-first-suite
 
 Exit code is 0 when the suite ran cleanly to completion, whatever the
 pass rate — a failing agent is a result, not a crash. See

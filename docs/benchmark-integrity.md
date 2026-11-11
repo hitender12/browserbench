@@ -77,16 +77,17 @@ README, a report, a leaderboard, or a blog post — must include:
   replay it locally with `browserbench replay`.
 
 Reports must show success rate **alongside** mean partial completion,
-steps, duration, and unsafe attempts. **Do not rank agents on a single
-aggregate number** without showing cost, latency, failure categories,
-and task coverage. The bundled scripted agent passing 15/15 proves the
+steps, duration, retries, cost (when reported), and unsafe attempts.
+**Do not rank agents on a single aggregate number** without showing
+cost, latency, failure categories, and task coverage. The bundled
+scripted agent passing 18/18 proves the
 tasks are solvable; it is not evidence of general agent ability, and
 must never be presented as a competing agent's score.
 
 ## 4. Separate public dev tasks from any hidden eval set
 
 - This repository ships **only the public development set** (currently
-  15 tasks). Agent developers may study, tune against, and overfit to
+  18 tasks). Agent developers may study, tune against, and overfit to
   these tasks — that is what a dev set is for.
 - Any hidden evaluation set, if one is ever created, must be kept
   separate: different tasks, different files, not shipped in this

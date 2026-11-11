@@ -167,19 +167,19 @@ must appear, `fill` + values). Rules:
 
 ```bash
 # 1. The task loads and validates
-python -c "from browserbench.spec import load_tasks; print([t.id for t in load_tasks('tasks') if t.id == '<id>'])"
+python3 -c "from browserbench.spec import load_tasks; print([t.id for t in load_tasks('tasks') if t.id == '<id>'])"
 
 # 2. The scripted agent passes it (solvability proof)
-python -m browserbench run --agent scripted --tasks <id>
+python3 -m browserbench run --agent scripted --tasks <id>
 
 # 3. The random baseline does NOT pass it by luck
-python -m browserbench run --agent random --tasks <id>
+python3 -m browserbench run --agent random --tasks <id>
 
 # 4. Replay reproduces the result
-python -m browserbench replay runs/<latest>/<id>   # must report match=YES
+python3 -m browserbench replay runs/<latest>/<id>   # must report match=YES
 
 # 5. Full suite still green, with the count assertion updated
-python -m unittest discover -s tests
+python3 -m unittest discover -s tests
 ```
 
 Also run the task by hand once (start the site, follow the goal as a

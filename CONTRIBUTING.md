@@ -14,10 +14,11 @@ By participating you agree to follow the
 ## First contribution path
 
 1. Run the demo and confirm the expected outcome:
-   `python demo.py` — the scripted reference agent should pass 15/15 and the
-   random baseline 0/15, followed by a replay check that reports `match=YES`.
-2. Run the tests: `python -m unittest discover -s tests` (58 tests, ~16 s;
-   2 expected failures are intentional — see "Tests" below).
+   `python3 demo.py` — the scripted reference agent should pass 18/18 and the
+   random baseline 0–0/18 across 3 seeds, followed by a replay check that
+   reports `match=YES`.
+2. Run the tests: `python3 -m unittest discover -s tests` (86 tests, ~35 s;
+   the non-editable-install test builds a throwaway venv).
 3. Pick a small task: a new benchmark task, a new evaluator condition type,
    a bug fix, or a docs clarification. Good first issues are labelled
    `good first issue` and always include enough context to be completed
@@ -28,12 +29,12 @@ By participating you agree to follow the
 Requirements:
 
 - Python 3.10, 3.11, or 3.12 (CI tests all three; see
-  `.github/workflows/ci.yml`). Check with `python --version`.
+  `.github/workflows/ci.yml`). Check with `python3 --version`.
 - Git. Nothing else. The core package has **zero dependencies** — standard
   library only (`pyproject.toml` lists `dependencies = []`), so there is no
   virtual-environment or network install step. If you want an isolated
   environment anyway, any `venv` works:
-  `python -m venv .venv && .venv/bin/activate` (Windows:
+  `python3 -m venv .venv && .venv/bin/activate` (Windows:
   `.venv\Scripts\activate`).
 - No API keys, no paid accounts, no browser download. The current build
   drives the synthetic test sites over local HTTP with a parsed-DOM
@@ -45,22 +46,22 @@ From the repository root:
 ```bash
 git clone <the repository URL>   # use the real repo URL for this project
 cd browserbench
-python -m pip install -e .        # optional; enables the `browserbench` command
-python -m unittest discover -s tests
-python demo.py
+python3 -m pip install -e .        # optional; enables the `browserbench` command
+python3 -m unittest discover -s tests
+python3 demo.py
 ```
 
 Useful commands once set up:
 
 ```bash
-python -m browserbench init my-bench                 # scaffold a workspace
-python -m browserbench run --agent scripted           # reference agent, all tasks
-python -m browserbench run --agent random              # random baseline, same tasks
-python -m browserbench run --agent scripted --tasks shop-add-to-cart,crm-create-lead
-python -m browserbench report latest
-python -m browserbench replay runs/<run-id>/<task-id>
-python examples/run_suite.py --agent random           # head-to-head helper
-python examples/compare_agents.py                     # compare two agents
+python3 -m browserbench init my-bench                 # scaffold a workspace
+python3 -m browserbench run --agent scripted           # reference agent, all tasks
+python3 -m browserbench run --agent random              # random baseline, same tasks
+python3 -m browserbench run --agent scripted --tasks shop-add-to-cart,crm-create-lead
+python3 -m browserbench report latest
+python3 -m browserbench replay runs/<run-id>/<task-id>
+python3 examples/run_suite.py --agent random           # head-to-head helper
+python3 examples/compare_agents.py                     # compare two agents
 ```
 
 `browserbench run` exits `0` only when the suite passes 100%; a failing
@@ -84,18 +85,18 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the full map. In short:
 ## Tests
 
 - Framework: `unittest`, standard library only. Keep the suite fast
-  (seconds, not minutes) — it currently runs in ~16 s.
+  (seconds, not minutes) — it currently runs in ~35 s, most of it the
+  non-editable-install test's throwaway venv.
 - Every public behaviour needs a test; every limitation goes in the
   README's honest-status section and in ARCHITECTURE.md, not just in a
   commit message.
 - The suite asserts the task count in two places
   (`tests/test_browserbench.py` and `tests/test_edge_cases.py` currently
-  expect 15 tasks). **If you add or remove a task, update both assertions
+  expect 18 tasks). **If you add or remove a task, update both assertions
   in the same PR.**
-- Two tests are marked as expected failures (`expectedFailure`): trace steps
-  do not yet carry wall-clock timestamps or per-step state snapshots. Do
-  not "fix" those by deleting the markers — implement the feature, then
-  remove the marker in the same PR.
+- Trace steps carry a wall-clock timestamp and a full per-step state
+  snapshot (`tests/test_edge_cases.py` pins both). If you change the
+  trace format, update those tests in the same PR.
 - Run the full suite before opening a PR, and add a regression test for
   every bug fix.
 
@@ -110,10 +111,10 @@ contributions. The full guide is
    One task per file; the filename should match the task `id`.
 2. Give it a `reference_plan` that reaches the success state, then verify
    the scripted agent passes it:
-   `python -m browserbench run --agent scripted --tasks <id>`.
+   `python3 -m browserbench run --agent scripted --tasks <id>`.
 3. Verify the random baseline does **not** pass it by luck:
-   `python -m browserbench run --agent random --tasks <id>`.
-4. Verify replay: `python -m browserbench replay runs/<latest>/<id>` —
+   `python3 -m browserbench run --agent random --tasks <id>`.
+4. Verify replay: `python3 -m browserbench replay runs/<latest>/<id>` —
    it must report `match=YES`.
 5. Update the task-count assertions in both test files (see "Tests" above).
 6. Add the task to `CHANGELOG.md` under Unreleased.
@@ -147,11 +148,11 @@ three ways to plug one in:
    and implement `act(self, observation)`. Override `reset(self, task)`
    if you need per-task state. Set class attributes `name` and `version`:
    both are recorded in every run artifact and published with results.
-2. **Python file** — `python -m browserbench run --agent ./agents/my-agent.py`.
+2. **Python file** — `python3 -m browserbench run --agent ./agents/my-agent.py`.
    The module must define `Agent` (a class) or `act` (a function). Copy
    `agents/scripted_agent.py` (reference-plan follower) or
    `agents/random_agent.py` (minimal shape) as a starting point.
-3. **HTTP agent** — `python -m browserbench run --agent http://127.0.0.1:9000`.
+3. **HTTP agent** — `python3 -m browserbench run --agent http://127.0.0.1:9000`.
    The runner POSTs `{"protocol": "browserbench-agent/1", "observation": {...}}`
    to `/act` and expects `{"protocol": "browserbench-agent/1", "action": {...}}`
    back (30 s timeout). `agents/http_agent_example.py` is a working
@@ -218,7 +219,7 @@ Adapter rules:
 ## Reporting issues
 
 - **Bugs:** open an issue with the task id (if any), agent, BrowserBench
-  version (`python -m browserbench --version`), the exact command, and
+  version (`python3 -m browserbench --version`), the exact command, and
   the run artifact or trace excerpt. A replayable failure is worth more
   than a screenshot.
 - **Wrong results / benchmark integrity concerns:** open an issue and say

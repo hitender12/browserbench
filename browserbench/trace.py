@@ -1,8 +1,12 @@
 """Trace capture and reproducible run artifacts.
 
 Every run writes a directory ``runs/<run-id>/`` containing:
-- ``trace.json``  — every step: action, URL, HTTP status, latency, DOM
-  snapshot summary, network events, and any blocked (unsafe) attempts
+- ``trace.json``  — every step: action, URL, HTTP status, latency,
+  wall-clock timestamp (ISO-8601 UTC), a DOM summary (links, form
+  names, 500-char text excerpt) and the full site-state snapshot after
+  the action, plus network events and any blocked (unsafe) attempts.
+  Note: the trace stores a DOM *summary*, not a full DOM snapshot —
+  the complete state is what ``state_snapshot`` records.
 - ``result.json`` — the evaluation result and aggregate metrics
 - ``artifact.json`` — the replayable artifact: task id + version, seed,
   agent name + version, config, and the exact action sequence, so the
@@ -14,9 +18,11 @@ whose format version it does not understand.
 
 from __future__ import annotations
 
+import copy
 import json
 import os
 import time
+from datetime import datetime, timezone
 
 FORMAT_VERSION = "1.0.0"
 
@@ -28,7 +34,8 @@ class TraceRecorder:
 
     def record_step(self, step_no: int, action: dict, observation: dict,
                     status: int | None, latency_ms: float,
-                    blocked: str | None = None) -> None:
+                    blocked: str | None = None,
+                    state_snapshot: dict | None = None) -> None:
         self.steps.append({
             "step": step_no,
             "action": action,
@@ -36,6 +43,7 @@ class TraceRecorder:
             "title": observation.get("title"),
             "http_status": status,
             "latency_ms": round(latency_ms, 1),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
             "blocked": blocked,
             "dom": {
                 "links": observation.get("links", []),
@@ -47,6 +55,8 @@ class TraceRecorder:
                 ],
             },
             "text_excerpt": (observation.get("text", "") or "")[:500],
+            "state_snapshot": copy.deepcopy(state_snapshot)
+            if state_snapshot is not None else None,
         })
 
     def record_network(self, method: str, url: str, status: int | None,

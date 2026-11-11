@@ -10,8 +10,8 @@ which is exactly what an example should do. Replace the strategy with
 your own; the protocol stays the same.
 
 Run it, then point the runner at it:
-    python agents/http_agent_example.py 9000
-    python -m browserbench run --agent http://127.0.0.1:9000
+    python3 agents/http_agent_example.py 9000
+    python3 -m browserbench run --agent http://127.0.0.1:9000
 """
 
 import json

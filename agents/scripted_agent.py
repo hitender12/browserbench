@@ -6,7 +6,7 @@ derive their own plan from the task goal instead; see
 for the HTTP protocol.
 
 Run it with:
-    python -m browserbench run --agent ./agents/scripted_agent.py
+    python3 -m browserbench run --agent ./agents/scripted_agent.py
 """
 
 import os

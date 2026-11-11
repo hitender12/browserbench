@@ -27,8 +27,21 @@ receives partial credit equal to the fraction of conditions satisfied.
    state or skipping the UI cannot score — the evaluator only sees state
    produced through legitimate actions.
 5. **No single aggregate number.** Reports always show success rate
-   alongside mean partial completion, steps, duration, and unsafe
-   attempts. Do not rank agents on success rate alone.
+   alongside mean partial completion, steps, duration, retries, cost
+   (when reported), and unsafe attempts. Do not rank agents on success
+   rate alone.
+6. **Exit codes.** `browserbench run` exits 0 only when the agent
+   passes every task (100% success rate), 1 when any task fails, and 2
+   for a usage or loading error. A run below 100% is a failing run.
+7. **Retries are failures, not noise.** An agent crash or an invalid
+   action counts as a retry, is recorded in the trace, and is aggregated
+   into the suite summary and report. A run with many retries is not
+   equivalent to a clean run with the same pass count.
+8. **Cost is reported when the agent supplies it.** An agent may set
+   the `cost_usd` attribute (in-process) or include `cost_usd` in its
+   HTTP response envelope (HTTP agents). The runner records it in the
+   run metrics and the suite summary; agents that do not supply a cost
+   report none. Cost is never estimated or invented by the harness.
 
 ## Task versioning and integrity
 
@@ -50,18 +63,31 @@ action sequence. `browserbench replay <run-dir>` re-executes it and
 reports whether the outcome matches. A mismatch is a defect in the task
 or the site, and must be investigated — never smoothed over.
 
+Traces (`trace.json`) record, for every step, the action, URL, HTTP
+status, latency, a wall-clock timestamp (ISO-8601 UTC), a DOM summary,
+and the full site-state snapshot after the action, plus network events
+and blocked attempts. The trace stores a DOM *summary*, not a full DOM
+snapshot — the complete state is what `state_snapshot` records.
+
+The random baseline is deterministic: its seed is SHA-256 of the base
+seed plus the task id, so the same (seed, task) reproduces the same
+action sequence in any process. It is reported as a range and a mean
+over seeds 0, 1, 2, never as a single run's pass count.
+
 ## What the numbers do and do not mean
 
-- The bundled scripted agent passes 10/10 because it follows each
+- The bundled scripted agent passes 18/18 because it follows each
   task's reference plan. It demonstrates that the tasks are solvable
   and the harness works. It is not evidence of general agent ability.
-- The random baseline passes 0/10. Any real agent should beat it; an
-  agent that does not is worse than chance on this suite.
+- The random baseline passes 0–0/18 across seeds 0, 1, 2 (mean 0.0).
+  Any real agent should beat it; an agent that does not is worse than
+  chance on this suite. Never quote a single random run's pass count
+  as the baseline — report the range and the mean over seeds.
 - Results on this local HTTP driver test agent logic (planning, tool
   use, recovery, instruction following). They say nothing about real
   browser rendering, layout handling, or JavaScript behaviour — that
   needs the Playwright runner (production path).
-- 10 tasks across 4 synthetic sites is a smoke suite, not a benchmark
+- 18 tasks across 4 synthetic sites is a smoke suite, not a benchmark
   with statistical power. Grow the task registry before drawing strong
   conclusions about an agent.
 

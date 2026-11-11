@@ -17,9 +17,9 @@ first failed task inside it is replayed).
 
 Usage (from the repo root):
 
-    python examples/replay_failed.py
-    python examples/replay_failed.py --run-dir runs/demo-random
-    python examples/replay_failed.py --run-dir runs/demo-random/shop-checkout
+    python3 examples/replay_failed.py
+    python3 examples/replay_failed.py --run-dir runs/demo-random
+    python3 examples/replay_failed.py --run-dir runs/demo-random/shop-checkout
 
 Exit code is 0 when the replay matches the original result, 1 on a
 mismatch, and 2 when no failed run could be found to replay.

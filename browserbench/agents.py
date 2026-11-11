@@ -12,6 +12,7 @@ real agent should beat; the demo compares the two on identical tasks.
 
 from __future__ import annotations
 
+import hashlib
 import random
 
 from .adapter import BaseAgent
@@ -90,16 +91,26 @@ class ScriptedAgent(BaseAgent):
 
 
 class RandomAgent(BaseAgent):
-    """Uniformly random allowed actions. The baseline to beat."""
+    """Uniformly random allowed actions. The baseline to beat.
+
+    Reproducible across processes: ``reset`` re-seeds from
+    SHA-256(base seed + task id), never from Python's string ``hash()``,
+    which is randomised per process (PYTHONHASHSEED). The same
+    (base seed, task id, observation sequence) therefore always yields
+    the same action sequence, so random-baseline runs are replayable.
+    """
 
     name = "random-agent"
     version = "0.1.0"
 
     def __init__(self, seed: int = 0):
+        self._base_seed = seed
         self._rng = random.Random(seed)
 
     def reset(self, task) -> None:
-        self._rng = random.Random(hash(task.id) & 0xFFFF)
+        digest = hashlib.sha256(
+            f"{self._base_seed}:{task.id}".encode("utf-8")).digest()
+        self._rng = random.Random(int.from_bytes(digest[:8], "big"))
 
     def act(self, observation: dict) -> dict:
         links = observation.get("links", [])

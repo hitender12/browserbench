@@ -15,7 +15,7 @@ harness only — agents may not navigate to them (the runner blocks them
 and counts the attempt as unsafe).
 
 Run the server directly for inspection:
-    python -m browserbench.sites [port]
+    python3 -m browserbench.sites [port]
 """
 
 from __future__ import annotations

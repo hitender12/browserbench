@@ -20,6 +20,7 @@ again and may continue.
 
 from __future__ import annotations
 
+import json
 import time
 import urllib.error
 import urllib.parse
@@ -39,7 +40,8 @@ class HttpClient:
         self.recorder = recorder
         self.form_values: dict[int, dict] = {}  # form index -> filled values
 
-    def request(self, method: str, url: str, data: bytes | None = None):
+    def request(self, method: str, url: str, data: bytes | None = None,
+                record: bool = True):
         started = time.monotonic()
         req = urllib.request.Request(url, data=data, method=method)
         if data is not None:
@@ -54,11 +56,12 @@ class HttpClient:
             status = exc.code
             final_url = url
         latency_ms = (time.monotonic() - started) * 1000
-        self.recorder.record_network(method, url, status, latency_ms)
+        if record:
+            self.recorder.record_network(method, url, status, latency_ms)
         return status, final_url, body
 
-    def get(self, url: str):
-        return self.request("GET", url)
+    def get(self, url: str, record: bool = True):
+        return self.request("GET", url, record=record)
 
     def post_form(self, url: str, values: dict):
         data = urllib.parse.urlencode(values).encode("utf-8")
@@ -102,6 +105,21 @@ def run_task(task, agent, base_url: str, out_dir: str, seed: int | None = None,
     agent.reset(task)
     metrics = {"steps": 0, "retries": 0, "unsafe_attempts": 0,
                "blocked_reasons": []}
+
+    def _snapshot() -> dict | None:
+        """Current site state for the trace (not a network event)."""
+        try:
+            _s, _u, body = client.get(
+                f"{base_url}/__state__?site={task.site}", record=False)
+            return json.loads(body)
+        except Exception:
+            return None
+
+    def _record(step_no, action, observation, status, latency_ms,
+                blocked=None):
+        recorder.record_step(step_no, action, observation, status,
+                             latency_ms, blocked=blocked,
+                             state_snapshot=_snapshot())
     started = time.monotonic()
     current_url = _resolve(base_url, task.start_url)
     status, current_url, body = client.get(current_url)
@@ -116,7 +134,7 @@ def run_task(task, agent, base_url: str, out_dir: str, seed: int | None = None,
             action = agent.act(observation) or {"type": "done"}
         except Exception as exc:  # an agent crash ends the run, scored on state
             metrics["retries"] += 1
-            recorder.record_step(step_no, {"type": "error", "error": str(exc)},
+            _record(step_no, {"type": "error", "error": str(exc)},
                                  observation, None, 0.0)
             break
         if not isinstance(action, dict) or "type" not in action:
@@ -124,14 +142,14 @@ def run_task(task, agent, base_url: str, out_dir: str, seed: int | None = None,
         atype = action["type"]
 
         if atype == "done":
-            recorder.record_step(step_no, action, observation, status, 0.0)
+            _record(step_no, action, observation, status, 0.0)
             done = True
             break
         if atype not in task.allowed_actions:
             metrics["unsafe_attempts"] += 1
             reason = f"action not allowed: {atype}"
             metrics["blocked_reasons"].append(reason)
-            recorder.record_step(step_no, action, observation, status, 0.0,
+            _record(step_no, action, observation, status, 0.0,
                                  blocked=reason)
             continue
 
@@ -146,12 +164,12 @@ def run_task(task, agent, base_url: str, out_dir: str, seed: int | None = None,
             index = action.get("form", 0)
             if not isinstance(index, int) or index >= len(forms):
                 metrics["retries"] += 1
-                recorder.record_step(step_no, action, observation, status, 0.0)
+                _record(step_no, action, observation, status, 0.0)
                 continue
             form = forms[index]
             if atype == "fill":
                 client.form_values[index] = dict(action.get("values", {}))
-                recorder.record_step(step_no, action, observation, status, 0.0)
+                _record(step_no, action, observation, status, 0.0)
                 continue
             target_url = _resolve(base_url, form.get("action") or current_url)
             method = form.get("method", "get")
@@ -169,34 +187,36 @@ def run_task(task, agent, base_url: str, out_dir: str, seed: int | None = None,
                 status, current_url, body = client.get(f"{target_url}?{query}")
             observation = parse_html(body, current_url)
             observation.update({"step": step_no, "task_id": task.id, "goal": task.goal})
-            recorder.record_step(step_no, action, observation, status,
+            _record(step_no, action, observation, status,
                                  (time.monotonic() - started_req) * 1000)
             continue
 
         if target_url is None:
             metrics["retries"] += 1
-            recorder.record_step(step_no, action, observation, status, 0.0)
+            _record(step_no, action, observation, status, 0.0)
             continue
         block_reason = _is_allowed_url(task, base_url, target_url)
         if block_reason:
             metrics["unsafe_attempts"] += 1
             metrics["blocked_reasons"].append(block_reason)
-            recorder.record_step(step_no, action, observation, status, 0.0,
+            _record(step_no, action, observation, status, 0.0,
                                  blocked=block_reason)
             continue
         started_req = time.monotonic()
         status, current_url, body = client.get(target_url)
         observation = parse_html(body, current_url)
         observation.update({"step": step_no, "task_id": task.id, "goal": task.goal})
-        recorder.record_step(step_no, action, observation, status,
+        _record(step_no, action, observation, status,
                              (time.monotonic() - started_req) * 1000)
 
     metrics["duration_s"] = round(time.monotonic() - started, 3)
     metrics["finished_by_agent"] = done
+    cost = getattr(agent, "cost_usd", None)
+    if isinstance(cost, (int, float)):
+        metrics["cost_usd"] = round(float(cost), 6)
 
     # 3. Evaluate final state deterministically.
     _status, _url, body = client.get(f"{base_url}/__state__?site={task.site}")
-    import json
     final_state = json.loads(body)
     evaluation = evaluator.evaluate(task, final_state)
 
@@ -249,6 +269,12 @@ def run_suite(tasks, agent, out_dir: str, base_url: str | None = None,
             sum(r["metrics"]["duration_s"] for r in results), 3),
         "total_unsafe_attempts": sum(
             r["metrics"]["unsafe_attempts"] for r in results),
+        "total_retries": sum(r["metrics"]["retries"] for r in results),
+        "total_cost_usd": (
+            round(sum(r["metrics"]["cost_usd"] for r in results
+                      if "cost_usd" in r["metrics"]), 6)
+            if any("cost_usd" in r["metrics"] for r in results)
+            else None),
         "results": results,
     }
     return summary

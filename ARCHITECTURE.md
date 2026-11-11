@@ -15,7 +15,7 @@ Task registry (versioned JSON/YAML scenarios)
                  |
         Synthetic test applications (browserbench/sites.py)
                  |
-       Trace + DOM snapshots + network events (browserbench/trace.py)
+       Trace + DOM summaries + state snapshots + network events (browserbench/trace.py)
                  |
        Deterministic state evaluator (browserbench/evaluator.py)
                  |
@@ -36,7 +36,7 @@ Task registry (versioned JSON/YAML scenarios)
 | `agents.py` | Scripted (reference-plan) and random (baseline) agents |
 | `evaluator.py` | State-based conditions; partial credit; no LLM judge |
 | `runner.py` | Reset → observe → act → validate → execute → evaluate; safety boundary |
-| `trace.py` | Per-run trace, result, and replayable artifact files |
+| `trace.py` | Per-run trace, result, and replayable artifact files (per-step wall-clock timestamps + full state snapshots) |
 | `replay.py` | Re-execute a saved artifact and compare the outcome |
 | `report.py` | Terminal + Markdown reports; latest-run lookup |
 | `__main__.py` | CLI: `init`, `run`, `report`, `replay` |

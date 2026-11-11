@@ -1,6 +1,6 @@
 """Edge-case tests for BrowserBench.
 
-Run: python -m unittest discover -s tests
+Run: python3 -m unittest discover -s tests
 
 Covers, beyond the happy path in test_browserbench.py:
 - task reset correctness (exact starting state, per-site isolation, seeds)
@@ -12,14 +12,9 @@ Covers, beyond the happy path in test_browserbench.py:
 - reproducibility (same task run twice gives the same result)
 - the five tasks added in this change (tasks/*/…)
 
-Known gap, recorded rather than hidden: TraceRecorder currently stores
-no per-step wall-clock timestamp and no full site-state snapshot — see
-test_step_has_wall_clock_timestamp and test_step_has_state_snapshot,
-both marked @unittest.expectedFailure. Those tests encode the missing
-fields; they must be un-decorated (and will then pass) once the trace
-format in browserbench/trace.py gains them. The trace work is outside
-the tests/ + tasks/ scope of this change, so it is flagged here and in
-the change report instead of being edited in place.
+TraceRecorder stores a per-step wall-clock timestamp and the full
+site-state snapshot after the action (see
+test_step_has_wall_clock_timestamp and test_step_has_state_snapshot).
 """
 
 import json
@@ -485,28 +480,31 @@ class TestTraceCompleteness(unittest.TestCase):
         self.assertIsInstance(artifact["saved_at"], str)
         self.assertTrue(artifact["saved_at"])
 
-    @unittest.expectedFailure
     def test_step_has_wall_clock_timestamp(self):
-        # GAP (browserbench/trace.py, out of scope for this change):
-        # TraceRecorder.record_step stores latency_ms but no per-step
-        # wall-clock timestamp, so a step cannot be placed on a timeline
-        # or correlated with external logs. Remove the decorator once
-        # each step records e.g. "timestamp" in ISO-8601 UTC.
+        # Every step records an ISO-8601 UTC wall-clock timestamp, so a
+        # step can be placed on a timeline or correlated with external
+        # logs.
         _task, trace, _artifact, _result = self._run_scripted("shop-add-to-cart")
         for step in trace["steps"]:
             self.assertIn("timestamp", step)
+            self.assertIsInstance(step["timestamp"], str)
+            self.assertIn("T", step["timestamp"])
+        # Timestamps are non-decreasing across the run.
+        stamps = [s["timestamp"] for s in trace["steps"]]
+        self.assertEqual(stamps, sorted(stamps))
 
-    @unittest.expectedFailure
     def test_step_has_state_snapshot(self):
-        # GAP (browserbench/trace.py, out of scope for this change):
-        # each step records a DOM summary (links/forms/text excerpt) but
-        # not the full site-state snapshot after the action, so a trace
-        # alone cannot show how state evolved step by step. Remove the
-        # decorator once each step records e.g. "state_snapshot".
+        # Every step records the full site-state snapshot after the
+        # action, so a trace alone shows how state evolved step by step.
         _task, trace, _artifact, _result = self._run_scripted("shop-add-to-cart")
         for step in trace["steps"]:
             self.assertIn("state_snapshot", step)
             self.assertIsInstance(step["state_snapshot"], dict)
+        # The snapshot evolves: the cart is empty on the first step and
+        # holds Widget Alpha on the last one.
+        self.assertEqual(trace["steps"][0]["state_snapshot"]["cart"], {})
+        self.assertEqual(trace["steps"][-1]["state_snapshot"]["cart"],
+                         {"p1": 1})
 
 
 class TestReproducibility(unittest.TestCase):
@@ -565,7 +563,7 @@ class TestReproducibility(unittest.TestCase):
 class TestNewTasks(unittest.TestCase):
     def test_five_new_tasks_load(self):
         tasks = load_tasks(TASKS_DIR)
-        self.assertEqual(len(tasks), 15)
+        self.assertEqual(len(tasks), 18)
         ids = {t.id for t in tasks}
         for task_id in NEW_TASK_IDS:
             self.assertIn(task_id, ids)

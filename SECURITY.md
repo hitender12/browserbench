@@ -29,7 +29,7 @@ Please include, where you can:
   adapter — e.g. `browserbench/runner.py`, the `/__reset__` handling, or
   the HTTP agent protocol).
 - Steps to reproduce, ideally a minimal task/agent and the exact command.
-- The BrowserBench version (`python -m browserbench --version`) and
+- The BrowserBench version (`python3 -m browserbench --version`) and
   Python version.
 - The impact you see: what an attacker (or a malicious agent/task) could
   do that the safety boundary is supposed to prevent.
@@ -84,7 +84,7 @@ account — that is explicitly unsupported (see below).
 **Known limitations — do not rely on the harness for these:**
 
 - **Agent code is executed, not sandboxed.** Running
-  `python -m browserbench run --agent ./agents/some-agent.py` imports
+  `python3 -m browserbench run --agent ./agents/some-agent.py` imports
   and executes that file with your user privileges. Only run agent files
   you have read and trust; never run an agent file from an untrusted
   pull request, download, or task submission without reviewing it first.

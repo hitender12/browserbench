@@ -21,6 +21,13 @@ Action (what the agent returns):
     {"type": "submit", "form": int}                   # submit a form
     {"type": "done"}                                  # end the run
 
+Cost (optional): an agent may report what a run cost it by setting the
+``cost_usd`` attribute (in-process agents) or by including a ``cost_usd``
+number in its HTTP response envelope (HTTP agents; the value is
+accumulated across calls). The runner records it in the run metrics and
+the suite summary; agents that do not supply a cost report none, and
+reports show no cost line for them. The bundled agents report no cost.
+
 Adapters:
 - Python class: any object with an ``act`` method (in-process).
 - Python file: ``--agent ./agents/my-agent.py`` — the module must define
@@ -49,10 +56,17 @@ class AgentError(Exception):
 
 
 class BaseAgent:
-    """In-process agent base class. Subclass and implement ``act``."""
+    """In-process agent base class. Subclass and implement ``act``.
+
+    Optional attributes an agent may set:
+    - ``cost_usd`` (float or None): what the run cost the agent, in USD.
+      The runner reads it after the run and records it in the metrics.
+      Leave it None (the default) to report no cost.
+    """
 
     name = "base-agent"
     version = "0.1.0"
+    cost_usd: float | None = None
 
     def act(self, observation: dict) -> dict:  # pragma: no cover - interface
         raise NotImplementedError
@@ -67,6 +81,7 @@ class HttpAgent(BaseAgent):
     def __init__(self, base_url: str, name: str = "http-agent"):
         self.base_url = base_url.rstrip("/")
         self.name = name
+        self.cost_usd: float | None = None
 
     def act(self, observation: dict) -> dict:
         payload = json.dumps(
@@ -83,6 +98,8 @@ class HttpAgent(BaseAgent):
         if body.get("protocol") != PROTOCOL:
             raise AgentError(
                 f"HTTP agent protocol mismatch: {body.get('protocol')!r}")
+        if isinstance(body.get("cost_usd"), (int, float)):
+            self.cost_usd = (self.cost_usd or 0.0) + float(body["cost_usd"])
         return body.get("action") or {"type": "done"}
 
 
