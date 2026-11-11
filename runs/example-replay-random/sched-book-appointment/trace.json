@@ -1,0 +1,117 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "href": "/sched/book"
+      },
+      "url": "http://127.0.0.1:37037/sched/book",
+      "title": "Book an appointment",
+      "http_status": 200,
+      "latency_ms": 1.4,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/sched/book",
+            "method": "post",
+            "fields": [
+              "slot",
+              "name"
+            ],
+            "submit": "Book appointment"
+          }
+        ]
+      },
+      "text_excerpt": "Book an appointment Shop | CRM | Scheduling | Support Book an appointment Slot 2026-11-20 10:00 2026-11-20 11:00 2026-11-20 14:00 2026-11-21 09:00 Name"
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:37037/sched/book",
+      "title": "Book an appointment",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/sched/book",
+            "method": "post",
+            "fields": [
+              "slot",
+              "name"
+            ],
+            "submit": "Book appointment"
+          }
+        ]
+      },
+      "text_excerpt": "Book an appointment Shop | CRM | Scheduling | Support Book an appointment Slot 2026-11-20 10:00 2026-11-20 11:00 2026-11-20 14:00 2026-11-21 09:00 Name"
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:37037/__reset__",
+      "status": 200,
+      "latency_ms": 1.0
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:37037/sched/",
+      "status": 200,
+      "latency_ms": 0.8
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:37037/sched/book",
+      "status": 200,
+      "latency_ms": 1.0
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:37037/__state__?site=sched",
+      "status": 200,
+      "latency_ms": 1.2
+    }
+  ]
+}

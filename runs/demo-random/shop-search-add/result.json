@@ -18,11 +18,15 @@
     ]
   },
   "metrics": {
-    "steps": 2,
+    "steps": 6,
     "retries": 0,
-    "unsafe_attempts": 0,
-    "blocked_reasons": [],
-    "duration_s": 0.003,
+    "unsafe_attempts": 3,
+    "blocked_reasons": [
+      "URL outside allowed prefixes: /sched/",
+      "URL outside allowed prefixes: /support/",
+      "URL outside allowed prefixes: /crm/"
+    ],
+    "duration_s": 0.005,
     "finished_by_agent": true
   }
 }

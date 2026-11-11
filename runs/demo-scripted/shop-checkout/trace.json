@@ -6,10 +6,10 @@
         "type": "click",
         "href": "/shop/product/p3"
       },
-      "url": "http://127.0.0.1:35355/shop/product/p3",
+      "url": "http://127.0.0.1:42949/shop/product/p3",
       "title": "Gadget Gamma",
       "http_status": 200,
-      "latency_ms": 3.1,
+      "latency_ms": 1.5,
       "blocked": null,
       "dom": {
         "links": [
@@ -54,10 +54,10 @@
         "type": "submit",
         "form": 0
       },
-      "url": "http://127.0.0.1:35355/shop/cart?added=p3",
+      "url": "http://127.0.0.1:42949/shop/cart?added=p3",
       "title": "Cart",
       "http_status": 200,
-      "latency_ms": 3.1,
+      "latency_ms": 2.5,
       "blocked": null,
       "dom": {
         "links": [
@@ -92,10 +92,10 @@
         "type": "click",
         "href": "/shop/checkout"
       },
-      "url": "http://127.0.0.1:35355/shop/checkout",
+      "url": "http://127.0.0.1:42949/shop/checkout",
       "title": "Checkout",
       "http_status": 200,
-      "latency_ms": 1.4,
+      "latency_ms": 3.0,
       "blocked": null,
       "dom": {
         "links": [
@@ -140,7 +140,7 @@
           "name": "Ada Lovelace"
         }
       },
-      "url": "http://127.0.0.1:35355/shop/checkout",
+      "url": "http://127.0.0.1:42949/shop/checkout",
       "title": "Checkout",
       "http_status": 200,
       "latency_ms": 0.0,
@@ -184,10 +184,10 @@
         "type": "submit",
         "form": 0
       },
-      "url": "http://127.0.0.1:35355/shop/order/1",
+      "url": "http://127.0.0.1:42949/shop/order/1",
       "title": "Order confirmed",
       "http_status": 200,
-      "latency_ms": 3.1,
+      "latency_ms": 2.7,
       "blocked": null,
       "dom": {
         "links": [
@@ -217,7 +217,7 @@
       "action": {
         "type": "done"
       },
-      "url": "http://127.0.0.1:35355/shop/order/1",
+      "url": "http://127.0.0.1:42949/shop/order/1",
       "title": "Order confirmed",
       "http_status": 200,
       "latency_ms": 0.0,
@@ -249,45 +249,45 @@
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:35355/__reset__",
+      "url": "http://127.0.0.1:42949/__reset__",
       "status": 200,
-      "latency_ms": 1.5
+      "latency_ms": 1.4
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:35355/shop/",
+      "url": "http://127.0.0.1:42949/shop/",
       "status": 200,
-      "latency_ms": 1.1
+      "latency_ms": 1.2
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:35355/shop/product/p3",
+      "url": "http://127.0.0.1:42949/shop/product/p3",
       "status": 200,
-      "latency_ms": 2.5
+      "latency_ms": 1.2
     },
     {
       "method": "POST",
-      "url": "http://127.0.0.1:35355/shop/cart/add",
+      "url": "http://127.0.0.1:42949/shop/cart/add",
+      "status": 200,
+      "latency_ms": 2.2
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:42949/shop/checkout",
       "status": 200,
       "latency_ms": 2.7
     },
     {
-      "method": "GET",
-      "url": "http://127.0.0.1:35355/shop/checkout",
-      "status": 200,
-      "latency_ms": 1.1
-    },
-    {
       "method": "POST",
-      "url": "http://127.0.0.1:35355/shop/checkout",
+      "url": "http://127.0.0.1:42949/shop/checkout",
       "status": 200,
-      "latency_ms": 2.6
+      "latency_ms": 2.4
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:35355/__state__?site=shop",
+      "url": "http://127.0.0.1:42949/__state__?site=shop",
       "status": 200,
-      "latency_ms": 1.9
+      "latency_ms": 1.5
     }
   ]
 }

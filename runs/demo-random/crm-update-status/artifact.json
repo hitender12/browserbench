@@ -11,19 +11,42 @@
   "actions": [
     {
       "type": "click",
-      "href": "/crm/leads/2"
+      "href": "/crm/leads/new"
     },
     {
       "type": "submit",
-      "form": 1
+      "form": 0
+    },
+    {
+      "type": "fill",
+      "form": 1,
+      "values": {
+        "note": "42"
+      }
     },
     {
       "type": "submit",
-      "form": 1
+      "form": 0
     },
     {
-      "type": "submit",
-      "form": 1
+      "type": "click",
+      "href": "/shop/"
+    },
+    {
+      "type": "click",
+      "href": "/support/"
+    },
+    {
+      "type": "click",
+      "href": "/shop/"
+    },
+    {
+      "type": "click",
+      "href": "/shop/"
+    },
+    {
+      "type": "click",
+      "href": "/support/"
     },
     {
       "type": "done"
@@ -48,12 +71,18 @@
     ]
   },
   "metrics": {
-    "steps": 5,
+    "steps": 10,
     "retries": 0,
-    "unsafe_attempts": 0,
-    "blocked_reasons": [],
-    "duration_s": 0.013,
+    "unsafe_attempts": 5,
+    "blocked_reasons": [
+      "URL outside allowed prefixes: /shop/",
+      "URL outside allowed prefixes: /support/",
+      "URL outside allowed prefixes: /shop/",
+      "URL outside allowed prefixes: /shop/",
+      "URL outside allowed prefixes: /support/"
+    ],
+    "duration_s": 0.008,
     "finished_by_agent": true
   },
-  "saved_at": "2026-11-11T10:07:01Z"
+  "saved_at": "2026-11-11T10:10:22Z"
 }

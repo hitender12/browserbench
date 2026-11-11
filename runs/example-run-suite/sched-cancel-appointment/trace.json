@@ -1,0 +1,160 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "href": "/sched/appointments/1"
+      },
+      "url": "http://127.0.0.1:43887/sched/appointments/1",
+      "title": "Appointment",
+      "http_status": 200,
+      "latency_ms": 1.2,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/sched/appointments/1/cancel",
+            "method": "post",
+            "fields": [],
+            "submit": "Cancel appointment"
+          }
+        ]
+      },
+      "text_excerpt": "Appointment Shop | CRM | Scheduling | Support Appointment 2026-11-20 09:00 \u2014 Alan Turing \u2014 booked"
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "submit",
+        "form": 0
+      },
+      "url": "http://127.0.0.1:43887/sched/?cancelled=1",
+      "title": "Scheduling",
+      "http_status": 200,
+      "latency_ms": 1.9,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "Book an appointment",
+            "href": "/sched/book"
+          },
+          {
+            "text": "All appointments",
+            "href": "/sched/appointments"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Scheduling Shop | CRM | Scheduling | Support Scheduling Appointment cancelled. Booked appointments Book an appointment All appointments"
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:43887/sched/?cancelled=1",
+      "title": "Scheduling",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "Book an appointment",
+            "href": "/sched/book"
+          },
+          {
+            "text": "All appointments",
+            "href": "/sched/appointments"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Scheduling Shop | CRM | Scheduling | Support Scheduling Appointment cancelled. Booked appointments Book an appointment All appointments"
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:43887/__reset__",
+      "status": 200,
+      "latency_ms": 1.1
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:43887/sched/",
+      "status": 200,
+      "latency_ms": 1.1
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:43887/sched/appointments/1",
+      "status": 200,
+      "latency_ms": 0.9
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:43887/sched/appointments/1/cancel",
+      "status": 200,
+      "latency_ms": 1.6
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:43887/__state__?site=sched",
+      "status": 200,
+      "latency_ms": 0.8
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "task_id": "support-reply-close",
+  "evaluation": {
+    "success": true,
+    "partial": 1.0,
+    "passed": 2,
+    "total": 2,
+    "conditions": [
+      {
+        "condition": {
+          "field": "status",
+          "id": 1,
+          "type": "ticket_field",
+          "value": "closed"
+        },
+        "passed": true,
+        "explanation": "ticket #1 status='closed' (want 'closed')"
+      },
+      {
+        "condition": {
+          "id": 1,
+          "text": "Reset link sent",
+          "type": "ticket_reply_contains"
+        },
+        "passed": true,
+        "explanation": "ticket #1 replies contain 'Reset link sent': True"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 5,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.008,
+    "finished_by_agent": true
+  }
+}

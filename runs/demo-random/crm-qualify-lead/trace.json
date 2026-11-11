@@ -1,0 +1,119 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "href": "/crm/leads/new"
+      },
+      "url": "http://127.0.0.1:34563/crm/leads/new",
+      "title": "New lead",
+      "http_status": 200,
+      "latency_ms": 1.2,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/new",
+            "method": "post",
+            "fields": [
+              "name",
+              "email",
+              "company"
+            ],
+            "submit": "Create lead"
+          }
+        ]
+      },
+      "text_excerpt": "New lead Shop | CRM | Scheduling | Support New lead Name Email Company"
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:34563/crm/leads/new",
+      "title": "New lead",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/new",
+            "method": "post",
+            "fields": [
+              "name",
+              "email",
+              "company"
+            ],
+            "submit": "Create lead"
+          }
+        ]
+      },
+      "text_excerpt": "New lead Shop | CRM | Scheduling | Support New lead Name Email Company"
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:34563/__reset__",
+      "status": 200,
+      "latency_ms": 1.1
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:34563/crm/",
+      "status": 200,
+      "latency_ms": 1.0
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:34563/crm/leads/new",
+      "status": 200,
+      "latency_ms": 0.9
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:34563/__state__?site=crm",
+      "status": 200,
+      "latency_ms": 0.9
+    }
+  ]
+}

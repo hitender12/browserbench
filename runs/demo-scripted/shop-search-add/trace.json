@@ -9,7 +9,7 @@
           "q": "widget"
         }
       },
-      "url": "http://127.0.0.1:35355/shop/",
+      "url": "http://127.0.0.1:42949/shop/",
       "title": "Shop",
       "http_status": 200,
       "latency_ms": 0.0,
@@ -76,10 +76,10 @@
         "type": "submit",
         "form": 0
       },
-      "url": "http://127.0.0.1:35355/shop/search?q=widget",
+      "url": "http://127.0.0.1:42949/shop/search?q=widget",
       "title": "Search results",
       "http_status": 200,
-      "latency_ms": 1.9,
+      "latency_ms": 2.2,
       "blocked": null,
       "dom": {
         "links": [
@@ -118,10 +118,10 @@
         "type": "click",
         "href": "/shop/product/p1"
       },
-      "url": "http://127.0.0.1:35355/shop/product/p1",
+      "url": "http://127.0.0.1:42949/shop/product/p1",
       "title": "Widget Alpha",
       "http_status": 200,
-      "latency_ms": 2.9,
+      "latency_ms": 2.3,
       "blocked": null,
       "dom": {
         "links": [
@@ -166,10 +166,10 @@
         "type": "submit",
         "form": 0
       },
-      "url": "http://127.0.0.1:35355/shop/cart?added=p1",
+      "url": "http://127.0.0.1:42949/shop/cart?added=p1",
       "title": "Cart",
       "http_status": 200,
-      "latency_ms": 3.4,
+      "latency_ms": 2.7,
       "blocked": null,
       "dom": {
         "links": [
@@ -203,7 +203,7 @@
       "action": {
         "type": "done"
       },
-      "url": "http://127.0.0.1:35355/shop/cart?added=p1",
+      "url": "http://127.0.0.1:42949/shop/cart?added=p1",
       "title": "Cart",
       "http_status": 200,
       "latency_ms": 0.0,
@@ -239,39 +239,39 @@
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:35355/__reset__",
+      "url": "http://127.0.0.1:42949/__reset__",
       "status": 200,
-      "latency_ms": 2.5
+      "latency_ms": 3.7
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:35355/shop/",
+      "url": "http://127.0.0.1:42949/shop/",
       "status": 200,
-      "latency_ms": 2.1
+      "latency_ms": 2.6
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:35355/shop/search?q=widget",
+      "url": "http://127.0.0.1:42949/shop/search?q=widget",
       "status": 200,
-      "latency_ms": 1.6
+      "latency_ms": 1.8
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:35355/shop/product/p1",
+      "url": "http://127.0.0.1:42949/shop/product/p1",
       "status": 200,
-      "latency_ms": 2.5
+      "latency_ms": 1.9
     },
     {
       "method": "POST",
-      "url": "http://127.0.0.1:35355/shop/cart/add",
+      "url": "http://127.0.0.1:42949/shop/cart/add",
       "status": 200,
-      "latency_ms": 3.1
+      "latency_ms": 2.4
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:35355/__state__?site=shop",
+      "url": "http://127.0.0.1:42949/__state__?site=shop",
       "status": 200,
-      "latency_ms": 2.2
+      "latency_ms": 0.9
     }
   ]
 }

@@ -1,0 +1,28 @@
+{
+  "task_id": "sched-book-afternoon",
+  "evaluation": {
+    "success": false,
+    "partial": 0.0,
+    "passed": 0,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "name": "Grace Hopper",
+          "slot": "2026-11-20 14:00",
+          "type": "appointment_exists"
+        },
+        "passed": false,
+        "explanation": "no booked appointment at 2026-11-20 14:00"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 1,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.001,
+    "finished_by_agent": true
+  }
+}

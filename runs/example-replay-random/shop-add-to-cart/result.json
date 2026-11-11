@@ -1,0 +1,28 @@
+{
+  "task_id": "shop-add-to-cart",
+  "evaluation": {
+    "success": false,
+    "partial": 0.0,
+    "passed": 0,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "product": "Widget Alpha",
+          "quantity": 1,
+          "type": "cart_contains"
+        },
+        "passed": false,
+        "explanation": "cart has 0 \u00d7 Widget Alpha (want 1)"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 2,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.002,
+    "finished_by_agent": true
+  }
+}

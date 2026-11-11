@@ -1,0 +1,242 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "href": "/crm/leads/1"
+      },
+      "url": "http://127.0.0.1:38721/crm/leads/1",
+      "title": "Ada Lovelace",
+      "http_status": 200,
+      "latency_ms": 1.8,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/1/status",
+            "method": "post",
+            "fields": [
+              "status"
+            ],
+            "submit": "Update lead"
+          },
+          {
+            "action": "/crm/leads/1/note",
+            "method": "post",
+            "fields": [
+              "note"
+            ],
+            "submit": "Add note"
+          }
+        ]
+      },
+      "text_excerpt": "Ada Lovelace Shop | CRM | Scheduling | Support Ada Lovelace Email: ada@example.com Company: Analytical Engines Status: New Status New Contacted Qualified Lost Note Notes"
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "fill",
+        "form": 1,
+        "values": {
+          "note": "Called, interested in a demo."
+        }
+      },
+      "url": "http://127.0.0.1:38721/crm/leads/1",
+      "title": "Ada Lovelace",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/1/status",
+            "method": "post",
+            "fields": [
+              "status"
+            ],
+            "submit": "Update lead"
+          },
+          {
+            "action": "/crm/leads/1/note",
+            "method": "post",
+            "fields": [
+              "note"
+            ],
+            "submit": "Add note"
+          }
+        ]
+      },
+      "text_excerpt": "Ada Lovelace Shop | CRM | Scheduling | Support Ada Lovelace Email: ada@example.com Company: Analytical Engines Status: New Status New Contacted Qualified Lost Note Notes"
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "submit",
+        "form": 1
+      },
+      "url": "http://127.0.0.1:38721/crm/leads/1?noted=1",
+      "title": "Ada Lovelace",
+      "http_status": 200,
+      "latency_ms": 3.4,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/1/status",
+            "method": "post",
+            "fields": [
+              "status"
+            ],
+            "submit": "Update lead"
+          },
+          {
+            "action": "/crm/leads/1/note",
+            "method": "post",
+            "fields": [
+              "note"
+            ],
+            "submit": "Add note"
+          }
+        ]
+      },
+      "text_excerpt": "Ada Lovelace Shop | CRM | Scheduling | Support Ada Lovelace Note added. Email: ada@example.com Company: Analytical Engines Status: New Status New Contacted Qualified Lost Note Notes Called, interested in a demo."
+    },
+    {
+      "step": 4,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:38721/crm/leads/1?noted=1",
+      "title": "Ada Lovelace",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/1/status",
+            "method": "post",
+            "fields": [
+              "status"
+            ],
+            "submit": "Update lead"
+          },
+          {
+            "action": "/crm/leads/1/note",
+            "method": "post",
+            "fields": [
+              "note"
+            ],
+            "submit": "Add note"
+          }
+        ]
+      },
+      "text_excerpt": "Ada Lovelace Shop | CRM | Scheduling | Support Ada Lovelace Note added. Email: ada@example.com Company: Analytical Engines Status: New Status New Contacted Qualified Lost Note Notes Called, interested in a demo."
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:38721/__reset__",
+      "status": 200,
+      "latency_ms": 30.4
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:38721/crm/",
+      "status": 200,
+      "latency_ms": 1.5
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:38721/crm/leads/1",
+      "status": 200,
+      "latency_ms": 1.2
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:38721/crm/leads/1/note",
+      "status": 200,
+      "latency_ms": 2.8
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:38721/__state__?site=crm",
+      "status": 200,
+      "latency_ms": 1.3
+    }
+  ]
+}

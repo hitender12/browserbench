@@ -10,26 +10,6 @@
   "config": {},
   "actions": [
     {
-      "type": "submit",
-      "form": 0
-    },
-    {
-      "type": "click",
-      "href": "/shop/product/p1"
-    },
-    {
-      "type": "submit",
-      "form": 0
-    },
-    {
-      "type": "click",
-      "href": "/shop/checkout"
-    },
-    {
-      "type": "click",
-      "href": "/shop/"
-    },
-    {
       "type": "done"
     }
   ],
@@ -51,12 +31,12 @@
     ]
   },
   "metrics": {
-    "steps": 6,
+    "steps": 1,
     "retries": 0,
     "unsafe_attempts": 0,
     "blocked_reasons": [],
-    "duration_s": 0.011,
+    "duration_s": 0.001,
     "finished_by_agent": true
   },
-  "saved_at": "2026-11-11T10:07:01Z"
+  "saved_at": "2026-11-11T10:10:22Z"
 }

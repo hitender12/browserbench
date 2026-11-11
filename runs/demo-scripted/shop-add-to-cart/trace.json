@@ -6,10 +6,10 @@
         "type": "click",
         "href": "/shop/product/p1"
       },
-      "url": "http://127.0.0.1:35355/shop/product/p1",
+      "url": "http://127.0.0.1:42949/shop/product/p1",
       "title": "Widget Alpha",
       "http_status": 200,
-      "latency_ms": 3.7,
+      "latency_ms": 1.5,
       "blocked": null,
       "dom": {
         "links": [
@@ -54,10 +54,10 @@
         "type": "submit",
         "form": 0
       },
-      "url": "http://127.0.0.1:35355/shop/cart?added=p1",
+      "url": "http://127.0.0.1:42949/shop/cart?added=p1",
       "title": "Cart",
       "http_status": 200,
-      "latency_ms": 3.7,
+      "latency_ms": 3.4,
       "blocked": null,
       "dom": {
         "links": [
@@ -91,7 +91,7 @@
       "action": {
         "type": "done"
       },
-      "url": "http://127.0.0.1:35355/shop/cart?added=p1",
+      "url": "http://127.0.0.1:42949/shop/cart?added=p1",
       "title": "Cart",
       "http_status": 200,
       "latency_ms": 0.0,
@@ -127,33 +127,33 @@
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:35355/__reset__",
+      "url": "http://127.0.0.1:42949/__reset__",
+      "status": 200,
+      "latency_ms": 1.4
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:42949/shop/",
       "status": 200,
       "latency_ms": 1.2
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:35355/shop/",
+      "url": "http://127.0.0.1:42949/shop/product/p1",
       "status": 200,
       "latency_ms": 1.1
     },
     {
-      "method": "GET",
-      "url": "http://127.0.0.1:35355/shop/product/p1",
-      "status": 200,
-      "latency_ms": 3.2
-    },
-    {
       "method": "POST",
-      "url": "http://127.0.0.1:35355/shop/cart/add",
+      "url": "http://127.0.0.1:42949/shop/cart/add",
       "status": 200,
-      "latency_ms": 3.4
+      "latency_ms": 3.1
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:35355/__state__?site=shop",
+      "url": "http://127.0.0.1:42949/__state__?site=shop",
       "status": 200,
-      "latency_ms": 1.4
+      "latency_ms": 1.1
     }
   ]
 }

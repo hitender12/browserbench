@@ -48,12 +48,16 @@ class MaliciousAgent(BaseAgent):
 
 
 class TestSpecLoading(unittest.TestCase):
-    def test_ten_tasks_load(self):
+    def test_fifteen_tasks_load(self):
         tasks = load_tasks(TASKS_DIR)
-        self.assertEqual(len(tasks), 10)
+        self.assertEqual(len(tasks), 15)
         ids = {t.id for t in tasks}
         self.assertIn("shop-add-to-cart", ids)
         self.assertIn("sched-cancel-appointment", ids)
+        for new_id in ("shop-add-two-beta", "shop-buy-doohickey",
+                       "crm-qualify-lead", "sched-book-afternoon",
+                       "support-close-ticket"):
+            self.assertIn(new_id, ids)
 
     def test_yaml_task_loads(self):
         task = _load("sched-cancel-appointment")
@@ -212,8 +216,8 @@ class TestRunner(unittest.TestCase):
         agent = load_agent("scripted")
         with tempfile.TemporaryDirectory() as tmp:
             summary = run_suite(tasks, agent, tmp)
-        self.assertEqual(summary["tasks_run"], 10)
-        self.assertEqual(summary["tasks_passed"], 10)
+        self.assertEqual(summary["tasks_run"], 15)
+        self.assertEqual(summary["tasks_passed"], 15)
         self.assertEqual(summary["total_unsafe_attempts"], 0)
 
 

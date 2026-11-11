@@ -1,0 +1,160 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "fill",
+        "form": 0,
+        "values": {
+          "q": "test"
+        }
+      },
+      "url": "http://127.0.0.1:37037/shop/",
+      "title": "Shop",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "View cart",
+            "href": "/shop/cart"
+          },
+          {
+            "text": "Widget Alpha",
+            "href": "/shop/product/p1"
+          },
+          {
+            "text": "Widget Beta",
+            "href": "/shop/product/p2"
+          },
+          {
+            "text": "Gadget Gamma",
+            "href": "/shop/product/p3"
+          },
+          {
+            "text": "Gizmo Delta",
+            "href": "/shop/product/p4"
+          },
+          {
+            "text": "Doohickey Epsilon",
+            "href": "/shop/product/p5"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/shop/search",
+            "method": "get",
+            "fields": [
+              "q"
+            ],
+            "submit": "Search"
+          }
+        ]
+      },
+      "text_excerpt": "Shop Shop | CRM | Scheduling | Support Shop Cart (0 items) \u2014 View cart Widget Alpha \u2014 $19.99 Widget Beta \u2014 $29.99 Gadget Gamma \u2014 $49.99 Gizmo Delta \u2014 $99.99 Doohickey Epsilon \u2014 $9.99"
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:37037/shop/",
+      "title": "Shop",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "View cart",
+            "href": "/shop/cart"
+          },
+          {
+            "text": "Widget Alpha",
+            "href": "/shop/product/p1"
+          },
+          {
+            "text": "Widget Beta",
+            "href": "/shop/product/p2"
+          },
+          {
+            "text": "Gadget Gamma",
+            "href": "/shop/product/p3"
+          },
+          {
+            "text": "Gizmo Delta",
+            "href": "/shop/product/p4"
+          },
+          {
+            "text": "Doohickey Epsilon",
+            "href": "/shop/product/p5"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/shop/search",
+            "method": "get",
+            "fields": [
+              "q"
+            ],
+            "submit": "Search"
+          }
+        ]
+      },
+      "text_excerpt": "Shop Shop | CRM | Scheduling | Support Shop Cart (0 items) \u2014 View cart Widget Alpha \u2014 $19.99 Widget Beta \u2014 $29.99 Gadget Gamma \u2014 $49.99 Gizmo Delta \u2014 $99.99 Doohickey Epsilon \u2014 $9.99"
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:37037/__reset__",
+      "status": 200,
+      "latency_ms": 1.3
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:37037/shop/",
+      "status": 200,
+      "latency_ms": 1.1
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:37037/__state__?site=shop",
+      "status": 200,
+      "latency_ms": 1.2
+    }
+  ]
+}

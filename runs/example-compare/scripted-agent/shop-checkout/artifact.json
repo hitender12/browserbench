@@ -1,0 +1,69 @@
+{
+  "format_version": "1.0.0",
+  "task_id": "shop-checkout",
+  "task_version": "1.0.0",
+  "seed": 1,
+  "agent": {
+    "name": "scripted-agent",
+    "version": "0.1.0"
+  },
+  "config": {
+    "agent_spec": "scripted",
+    "example": "compare_agents"
+  },
+  "actions": [
+    {
+      "type": "click",
+      "href": "/shop/product/p3"
+    },
+    {
+      "type": "submit",
+      "form": 0
+    },
+    {
+      "type": "click",
+      "href": "/shop/checkout"
+    },
+    {
+      "type": "fill",
+      "form": 0,
+      "values": {
+        "address": "12 Test Street",
+        "name": "Ada Lovelace"
+      }
+    },
+    {
+      "type": "submit",
+      "form": 0
+    },
+    {
+      "type": "done"
+    }
+  ],
+  "evaluation": {
+    "success": true,
+    "partial": 1.0,
+    "passed": 1,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "customer": "Ada Lovelace",
+          "product": "Gadget Gamma",
+          "type": "order_exists"
+        },
+        "passed": true,
+        "explanation": "order #1 for Gadget Gamma exists"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 6,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.009,
+    "finished_by_agent": true
+  },
+  "saved_at": "2026-11-11T10:11:07Z"
+}

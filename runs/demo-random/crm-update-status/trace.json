@@ -4,12 +4,12 @@
       "step": 1,
       "action": {
         "type": "click",
-        "href": "/crm/leads/2"
+        "href": "/crm/leads/new"
       },
-      "url": "http://127.0.0.1:37781/crm/leads/2",
-      "title": "Grace Hopper",
+      "url": "http://127.0.0.1:34563/crm/leads/new",
+      "title": "New lead",
       "http_status": 200,
-      "latency_ms": 1.8,
+      "latency_ms": 1.2,
       "blocked": null,
       "dom": {
         "links": [
@@ -32,35 +32,29 @@
         ],
         "forms": [
           {
-            "action": "/crm/leads/2/status",
+            "action": "/crm/leads/new",
             "method": "post",
             "fields": [
-              "status"
+              "name",
+              "email",
+              "company"
             ],
-            "submit": "Update lead"
-          },
-          {
-            "action": "/crm/leads/2/note",
-            "method": "post",
-            "fields": [
-              "note"
-            ],
-            "submit": "Add note"
+            "submit": "Create lead"
           }
         ]
       },
-      "text_excerpt": "Grace Hopper Shop | CRM | Scheduling | Support Grace Hopper Email: grace@example.com Company: Navy Computing Status: New Status New Contacted Qualified Lost Note Notes"
+      "text_excerpt": "New lead Shop | CRM | Scheduling | Support New lead Name Email Company"
     },
     {
       "step": 2,
       "action": {
         "type": "submit",
-        "form": 1
+        "form": 0
       },
-      "url": "http://127.0.0.1:37781/crm/leads/2?noted=1",
-      "title": "Grace Hopper",
+      "url": "http://127.0.0.1:34563/crm/leads/3?created=1",
+      "title": "",
       "http_status": 200,
-      "latency_ms": 3.2,
+      "latency_ms": 2.3,
       "blocked": null,
       "dom": {
         "links": [
@@ -83,7 +77,7 @@
         ],
         "forms": [
           {
-            "action": "/crm/leads/2/status",
+            "action": "/crm/leads/3/status",
             "method": "post",
             "fields": [
               "status"
@@ -91,7 +85,7 @@
             "submit": "Update lead"
           },
           {
-            "action": "/crm/leads/2/note",
+            "action": "/crm/leads/3/note",
             "method": "post",
             "fields": [
               "note"
@@ -100,117 +94,19 @@
           }
         ]
       },
-      "text_excerpt": "Grace Hopper Shop | CRM | Scheduling | Support Grace Hopper Note added. Email: grace@example.com Company: Navy Computing Status: New Status New Contacted Qualified Lost Note Notes"
+      "text_excerpt": "Shop | CRM | Scheduling | Support Email: Company: Status: New Status New Contacted Qualified Lost Note Notes"
     },
     {
       "step": 3,
       "action": {
-        "type": "submit",
-        "form": 1
+        "type": "fill",
+        "form": 1,
+        "values": {
+          "note": "42"
+        }
       },
-      "url": "http://127.0.0.1:37781/crm/leads/2?noted=1",
-      "title": "Grace Hopper",
-      "http_status": 200,
-      "latency_ms": 3.2,
-      "blocked": null,
-      "dom": {
-        "links": [
-          {
-            "text": "Shop",
-            "href": "/shop/"
-          },
-          {
-            "text": "CRM",
-            "href": "/crm/"
-          },
-          {
-            "text": "Scheduling",
-            "href": "/sched/"
-          },
-          {
-            "text": "Support",
-            "href": "/support/"
-          }
-        ],
-        "forms": [
-          {
-            "action": "/crm/leads/2/status",
-            "method": "post",
-            "fields": [
-              "status"
-            ],
-            "submit": "Update lead"
-          },
-          {
-            "action": "/crm/leads/2/note",
-            "method": "post",
-            "fields": [
-              "note"
-            ],
-            "submit": "Add note"
-          }
-        ]
-      },
-      "text_excerpt": "Grace Hopper Shop | CRM | Scheduling | Support Grace Hopper Note added. Email: grace@example.com Company: Navy Computing Status: New Status New Contacted Qualified Lost Note Notes"
-    },
-    {
-      "step": 4,
-      "action": {
-        "type": "submit",
-        "form": 1
-      },
-      "url": "http://127.0.0.1:37781/crm/leads/2?noted=1",
-      "title": "Grace Hopper",
-      "http_status": 200,
-      "latency_ms": 2.6,
-      "blocked": null,
-      "dom": {
-        "links": [
-          {
-            "text": "Shop",
-            "href": "/shop/"
-          },
-          {
-            "text": "CRM",
-            "href": "/crm/"
-          },
-          {
-            "text": "Scheduling",
-            "href": "/sched/"
-          },
-          {
-            "text": "Support",
-            "href": "/support/"
-          }
-        ],
-        "forms": [
-          {
-            "action": "/crm/leads/2/status",
-            "method": "post",
-            "fields": [
-              "status"
-            ],
-            "submit": "Update lead"
-          },
-          {
-            "action": "/crm/leads/2/note",
-            "method": "post",
-            "fields": [
-              "note"
-            ],
-            "submit": "Add note"
-          }
-        ]
-      },
-      "text_excerpt": "Grace Hopper Shop | CRM | Scheduling | Support Grace Hopper Note added. Email: grace@example.com Company: Navy Computing Status: New Status New Contacted Qualified Lost Note Notes"
-    },
-    {
-      "step": 5,
-      "action": {
-        "type": "done"
-      },
-      "url": "http://127.0.0.1:37781/crm/leads/2?noted=1",
-      "title": "Grace Hopper",
+      "url": "http://127.0.0.1:34563/crm/leads/3?created=1",
+      "title": "",
       "http_status": 200,
       "latency_ms": 0.0,
       "blocked": null,
@@ -235,7 +131,7 @@
         ],
         "forms": [
           {
-            "action": "/crm/leads/2/status",
+            "action": "/crm/leads/3/status",
             "method": "post",
             "fields": [
               "status"
@@ -243,7 +139,7 @@
             "submit": "Update lead"
           },
           {
-            "action": "/crm/leads/2/note",
+            "action": "/crm/leads/3/note",
             "method": "post",
             "fields": [
               "note"
@@ -252,51 +148,282 @@
           }
         ]
       },
-      "text_excerpt": "Grace Hopper Shop | CRM | Scheduling | Support Grace Hopper Note added. Email: grace@example.com Company: Navy Computing Status: New Status New Contacted Qualified Lost Note Notes"
+      "text_excerpt": "Shop | CRM | Scheduling | Support Email: Company: Status: New Status New Contacted Qualified Lost Note Notes"
+    },
+    {
+      "step": 4,
+      "action": {
+        "type": "submit",
+        "form": 0
+      },
+      "url": "http://127.0.0.1:34563/crm/leads/3/status",
+      "title": "Error",
+      "http_status": 400,
+      "latency_ms": 1.9,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Error Shop | CRM | Scheduling | Support Error Invalid status."
+    },
+    {
+      "step": 5,
+      "action": {
+        "type": "click",
+        "href": "/shop/"
+      },
+      "url": "http://127.0.0.1:34563/crm/leads/3/status",
+      "title": "Error",
+      "http_status": 400,
+      "latency_ms": 0.0,
+      "blocked": "URL outside allowed prefixes: /shop/",
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Error Shop | CRM | Scheduling | Support Error Invalid status."
+    },
+    {
+      "step": 6,
+      "action": {
+        "type": "click",
+        "href": "/support/"
+      },
+      "url": "http://127.0.0.1:34563/crm/leads/3/status",
+      "title": "Error",
+      "http_status": 400,
+      "latency_ms": 0.0,
+      "blocked": "URL outside allowed prefixes: /support/",
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Error Shop | CRM | Scheduling | Support Error Invalid status."
+    },
+    {
+      "step": 7,
+      "action": {
+        "type": "click",
+        "href": "/shop/"
+      },
+      "url": "http://127.0.0.1:34563/crm/leads/3/status",
+      "title": "Error",
+      "http_status": 400,
+      "latency_ms": 0.0,
+      "blocked": "URL outside allowed prefixes: /shop/",
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Error Shop | CRM | Scheduling | Support Error Invalid status."
+    },
+    {
+      "step": 8,
+      "action": {
+        "type": "click",
+        "href": "/shop/"
+      },
+      "url": "http://127.0.0.1:34563/crm/leads/3/status",
+      "title": "Error",
+      "http_status": 400,
+      "latency_ms": 0.0,
+      "blocked": "URL outside allowed prefixes: /shop/",
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Error Shop | CRM | Scheduling | Support Error Invalid status."
+    },
+    {
+      "step": 9,
+      "action": {
+        "type": "click",
+        "href": "/support/"
+      },
+      "url": "http://127.0.0.1:34563/crm/leads/3/status",
+      "title": "Error",
+      "http_status": 400,
+      "latency_ms": 0.0,
+      "blocked": "URL outside allowed prefixes: /support/",
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Error Shop | CRM | Scheduling | Support Error Invalid status."
+    },
+    {
+      "step": 10,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:34563/crm/leads/3/status",
+      "title": "Error",
+      "http_status": 400,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Error Shop | CRM | Scheduling | Support Error Invalid status."
     }
   ],
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:37781/__reset__",
+      "url": "http://127.0.0.1:34563/__reset__",
+      "status": 200,
+      "latency_ms": 0.9
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:34563/crm/",
       "status": 200,
       "latency_ms": 1.1
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:37781/crm/",
+      "url": "http://127.0.0.1:34563/crm/leads/new",
       "status": 200,
-      "latency_ms": 1.3
+      "latency_ms": 0.9
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:34563/crm/leads/new",
+      "status": 200,
+      "latency_ms": 1.9
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:34563/crm/leads/3/status",
+      "status": 400,
+      "latency_ms": 1.7
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:37781/crm/leads/2",
+      "url": "http://127.0.0.1:34563/__state__?site=crm",
       "status": 200,
-      "latency_ms": 1.2
-    },
-    {
-      "method": "POST",
-      "url": "http://127.0.0.1:37781/crm/leads/2/note",
-      "status": 200,
-      "latency_ms": 2.7
-    },
-    {
-      "method": "POST",
-      "url": "http://127.0.0.1:37781/crm/leads/2/note",
-      "status": 200,
-      "latency_ms": 2.5
-    },
-    {
-      "method": "POST",
-      "url": "http://127.0.0.1:37781/crm/leads/2/note",
-      "status": 200,
-      "latency_ms": 2.0
-    },
-    {
-      "method": "GET",
-      "url": "http://127.0.0.1:37781/__state__?site=crm",
-      "status": 200,
-      "latency_ms": 1.1
+      "latency_ms": 1.4
     }
   ]
 }

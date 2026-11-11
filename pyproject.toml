@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "browserbench"
+version = "0.1.0"
+description = "A reproducible test lab and benchmark for browser-using AI agents."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Software Development :: Testing",
+]
+
+[project.scripts]
+browserbench = "browserbench.__main__:main"
+
+[tool.setuptools]
+packages = ["browserbench"]

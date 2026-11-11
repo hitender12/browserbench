@@ -1,0 +1,28 @@
+{
+  "task_id": "sched-book-appointment",
+  "evaluation": {
+    "success": true,
+    "partial": 1.0,
+    "passed": 1,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "name": "Alan Turing",
+          "slot": "2026-11-20 10:00",
+          "type": "appointment_exists"
+        },
+        "passed": true,
+        "explanation": "appointment at 2026-11-20 10:00 exists"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 4,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.005,
+    "finished_by_agent": true
+  }
+}

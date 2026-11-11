@@ -18,10 +18,12 @@
     ]
   },
   "metrics": {
-    "steps": 4,
+    "steps": 5,
     "retries": 0,
-    "unsafe_attempts": 0,
-    "blocked_reasons": [],
+    "unsafe_attempts": 1,
+    "blocked_reasons": [
+      "URL outside allowed prefixes: /sched/"
+    ],
     "duration_s": 0.005,
     "finished_by_agent": true
   }

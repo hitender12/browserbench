@@ -1,0 +1,69 @@
+{
+  "format_version": "1.0.0",
+  "task_id": "shop-buy-doohickey",
+  "task_version": "1.0.0",
+  "seed": 1,
+  "agent": {
+    "name": "scripted-agent",
+    "version": "0.1.0"
+  },
+  "config": {
+    "agent_spec": "scripted",
+    "example": "run_suite"
+  },
+  "actions": [
+    {
+      "type": "click",
+      "href": "/shop/product/p5"
+    },
+    {
+      "type": "submit",
+      "form": 0
+    },
+    {
+      "type": "click",
+      "href": "/shop/checkout"
+    },
+    {
+      "type": "fill",
+      "form": 0,
+      "values": {
+        "address": "45 Test Lane",
+        "name": "Grace Hopper"
+      }
+    },
+    {
+      "type": "submit",
+      "form": 0
+    },
+    {
+      "type": "done"
+    }
+  ],
+  "evaluation": {
+    "success": true,
+    "partial": 1.0,
+    "passed": 1,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "customer": "Grace Hopper",
+          "product": "Doohickey Epsilon",
+          "type": "order_exists"
+        },
+        "passed": true,
+        "explanation": "order #1 for Doohickey Epsilon exists"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 6,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.009,
+    "finished_by_agent": true
+  },
+  "saved_at": "2026-11-11T10:10:19Z"
+}

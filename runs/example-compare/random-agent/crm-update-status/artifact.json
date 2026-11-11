@@ -1,0 +1,66 @@
+{
+  "format_version": "1.0.0",
+  "task_id": "crm-update-status",
+  "task_version": "1.0.0",
+  "seed": 1,
+  "agent": {
+    "name": "random-agent",
+    "version": "0.1.0"
+  },
+  "config": {
+    "agent_spec": "random",
+    "example": "compare_agents"
+  },
+  "actions": [
+    {
+      "type": "click",
+      "href": "/crm/"
+    },
+    {
+      "type": "click",
+      "href": "/crm/leads/1"
+    },
+    {
+      "type": "click",
+      "href": "/crm/"
+    },
+    {
+      "type": "click",
+      "href": "/crm/leads/1"
+    },
+    {
+      "type": "click",
+      "href": "/crm/"
+    },
+    {
+      "type": "done"
+    }
+  ],
+  "evaluation": {
+    "success": false,
+    "partial": 0.0,
+    "passed": 0,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "field": "status",
+          "name": "Ada Lovelace",
+          "type": "lead_field",
+          "value": "Contacted"
+        },
+        "passed": false,
+        "explanation": "lead Ada Lovelace status='New' (want 'Contacted')"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 6,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.008,
+    "finished_by_agent": true
+  },
+  "saved_at": "2026-11-11T10:11:07Z"
+}

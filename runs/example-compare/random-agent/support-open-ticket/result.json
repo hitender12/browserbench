@@ -1,0 +1,28 @@
+{
+  "task_id": "support-open-ticket",
+  "evaluation": {
+    "success": false,
+    "partial": 0.0,
+    "passed": 0,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "status": "open",
+          "subject": "Login fails on checkout",
+          "type": "ticket_exists"
+        },
+        "passed": false,
+        "explanation": "no ticket 'Login fails on checkout'"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 2,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.003,
+    "finished_by_agent": true
+  }
+}

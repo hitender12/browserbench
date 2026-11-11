@@ -6,10 +6,10 @@
         "type": "click",
         "href": "/support/tickets/1"
       },
-      "url": "http://127.0.0.1:35355/support/tickets/1",
+      "url": "http://127.0.0.1:42949/support/tickets/1",
       "title": "Cannot reset password",
       "http_status": 200,
-      "latency_ms": 1.4,
+      "latency_ms": 2.2,
       "blocked": null,
       "dom": {
         "links": [
@@ -58,7 +58,7 @@
           "reply": "Reset link sent. Please check your inbox."
         }
       },
-      "url": "http://127.0.0.1:35355/support/tickets/1",
+      "url": "http://127.0.0.1:42949/support/tickets/1",
       "title": "Cannot reset password",
       "http_status": 200,
       "latency_ms": 0.0,
@@ -107,10 +107,10 @@
         "type": "submit",
         "form": 0
       },
-      "url": "http://127.0.0.1:35355/support/tickets/1?replied=1",
+      "url": "http://127.0.0.1:42949/support/tickets/1?replied=1",
       "title": "Cannot reset password",
       "http_status": 200,
-      "latency_ms": 2.6,
+      "latency_ms": 3.0,
       "blocked": null,
       "dom": {
         "links": [
@@ -156,10 +156,10 @@
         "type": "submit",
         "form": 1
       },
-      "url": "http://127.0.0.1:35355/support/tickets/1?closed=1",
+      "url": "http://127.0.0.1:42949/support/tickets/1?closed=1",
       "title": "Cannot reset password",
       "http_status": 200,
-      "latency_ms": 2.3,
+      "latency_ms": 2.7,
       "blocked": null,
       "dom": {
         "links": [
@@ -198,7 +198,7 @@
       "action": {
         "type": "done"
       },
-      "url": "http://127.0.0.1:35355/support/tickets/1?closed=1",
+      "url": "http://127.0.0.1:42949/support/tickets/1?closed=1",
       "title": "Cannot reset password",
       "http_status": 200,
       "latency_ms": 0.0,
@@ -239,39 +239,39 @@
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:35355/__reset__",
+      "url": "http://127.0.0.1:42949/__reset__",
       "status": 200,
-      "latency_ms": 1.6
+      "latency_ms": 1.0
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:35355/support/",
-      "status": 200,
-      "latency_ms": 2.1
-    },
-    {
-      "method": "GET",
-      "url": "http://127.0.0.1:35355/support/tickets/1",
-      "status": 200,
-      "latency_ms": 1.1
-    },
-    {
-      "method": "POST",
-      "url": "http://127.0.0.1:35355/support/tickets/1/reply",
-      "status": 200,
-      "latency_ms": 2.3
-    },
-    {
-      "method": "POST",
-      "url": "http://127.0.0.1:35355/support/tickets/1/close",
-      "status": 200,
-      "latency_ms": 2.0
-    },
-    {
-      "method": "GET",
-      "url": "http://127.0.0.1:35355/__state__?site=support",
+      "url": "http://127.0.0.1:42949/support/",
       "status": 200,
       "latency_ms": 0.9
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:42949/support/tickets/1",
+      "status": 200,
+      "latency_ms": 1.9
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:42949/support/tickets/1/reply",
+      "status": 200,
+      "latency_ms": 2.6
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:42949/support/tickets/1/close",
+      "status": 200,
+      "latency_ms": 2.4
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:42949/__state__?site=support",
+      "status": 200,
+      "latency_ms": 1.2
     }
   ]
 }

@@ -1,0 +1,293 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "href": "/shop/product/p3"
+      },
+      "url": "http://127.0.0.1:43887/shop/product/p3",
+      "title": "Gadget Gamma",
+      "http_status": 200,
+      "latency_ms": 1.5,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "View cart",
+            "href": "/shop/cart"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/shop/cart/add",
+            "method": "post",
+            "fields": [
+              "product",
+              "quantity"
+            ],
+            "submit": "Add to cart"
+          }
+        ]
+      },
+      "text_excerpt": "Gadget Gamma Shop | CRM | Scheduling | Support Gadget Gamma A pocket gadget with three modes. Price: $49.99 Quantity View cart"
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "submit",
+        "form": 0
+      },
+      "url": "http://127.0.0.1:43887/shop/cart?added=p3",
+      "title": "Cart",
+      "http_status": 200,
+      "latency_ms": 2.3,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "Checkout",
+            "href": "/shop/checkout"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Cart Shop | CRM | Scheduling | Support Cart Gadget Gamma added to your cart. Gadget Gamma \u00d7 1 \u2014 $49.99 Checkout"
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "click",
+        "href": "/shop/checkout"
+      },
+      "url": "http://127.0.0.1:43887/shop/checkout",
+      "title": "Checkout",
+      "http_status": 200,
+      "latency_ms": 1.2,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/shop/checkout",
+            "method": "post",
+            "fields": [
+              "name",
+              "address"
+            ],
+            "submit": "Place order"
+          }
+        ]
+      },
+      "text_excerpt": "Checkout Shop | CRM | Scheduling | Support Checkout Name Address"
+    },
+    {
+      "step": 4,
+      "action": {
+        "type": "fill",
+        "form": 0,
+        "values": {
+          "address": "12 Test Street",
+          "name": "Ada Lovelace"
+        }
+      },
+      "url": "http://127.0.0.1:43887/shop/checkout",
+      "title": "Checkout",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/shop/checkout",
+            "method": "post",
+            "fields": [
+              "name",
+              "address"
+            ],
+            "submit": "Place order"
+          }
+        ]
+      },
+      "text_excerpt": "Checkout Shop | CRM | Scheduling | Support Checkout Name Address"
+    },
+    {
+      "step": 5,
+      "action": {
+        "type": "submit",
+        "form": 0
+      },
+      "url": "http://127.0.0.1:43887/shop/order/1",
+      "title": "Order confirmed",
+      "http_status": 200,
+      "latency_ms": 1.7,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Order confirmed Shop | CRM | Scheduling | Support Order confirmed Order confirmed. Thank you, Ada Lovelace! Order #1: Gadget Gamma \u00d7 1 \u2014 total $49.99."
+    },
+    {
+      "step": 6,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:43887/shop/order/1",
+      "title": "Order confirmed",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Order confirmed Shop | CRM | Scheduling | Support Order confirmed Order confirmed. Thank you, Ada Lovelace! Order #1: Gadget Gamma \u00d7 1 \u2014 total $49.99."
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:43887/__reset__",
+      "status": 200,
+      "latency_ms": 3.2
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:43887/shop/",
+      "status": 200,
+      "latency_ms": 1.0
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:43887/shop/product/p3",
+      "status": 200,
+      "latency_ms": 1.2
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:43887/shop/cart/add",
+      "status": 200,
+      "latency_ms": 2.1
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:43887/shop/checkout",
+      "status": 200,
+      "latency_ms": 0.9
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:43887/shop/checkout",
+      "status": 200,
+      "latency_ms": 1.5
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:43887/__state__?site=shop",
+      "status": 200,
+      "latency_ms": 0.8
+    }
+  ]
+}

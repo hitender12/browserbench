@@ -6,10 +6,10 @@
         "type": "click",
         "href": "/support/tickets/new"
       },
-      "url": "http://127.0.0.1:35355/support/tickets/new",
+      "url": "http://127.0.0.1:42949/support/tickets/new",
       "title": "New ticket",
       "http_status": 200,
-      "latency_ms": 1.7,
+      "latency_ms": 1.3,
       "blocked": null,
       "dom": {
         "links": [
@@ -56,7 +56,7 @@
           "subject": "Login fails on checkout"
         }
       },
-      "url": "http://127.0.0.1:35355/support/tickets/new",
+      "url": "http://127.0.0.1:42949/support/tickets/new",
       "title": "New ticket",
       "http_status": 200,
       "latency_ms": 0.0,
@@ -101,10 +101,10 @@
         "type": "submit",
         "form": 0
       },
-      "url": "http://127.0.0.1:35355/support/tickets/2?created=1",
+      "url": "http://127.0.0.1:42949/support/tickets/2?created=1",
       "title": "Login fails on checkout",
       "http_status": 200,
-      "latency_ms": 5.4,
+      "latency_ms": 2.2,
       "blocked": null,
       "dom": {
         "links": [
@@ -149,7 +149,7 @@
       "action": {
         "type": "done"
       },
-      "url": "http://127.0.0.1:35355/support/tickets/2?created=1",
+      "url": "http://127.0.0.1:42949/support/tickets/2?created=1",
       "title": "Login fails on checkout",
       "http_status": 200,
       "latency_ms": 0.0,
@@ -196,33 +196,33 @@
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:35355/__reset__",
-      "status": 200,
-      "latency_ms": 1.5
-    },
-    {
-      "method": "GET",
-      "url": "http://127.0.0.1:35355/support/",
-      "status": 200,
-      "latency_ms": 1.4
-    },
-    {
-      "method": "GET",
-      "url": "http://127.0.0.1:35355/support/tickets/new",
+      "url": "http://127.0.0.1:42949/__reset__",
       "status": 200,
       "latency_ms": 1.2
     },
     {
-      "method": "POST",
-      "url": "http://127.0.0.1:35355/support/tickets/new",
+      "method": "GET",
+      "url": "http://127.0.0.1:42949/support/",
       "status": 200,
-      "latency_ms": 4.9
+      "latency_ms": 1.0
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:35355/__state__?site=support",
+      "url": "http://127.0.0.1:42949/support/tickets/new",
       "status": 200,
-      "latency_ms": 2.5
+      "latency_ms": 0.9
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:42949/support/tickets/new",
+      "status": 200,
+      "latency_ms": 1.9
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:42949/__state__?site=support",
+      "status": 200,
+      "latency_ms": 0.9
     }
   ]
 }

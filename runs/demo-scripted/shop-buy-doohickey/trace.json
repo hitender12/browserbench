@@ -1,0 +1,293 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "href": "/shop/product/p5"
+      },
+      "url": "http://127.0.0.1:42949/shop/product/p5",
+      "title": "Doohickey Epsilon",
+      "http_status": 200,
+      "latency_ms": 1.6,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "View cart",
+            "href": "/shop/cart"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/shop/cart/add",
+            "method": "post",
+            "fields": [
+              "product",
+              "quantity"
+            ],
+            "submit": "Add to cart"
+          }
+        ]
+      },
+      "text_excerpt": "Doohickey Epsilon Shop | CRM | Scheduling | Support Doohickey Epsilon A small doohickey for quick jobs. Price: $9.99 Quantity View cart"
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "submit",
+        "form": 0
+      },
+      "url": "http://127.0.0.1:42949/shop/cart?added=p5",
+      "title": "Cart",
+      "http_status": 200,
+      "latency_ms": 7.3,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "Checkout",
+            "href": "/shop/checkout"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Cart Shop | CRM | Scheduling | Support Cart Doohickey Epsilon added to your cart. Doohickey Epsilon \u00d7 1 \u2014 $9.99 Checkout"
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "click",
+        "href": "/shop/checkout"
+      },
+      "url": "http://127.0.0.1:42949/shop/checkout",
+      "title": "Checkout",
+      "http_status": 200,
+      "latency_ms": 1.7,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/shop/checkout",
+            "method": "post",
+            "fields": [
+              "name",
+              "address"
+            ],
+            "submit": "Place order"
+          }
+        ]
+      },
+      "text_excerpt": "Checkout Shop | CRM | Scheduling | Support Checkout Name Address"
+    },
+    {
+      "step": 4,
+      "action": {
+        "type": "fill",
+        "form": 0,
+        "values": {
+          "address": "45 Test Lane",
+          "name": "Grace Hopper"
+        }
+      },
+      "url": "http://127.0.0.1:42949/shop/checkout",
+      "title": "Checkout",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/shop/checkout",
+            "method": "post",
+            "fields": [
+              "name",
+              "address"
+            ],
+            "submit": "Place order"
+          }
+        ]
+      },
+      "text_excerpt": "Checkout Shop | CRM | Scheduling | Support Checkout Name Address"
+    },
+    {
+      "step": 5,
+      "action": {
+        "type": "submit",
+        "form": 0
+      },
+      "url": "http://127.0.0.1:42949/shop/order/1",
+      "title": "Order confirmed",
+      "http_status": 200,
+      "latency_ms": 4.9,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Order confirmed Shop | CRM | Scheduling | Support Order confirmed Order confirmed. Thank you, Grace Hopper! Order #1: Doohickey Epsilon \u00d7 1 \u2014 total $9.99."
+    },
+    {
+      "step": 6,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:42949/shop/order/1",
+      "title": "Order confirmed",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Order confirmed Shop | CRM | Scheduling | Support Order confirmed Order confirmed. Thank you, Grace Hopper! Order #1: Doohickey Epsilon \u00d7 1 \u2014 total $9.99."
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:42949/__reset__",
+      "status": 200,
+      "latency_ms": 1.5
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:42949/shop/",
+      "status": 200,
+      "latency_ms": 1.6
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:42949/shop/product/p5",
+      "status": 200,
+      "latency_ms": 1.3
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:42949/shop/cart/add",
+      "status": 200,
+      "latency_ms": 6.5
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:42949/shop/checkout",
+      "status": 200,
+      "latency_ms": 1.4
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:42949/shop/checkout",
+      "status": 200,
+      "latency_ms": 4.5
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:42949/__state__?site=shop",
+      "status": 200,
+      "latency_ms": 1.1
+    }
+  ]
+}

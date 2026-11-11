@@ -1,0 +1,71 @@
+{
+  "format_version": "1.0.0",
+  "task_id": "shop-add-two-beta",
+  "task_version": "1.0.0",
+  "seed": 1,
+  "agent": {
+    "name": "random-agent",
+    "version": "0.1.0"
+  },
+  "config": {
+    "agent_spec": "random",
+    "example": "compare_agents"
+  },
+  "actions": [
+    {
+      "type": "fill",
+      "form": 0,
+      "values": {
+        "q": "x@y.z"
+      }
+    },
+    {
+      "type": "submit",
+      "form": 0
+    },
+    {
+      "type": "click",
+      "href": "/crm/"
+    },
+    {
+      "type": "click",
+      "href": "/support/"
+    },
+    {
+      "type": "click",
+      "href": "/shop/"
+    },
+    {
+      "type": "done"
+    }
+  ],
+  "evaluation": {
+    "success": false,
+    "partial": 0.0,
+    "passed": 0,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "product": "Widget Beta",
+          "quantity": 2,
+          "type": "cart_contains"
+        },
+        "passed": false,
+        "explanation": "cart has 0 \u00d7 Widget Beta (want 2)"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 6,
+    "retries": 0,
+    "unsafe_attempts": 2,
+    "blocked_reasons": [
+      "URL outside allowed prefixes: /crm/",
+      "URL outside allowed prefixes: /support/"
+    ],
+    "duration_s": 0.004,
+    "finished_by_agent": true
+  },
+  "saved_at": "2026-11-11T10:11:07Z"
+}

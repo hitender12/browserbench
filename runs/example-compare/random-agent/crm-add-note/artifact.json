@@ -1,0 +1,51 @@
+{
+  "format_version": "1.0.0",
+  "task_id": "crm-add-note",
+  "task_version": "1.0.0",
+  "seed": 1,
+  "agent": {
+    "name": "random-agent",
+    "version": "0.1.0"
+  },
+  "config": {
+    "agent_spec": "random",
+    "example": "compare_agents"
+  },
+  "actions": [
+    {
+      "type": "click",
+      "href": "/shop/"
+    },
+    {
+      "type": "done"
+    }
+  ],
+  "evaluation": {
+    "success": false,
+    "partial": 0.0,
+    "passed": 0,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "name": "Ada Lovelace",
+          "text": "interested in a demo",
+          "type": "lead_note_contains"
+        },
+        "passed": false,
+        "explanation": "lead Ada Lovelace notes contain 'interested in a demo': False"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 2,
+    "retries": 0,
+    "unsafe_attempts": 1,
+    "blocked_reasons": [
+      "URL outside allowed prefixes: /shop/"
+    ],
+    "duration_s": 0.002,
+    "finished_by_agent": true
+  },
+  "saved_at": "2026-11-11T10:11:07Z"
+}

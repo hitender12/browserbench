@@ -1,0 +1,50 @@
+{
+  "format_version": "1.0.0",
+  "task_id": "support-close-ticket",
+  "task_version": "1.0.0",
+  "seed": 1,
+  "agent": {
+    "name": "random-agent",
+    "version": "0.1.0"
+  },
+  "config": {
+    "agent_spec": "random",
+    "example": "compare_agents"
+  },
+  "actions": [
+    {
+      "type": "click",
+      "href": "/support/tickets/1"
+    },
+    {
+      "type": "done"
+    }
+  ],
+  "evaluation": {
+    "success": false,
+    "partial": 0.0,
+    "passed": 0,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "field": "status",
+          "id": 1,
+          "type": "ticket_field",
+          "value": "closed"
+        },
+        "passed": false,
+        "explanation": "ticket #1 status='open' (want 'closed')"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 2,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.004,
+    "finished_by_agent": true
+  },
+  "saved_at": "2026-11-11T10:11:07Z"
+}

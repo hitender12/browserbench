@@ -1,0 +1,52 @@
+{
+  "format_version": "1.0.0",
+  "task_id": "sched-cancel-appointment",
+  "task_version": "1.0.0",
+  "seed": 1,
+  "agent": {
+    "name": "scripted-agent",
+    "version": "0.1.0"
+  },
+  "config": {
+    "agent_spec": "scripted",
+    "example": "compare_agents"
+  },
+  "actions": [
+    {
+      "type": "click",
+      "href": "/sched/appointments/1"
+    },
+    {
+      "type": "submit",
+      "form": 0
+    },
+    {
+      "type": "done"
+    }
+  ],
+  "evaluation": {
+    "success": true,
+    "partial": 1.0,
+    "passed": 1,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "type": "appointment_absent",
+          "id": 1
+        },
+        "passed": true,
+        "explanation": "appointment 1 booked: False"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 3,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.005,
+    "finished_by_agent": true
+  },
+  "saved_at": "2026-11-11T10:11:06Z"
+}
