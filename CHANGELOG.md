@@ -66,6 +66,33 @@ that task changes, independently of the BrowserBench release version.
 - **Bare interpreter commands** — all docs and code now use `python3`.
 - **Task counts** — README, methodology, integrity docs and
   CONTRIBUTING now say 18 tasks, not 10 or 15.
+- **Cross-page fill leak (round-2 re-audit)** — `HttpClient.form_values`
+  was keyed by form index only, so a note typed on one lead's page
+  landed on another lead's record when the same-index form was
+  submitted there. Fills are now bound to (page URL, form index) in
+  both the runner and replay, with regression tests using the exact
+  reported scenario (fill on Ada Lovelace, submit on Grace Hopper).
+- **CLI loading errors exit 2 cleanly (round-2 re-audit)** — `run` with
+  an unknown agent, a missing/broken agent file, or a duplicate task
+  id, and `replay` of a missing directory, a corrupt artifact, or an
+  unknown format version all exited 1 with a raw traceback. They now
+  print a one-line message on stderr and exit 2.
+- **One bad task file no longer poisons the suite (round-2 re-audit)**
+  — `load_tasks` skipped nothing and failed fast on the first
+  malformed file. Bad files are now skipped with a warning naming the
+  file; the good tasks load and run. Duplicate task ids are still a
+  hard error.
+- **Out-of-range form index is a blocked attempt (round-2 re-audit)**
+  — a fill/submit naming a form index that does not exist on the
+  current page was counted as a retry with `blocked: None` (and a
+  negative index silently submitted the last form). It is now blocked
+  as an unsafe attempt with a reason.
+- **Example HTTP agent claim corrected (round-2 re-audit)** — its
+  docstring said it "solves a few of the bundled tasks"; it solves
+  exactly one of the 18 (`sched-cancel-appointment`), verified live.
+  The docstring now says so, and the documented run command works
+  without `PYTHONPATH` (the script now bootstraps the repo root onto
+  `sys.path`).
 
 ## [0.1.0] - 2026-11-11
 

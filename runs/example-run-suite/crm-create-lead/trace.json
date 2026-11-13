@@ -6,10 +6,11 @@
         "type": "click",
         "href": "/crm/leads/new"
       },
-      "url": "http://127.0.0.1:43887/crm/leads/new",
+      "url": "http://127.0.0.1:41979/crm/leads/new",
       "title": "New lead",
       "http_status": 200,
-      "latency_ms": 1.4,
+      "latency_ms": 0.9,
+      "timestamp": "2026-11-11T10:44:39.398155+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -43,7 +44,29 @@
           }
         ]
       },
-      "text_excerpt": "New lead Shop | CRM | Scheduling | Support New lead Name Email Company"
+      "text_excerpt": "New lead Shop | CRM | Scheduling | Support New lead Name Email Company",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
     },
     {
       "step": 2,
@@ -56,10 +79,11 @@
           "name": "Alan Turing"
         }
       },
-      "url": "http://127.0.0.1:43887/crm/leads/new",
+      "url": "http://127.0.0.1:41979/crm/leads/new",
       "title": "New lead",
       "http_status": 200,
       "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:44:39.398923+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -93,7 +117,29 @@
           }
         ]
       },
-      "text_excerpt": "New lead Shop | CRM | Scheduling | Support New lead Name Email Company"
+      "text_excerpt": "New lead Shop | CRM | Scheduling | Support New lead Name Email Company",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
     },
     {
       "step": 3,
@@ -101,10 +147,11 @@
         "type": "submit",
         "form": 0
       },
-      "url": "http://127.0.0.1:43887/crm/leads/3?created=1",
+      "url": "http://127.0.0.1:41979/crm/leads/3?created=1",
       "title": "Alan Turing",
       "http_status": 200,
-      "latency_ms": 2.4,
+      "latency_ms": 1.8,
+      "timestamp": "2026-11-11T10:44:39.401465+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -144,17 +191,48 @@
           }
         ]
       },
-      "text_excerpt": "Alan Turing Shop | CRM | Scheduling | Support Alan Turing Email: alan@example.com Company: Bletchley Park Status: New Status New Contacted Qualified Lost Note Notes"
+      "text_excerpt": "Alan Turing Shop | CRM | Scheduling | Support Alan Turing Email: alan@example.com Company: Bletchley Park Status: New Status New Contacted Qualified Lost Note Notes",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 3,
+            "name": "Alan Turing",
+            "email": "alan@example.com",
+            "company": "Bletchley Park",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 4,
+        "seed": 1
+      }
     },
     {
       "step": 4,
       "action": {
         "type": "done"
       },
-      "url": "http://127.0.0.1:43887/crm/leads/3?created=1",
+      "url": "http://127.0.0.1:41979/crm/leads/3?created=1",
       "title": "Alan Turing",
       "http_status": 200,
       "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:44:39.402193+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -194,39 +272,69 @@
           }
         ]
       },
-      "text_excerpt": "Alan Turing Shop | CRM | Scheduling | Support Alan Turing Email: alan@example.com Company: Bletchley Park Status: New Status New Contacted Qualified Lost Note Notes"
+      "text_excerpt": "Alan Turing Shop | CRM | Scheduling | Support Alan Turing Email: alan@example.com Company: Bletchley Park Status: New Status New Contacted Qualified Lost Note Notes",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 3,
+            "name": "Alan Turing",
+            "email": "alan@example.com",
+            "company": "Bletchley Park",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 4,
+        "seed": 1
+      }
     }
   ],
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:43887/__reset__",
+      "url": "http://127.0.0.1:41979/__reset__",
       "status": 200,
-      "latency_ms": 1.0
+      "latency_ms": 0.9
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:43887/crm/",
+      "url": "http://127.0.0.1:41979/crm/",
       "status": 200,
-      "latency_ms": 0.8
+      "latency_ms": 0.6
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:43887/crm/leads/new",
+      "url": "http://127.0.0.1:41979/crm/leads/new",
       "status": 200,
-      "latency_ms": 1.1
+      "latency_ms": 0.6
     },
     {
       "method": "POST",
-      "url": "http://127.0.0.1:43887/crm/leads/new",
+      "url": "http://127.0.0.1:41979/crm/leads/new",
       "status": 200,
-      "latency_ms": 2.0
+      "latency_ms": 1.4
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:43887/__state__?site=crm",
+      "url": "http://127.0.0.1:41979/__state__?site=crm",
       "status": 200,
-      "latency_ms": 0.8
+      "latency_ms": 0.6
     }
   ]
 }

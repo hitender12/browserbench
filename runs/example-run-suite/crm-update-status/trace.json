@@ -6,10 +6,11 @@
         "type": "click",
         "href": "/crm/leads/1"
       },
-      "url": "http://127.0.0.1:43887/crm/leads/1",
+      "url": "http://127.0.0.1:41979/crm/leads/1",
       "title": "Ada Lovelace",
       "http_status": 200,
-      "latency_ms": 1.6,
+      "latency_ms": 1.1,
+      "timestamp": "2026-11-11T10:44:39.417636+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -49,7 +50,29 @@
           }
         ]
       },
-      "text_excerpt": "Ada Lovelace Shop | CRM | Scheduling | Support Ada Lovelace Email: ada@example.com Company: Analytical Engines Status: New Status New Contacted Qualified Lost Note Notes"
+      "text_excerpt": "Ada Lovelace Shop | CRM | Scheduling | Support Ada Lovelace Email: ada@example.com Company: Analytical Engines Status: New Status New Contacted Qualified Lost Note Notes",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
     },
     {
       "step": 2,
@@ -60,10 +83,11 @@
           "status": "Contacted"
         }
       },
-      "url": "http://127.0.0.1:43887/crm/leads/1",
+      "url": "http://127.0.0.1:41979/crm/leads/1",
       "title": "Ada Lovelace",
       "http_status": 200,
       "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:44:39.418357+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -103,7 +127,29 @@
           }
         ]
       },
-      "text_excerpt": "Ada Lovelace Shop | CRM | Scheduling | Support Ada Lovelace Email: ada@example.com Company: Analytical Engines Status: New Status New Contacted Qualified Lost Note Notes"
+      "text_excerpt": "Ada Lovelace Shop | CRM | Scheduling | Support Ada Lovelace Email: ada@example.com Company: Analytical Engines Status: New Status New Contacted Qualified Lost Note Notes",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
     },
     {
       "step": 3,
@@ -111,10 +157,11 @@
         "type": "submit",
         "form": 0
       },
-      "url": "http://127.0.0.1:43887/crm/leads/1?updated=1",
+      "url": "http://127.0.0.1:41979/crm/leads/1?updated=1",
       "title": "Ada Lovelace",
       "http_status": 200,
-      "latency_ms": 2.3,
+      "latency_ms": 1.8,
+      "timestamp": "2026-11-11T10:44:39.420882+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -154,17 +201,40 @@
           }
         ]
       },
-      "text_excerpt": "Ada Lovelace Shop | CRM | Scheduling | Support Ada Lovelace Lead updated. Email: ada@example.com Company: Analytical Engines Status: Contacted Status New Contacted Qualified Lost Note Notes"
+      "text_excerpt": "Ada Lovelace Shop | CRM | Scheduling | Support Ada Lovelace Lead updated. Email: ada@example.com Company: Analytical Engines Status: Contacted Status New Contacted Qualified Lost Note Notes",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "Contacted",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
     },
     {
       "step": 4,
       "action": {
         "type": "done"
       },
-      "url": "http://127.0.0.1:43887/crm/leads/1?updated=1",
+      "url": "http://127.0.0.1:41979/crm/leads/1?updated=1",
       "title": "Ada Lovelace",
       "http_status": 200,
       "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:44:39.421694+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -204,39 +274,61 @@
           }
         ]
       },
-      "text_excerpt": "Ada Lovelace Shop | CRM | Scheduling | Support Ada Lovelace Lead updated. Email: ada@example.com Company: Analytical Engines Status: Contacted Status New Contacted Qualified Lost Note Notes"
+      "text_excerpt": "Ada Lovelace Shop | CRM | Scheduling | Support Ada Lovelace Lead updated. Email: ada@example.com Company: Analytical Engines Status: Contacted Status New Contacted Qualified Lost Note Notes",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "Contacted",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
     }
   ],
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:43887/__reset__",
+      "url": "http://127.0.0.1:41979/__reset__",
       "status": 200,
-      "latency_ms": 1.1
+      "latency_ms": 0.8
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:43887/crm/",
+      "url": "http://127.0.0.1:41979/crm/",
       "status": 200,
       "latency_ms": 0.9
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:43887/crm/leads/1",
+      "url": "http://127.0.0.1:41979/crm/leads/1",
       "status": 200,
-      "latency_ms": 1.1
+      "latency_ms": 0.7
     },
     {
       "method": "POST",
-      "url": "http://127.0.0.1:43887/crm/leads/1/status",
+      "url": "http://127.0.0.1:41979/crm/leads/1/status",
       "status": 200,
-      "latency_ms": 1.9
+      "latency_ms": 1.4
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:43887/__state__?site=crm",
+      "url": "http://127.0.0.1:41979/__state__?site=crm",
       "status": 200,
-      "latency_ms": 0.8
+      "latency_ms": 0.6
     }
   ]
 }

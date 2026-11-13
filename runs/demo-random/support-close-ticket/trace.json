@@ -4,13 +4,14 @@
       "step": 1,
       "action": {
         "type": "click",
-        "href": "/crm/"
+        "href": "/shop/"
       },
-      "url": "http://127.0.0.1:34563/support/",
+      "url": "http://127.0.0.1:38057/support/",
       "title": "Support",
       "http_status": 200,
       "latency_ms": 0.0,
-      "blocked": "URL outside allowed prefixes: /crm/",
+      "timestamp": "2026-11-11T10:53:46.853027+00:00",
+      "blocked": "URL outside allowed prefixes: /shop/",
       "dom": {
         "links": [
           {
@@ -40,17 +41,32 @@
         ],
         "forms": []
       },
-      "text_excerpt": "Support Shop | CRM | Scheduling | Support Support Cannot reset password \u2014 open New ticket"
+      "text_excerpt": "Support Shop | CRM | Scheduling | Support Support Cannot reset password \u2014 open New ticket",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
     },
     {
       "step": 2,
       "action": {
         "type": "done"
       },
-      "url": "http://127.0.0.1:34563/support/",
+      "url": "http://127.0.0.1:38057/support/",
       "title": "Support",
       "http_status": 200,
       "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:46.853875+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -81,27 +97,41 @@
         ],
         "forms": []
       },
-      "text_excerpt": "Support Shop | CRM | Scheduling | Support Support Cannot reset password \u2014 open New ticket"
+      "text_excerpt": "Support Shop | CRM | Scheduling | Support Support Cannot reset password \u2014 open New ticket",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
     }
   ],
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:34563/__reset__",
+      "url": "http://127.0.0.1:38057/__reset__",
       "status": 200,
-      "latency_ms": 1.3
+      "latency_ms": 1.2
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:34563/support/",
+      "url": "http://127.0.0.1:38057/support/",
       "status": 200,
       "latency_ms": 1.1
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:34563/__state__?site=support",
+      "url": "http://127.0.0.1:38057/__state__?site=support",
       "status": 200,
-      "latency_ms": 1.2
+      "latency_ms": 0.6
     }
   ]
 }

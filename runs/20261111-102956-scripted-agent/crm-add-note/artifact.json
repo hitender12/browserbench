@@ -1,0 +1,59 @@
+{
+  "format_version": "1.0.0",
+  "task_id": "crm-add-note",
+  "task_version": "1.0.0",
+  "seed": 1,
+  "agent": {
+    "name": "scripted-agent",
+    "version": "0.1.0"
+  },
+  "config": {
+    "agent_spec": "scripted"
+  },
+  "actions": [
+    {
+      "type": "click",
+      "href": "/crm/leads/1"
+    },
+    {
+      "type": "fill",
+      "form": 1,
+      "values": {
+        "note": "Called, interested in a demo."
+      }
+    },
+    {
+      "type": "submit",
+      "form": 1
+    },
+    {
+      "type": "done"
+    }
+  ],
+  "evaluation": {
+    "success": true,
+    "partial": 1.0,
+    "passed": 1,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "name": "Ada Lovelace",
+          "text": "interested in a demo",
+          "type": "lead_note_contains"
+        },
+        "passed": true,
+        "explanation": "lead Ada Lovelace notes contain 'interested in a demo': True"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 4,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.012,
+    "finished_by_agent": true
+  },
+  "saved_at": "2026-11-11T10:29:57Z"
+}

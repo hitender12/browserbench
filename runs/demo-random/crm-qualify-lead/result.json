@@ -19,7 +19,7 @@
     ]
   },
   "metrics": {
-    "steps": 2,
+    "steps": 1,
     "retries": 0,
     "unsafe_attempts": 0,
     "blocked_reasons": [],

@@ -5,10 +5,11 @@
       "action": {
         "type": "done"
       },
-      "url": "http://127.0.0.1:37037/crm/",
+      "url": "http://127.0.0.1:40971/crm/",
       "title": "CRM",
       "http_status": 200,
       "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:44:41.901955+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -43,27 +44,49 @@
         ],
         "forms": []
       },
-      "text_excerpt": "CRM Shop | CRM | Scheduling | Support CRM Ada Lovelace \u2014 New Grace Hopper \u2014 New New lead"
+      "text_excerpt": "CRM Shop | CRM | Scheduling | Support CRM Ada Lovelace \u2014 New Grace Hopper \u2014 New New lead",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
     }
   ],
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:37037/__reset__",
+      "url": "http://127.0.0.1:40971/__reset__",
       "status": 200,
-      "latency_ms": 1.2
+      "latency_ms": 0.9
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:37037/crm/",
+      "url": "http://127.0.0.1:40971/crm/",
       "status": 200,
       "latency_ms": 0.8
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:37037/__state__?site=crm",
+      "url": "http://127.0.0.1:40971/__state__?site=crm",
       "status": 200,
-      "latency_ms": 0.8
+      "latency_ms": 1.0
     }
   ]
 }

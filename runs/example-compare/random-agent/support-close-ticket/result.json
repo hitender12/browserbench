@@ -21,8 +21,10 @@
   "metrics": {
     "steps": 2,
     "retries": 0,
-    "unsafe_attempts": 0,
-    "blocked_reasons": [],
+    "unsafe_attempts": 1,
+    "blocked_reasons": [
+      "URL outside allowed prefixes: /shop/"
+    ],
     "duration_s": 0.004,
     "finished_by_agent": true
   }

@@ -1,0 +1,89 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:39777/sched/",
+      "title": "Scheduling",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:48.119880+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "Alan Turing",
+            "href": "/sched/appointments/1"
+          },
+          {
+            "text": "Book an appointment",
+            "href": "/sched/book"
+          },
+          {
+            "text": "All appointments",
+            "href": "/sched/appointments"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Scheduling Shop | CRM | Scheduling | Support Scheduling Booked appointments 2026-11-20 09:00 \u2014 Alan Turing Book an appointment All appointments",
+      "state_snapshot": {
+        "slots": [
+          "2026-11-20 09:00",
+          "2026-11-20 10:00",
+          "2026-11-20 11:00",
+          "2026-11-20 14:00",
+          "2026-11-21 09:00"
+        ],
+        "appointments": [
+          {
+            "id": 1,
+            "slot": "2026-11-20 09:00",
+            "name": "Alan Turing",
+            "status": "booked"
+          }
+        ],
+        "next_appointment_id": 2,
+        "seed": 1
+      }
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:39777/__reset__",
+      "status": 200,
+      "latency_ms": 0.9
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:39777/sched/",
+      "status": 200,
+      "latency_ms": 0.9
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:39777/__state__?site=sched",
+      "status": 200,
+      "latency_ms": 0.9
+    }
+  ]
+}

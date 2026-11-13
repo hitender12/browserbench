@@ -1,0 +1,37 @@
+{
+  "task_id": "sched-book-and-verify",
+  "evaluation": {
+    "success": true,
+    "partial": 1.0,
+    "passed": 2,
+    "total": 2,
+    "conditions": [
+      {
+        "condition": {
+          "name": "Grace Hopper",
+          "slot": "2026-11-20 14:00",
+          "type": "appointment_exists"
+        },
+        "passed": true,
+        "explanation": "appointment at 2026-11-20 14:00 exists"
+      },
+      {
+        "condition": {
+          "path": "next_appointment_id",
+          "type": "state_equals",
+          "value": 3
+        },
+        "passed": true,
+        "explanation": "next_appointment_id=3"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 4,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.01,
+    "finished_by_agent": true
+  }
+}

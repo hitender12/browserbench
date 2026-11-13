@@ -54,8 +54,8 @@
     "retries": 0,
     "unsafe_attempts": 0,
     "blocked_reasons": [],
-    "duration_s": 0.008,
+    "duration_s": 0.01,
     "finished_by_agent": true
   },
-  "saved_at": "2026-11-11T10:10:19Z"
+  "saved_at": "2026-11-11T10:44:39Z"
 }

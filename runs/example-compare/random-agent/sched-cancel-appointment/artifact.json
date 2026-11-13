@@ -14,11 +14,7 @@
   "actions": [
     {
       "type": "click",
-      "href": "/sched/"
-    },
-    {
-      "type": "click",
-      "href": "/support/"
+      "href": "/sched/appointments"
     },
     {
       "type": "done"
@@ -41,14 +37,12 @@
     ]
   },
   "metrics": {
-    "steps": 3,
+    "steps": 2,
     "retries": 0,
-    "unsafe_attempts": 1,
-    "blocked_reasons": [
-      "URL outside allowed prefixes: /support/"
-    ],
-    "duration_s": 0.002,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.005,
     "finished_by_agent": true
   },
-  "saved_at": "2026-11-11T10:11:07Z"
+  "saved_at": "2026-11-11T10:44:41Z"
 }

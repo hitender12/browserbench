@@ -1,0 +1,61 @@
+{
+  "format_version": "1.0.0",
+  "task_id": "support-open-ticket",
+  "task_version": "1.0.0",
+  "seed": 1,
+  "agent": {
+    "name": "scripted-agent",
+    "version": "0.1.0"
+  },
+  "config": {
+    "agent_spec": "scripted"
+  },
+  "actions": [
+    {
+      "type": "click",
+      "href": "/support/tickets/new"
+    },
+    {
+      "type": "fill",
+      "form": 0,
+      "values": {
+        "category": "billing",
+        "description": "Customers cannot log in at checkout.",
+        "subject": "Login fails on checkout"
+      }
+    },
+    {
+      "type": "submit",
+      "form": 0
+    },
+    {
+      "type": "done"
+    }
+  ],
+  "evaluation": {
+    "success": true,
+    "partial": 1.0,
+    "passed": 1,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "status": "open",
+          "subject": "Login fails on checkout",
+          "type": "ticket_exists"
+        },
+        "passed": true,
+        "explanation": "ticket 'Login fails on checkout' exists"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 4,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.009,
+    "finished_by_agent": true
+  },
+  "saved_at": "2026-11-11T10:29:57Z"
+}

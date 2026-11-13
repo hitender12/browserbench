@@ -18,11 +18,14 @@
     ]
   },
   "metrics": {
-    "steps": 2,
+    "steps": 10,
     "retries": 0,
-    "unsafe_attempts": 0,
-    "blocked_reasons": [],
-    "duration_s": 0.003,
-    "finished_by_agent": true
+    "unsafe_attempts": 2,
+    "blocked_reasons": [
+      "URL outside allowed prefixes: /shop/",
+      "URL outside allowed prefixes: /crm/"
+    ],
+    "duration_s": 0.022,
+    "finished_by_agent": false
   }
 }

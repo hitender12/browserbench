@@ -18,11 +18,7 @@
     },
     {
       "type": "click",
-      "href": "/shop/product/p3"
-    },
-    {
-      "type": "submit",
-      "form": 0
+      "href": "/shop/"
     },
     {
       "type": "done"
@@ -46,12 +42,12 @@
     ]
   },
   "metrics": {
-    "steps": 4,
+    "steps": 3,
     "retries": 0,
     "unsafe_attempts": 0,
     "blocked_reasons": [],
-    "duration_s": 0.007,
+    "duration_s": 0.009,
     "finished_by_agent": true
   },
-  "saved_at": "2026-11-11T10:11:08Z"
+  "saved_at": "2026-11-11T10:44:41Z"
 }

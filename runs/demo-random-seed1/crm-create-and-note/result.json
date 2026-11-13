@@ -1,0 +1,38 @@
+{
+  "task_id": "crm-create-and-note",
+  "evaluation": {
+    "success": false,
+    "partial": 0.0,
+    "passed": 0,
+    "total": 2,
+    "conditions": [
+      {
+        "condition": {
+          "company": "Bletchley Park",
+          "email": "alan@example.com",
+          "name": "Alan Turing",
+          "type": "lead_exists"
+        },
+        "passed": false,
+        "explanation": "no lead named Alan Turing"
+      },
+      {
+        "condition": {
+          "name": "Alan Turing",
+          "text": "Met at conference",
+          "type": "lead_note_contains"
+        },
+        "passed": false,
+        "explanation": "no lead named Alan Turing"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 2,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.005,
+    "finished_by_agent": true
+  }
+}

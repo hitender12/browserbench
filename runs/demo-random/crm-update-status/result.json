@@ -19,17 +19,11 @@
     ]
   },
   "metrics": {
-    "steps": 10,
+    "steps": 1,
     "retries": 0,
-    "unsafe_attempts": 5,
-    "blocked_reasons": [
-      "URL outside allowed prefixes: /shop/",
-      "URL outside allowed prefixes: /support/",
-      "URL outside allowed prefixes: /shop/",
-      "URL outside allowed prefixes: /shop/",
-      "URL outside allowed prefixes: /support/"
-    ],
-    "duration_s": 0.008,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.003,
     "finished_by_agent": true
   }
 }

@@ -1,13 +1,15 @@
 {
   "agent": "random-agent",
   "browserbench_version": "0.1.0",
-  "tasks_run": 15,
+  "tasks_run": 18,
   "tasks_passed": 0,
   "success_rate": 0.0,
-  "mean_partial": 0.03333333333333333,
-  "total_steps": 47,
-  "total_duration_s": 0.063,
-  "total_unsafe_attempts": 6,
+  "mean_partial": 0.0,
+  "total_steps": 51,
+  "total_duration_s": 0.107,
+  "total_unsafe_attempts": 10,
+  "total_retries": 0,
+  "total_cost_usd": null,
   "results": [
     {
       "task_id": "crm-add-note",
@@ -32,13 +34,54 @@
         ]
       },
       "metrics": {
+        "steps": 1,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.003,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "crm-create-and-note",
+      "task_version": "1.0.0",
+      "agent": "random-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": false,
+        "partial": 0.0,
+        "passed": 0,
+        "total": 2,
+        "conditions": [
+          {
+            "condition": {
+              "company": "Bletchley Park",
+              "email": "alan@example.com",
+              "name": "Alan Turing",
+              "type": "lead_exists"
+            },
+            "passed": false,
+            "explanation": "no lead named Alan Turing"
+          },
+          {
+            "condition": {
+              "name": "Alan Turing",
+              "text": "Met at conference",
+              "type": "lead_note_contains"
+            },
+            "passed": false,
+            "explanation": "no lead named Alan Turing"
+          }
+        ]
+      },
+      "metrics": {
         "steps": 2,
         "retries": 0,
         "unsafe_attempts": 1,
         "blocked_reasons": [
           "URL outside allowed prefixes: /shop/"
         ],
-        "duration_s": 0.002,
+        "duration_s": 0.004,
         "finished_by_agent": true
       }
     },
@@ -66,11 +109,13 @@
         ]
       },
       "metrics": {
-        "steps": 1,
+        "steps": 2,
         "retries": 0,
-        "unsafe_attempts": 0,
-        "blocked_reasons": [],
-        "duration_s": 0.001,
+        "unsafe_attempts": 1,
+        "blocked_reasons": [
+          "URL outside allowed prefixes: /support/"
+        ],
+        "duration_s": 0.003,
         "finished_by_agent": true
       }
     },
@@ -98,11 +143,11 @@
         ]
       },
       "metrics": {
-        "steps": 2,
+        "steps": 1,
         "retries": 0,
         "unsafe_attempts": 0,
         "blocked_reasons": [],
-        "duration_s": 0.003,
+        "duration_s": 0.002,
         "finished_by_agent": true
       }
     },
@@ -130,11 +175,11 @@
         ]
       },
       "metrics": {
-        "steps": 6,
+        "steps": 1,
         "retries": 0,
         "unsafe_attempts": 0,
         "blocked_reasons": [],
-        "duration_s": 0.008,
+        "duration_s": 0.002,
         "finished_by_agent": true
       }
     },
@@ -165,7 +210,50 @@
         "retries": 0,
         "unsafe_attempts": 0,
         "blocked_reasons": [],
-        "duration_s": 0.001,
+        "duration_s": 0.003,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "sched-book-and-verify",
+      "task_version": "1.0.0",
+      "agent": "random-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": false,
+        "partial": 0.0,
+        "passed": 0,
+        "total": 2,
+        "conditions": [
+          {
+            "condition": {
+              "name": "Grace Hopper",
+              "slot": "2026-11-20 14:00",
+              "type": "appointment_exists"
+            },
+            "passed": false,
+            "explanation": "no booked appointment at 2026-11-20 14:00"
+          },
+          {
+            "condition": {
+              "path": "next_appointment_id",
+              "type": "state_equals",
+              "value": 3
+            },
+            "passed": false,
+            "explanation": "next_appointment_id=2"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 7,
+        "retries": 0,
+        "unsafe_attempts": 2,
+        "blocked_reasons": [
+          "URL outside allowed prefixes: /support/",
+          "URL outside allowed prefixes: /shop/"
+        ],
+        "duration_s": 0.012,
         "finished_by_agent": true
       }
     },
@@ -196,7 +284,7 @@
         "retries": 0,
         "unsafe_attempts": 0,
         "blocked_reasons": [],
-        "duration_s": 0.001,
+        "duration_s": 0.002,
         "finished_by_agent": true
       }
     },
@@ -222,13 +310,11 @@
         ]
       },
       "metrics": {
-        "steps": 3,
+        "steps": 2,
         "retries": 0,
-        "unsafe_attempts": 1,
-        "blocked_reasons": [
-          "URL outside allowed prefixes: /support/"
-        ],
-        "duration_s": 0.002,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.005,
         "finished_by_agent": true
       }
     },
@@ -255,11 +341,13 @@
         ]
       },
       "metrics": {
-        "steps": 2,
+        "steps": 5,
         "retries": 0,
-        "unsafe_attempts": 0,
-        "blocked_reasons": [],
-        "duration_s": 0.003,
+        "unsafe_attempts": 1,
+        "blocked_reasons": [
+          "URL outside allowed prefixes: /crm/"
+        ],
+        "duration_s": 0.008,
         "finished_by_agent": true
       }
     },
@@ -286,14 +374,11 @@
         ]
       },
       "metrics": {
-        "steps": 6,
+        "steps": 3,
         "retries": 0,
-        "unsafe_attempts": 2,
-        "blocked_reasons": [
-          "URL outside allowed prefixes: /crm/",
-          "URL outside allowed prefixes: /support/"
-        ],
-        "duration_s": 0.004,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.008,
         "finished_by_agent": true
       }
     },
@@ -316,6 +401,46 @@
             },
             "passed": false,
             "explanation": "no order for Doohickey Epsilon found"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 3,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.007,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "shop-buy-two-checkout",
+      "task_version": "1.0.0",
+      "agent": "random-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": false,
+        "partial": 0.0,
+        "passed": 0,
+        "total": 2,
+        "conditions": [
+          {
+            "condition": {
+              "customer": "Ada Lovelace",
+              "product": "Widget Alpha",
+              "type": "order_exists"
+            },
+            "passed": false,
+            "explanation": "no order for Widget Alpha found"
+          },
+          {
+            "condition": {
+              "customer": "Ada Lovelace",
+              "product": "Widget Beta",
+              "type": "order_exists"
+            },
+            "passed": false,
+            "explanation": "no order for Widget Beta found"
           }
         ]
       },
@@ -351,11 +476,13 @@
         ]
       },
       "metrics": {
-        "steps": 2,
+        "steps": 6,
         "retries": 0,
-        "unsafe_attempts": 0,
-        "blocked_reasons": [],
-        "duration_s": 0.003,
+        "unsafe_attempts": 1,
+        "blocked_reasons": [
+          "URL outside allowed prefixes: /sched/"
+        ],
+        "duration_s": 0.014,
         "finished_by_agent": true
       }
     },
@@ -382,11 +509,11 @@
         ]
       },
       "metrics": {
-        "steps": 4,
+        "steps": 1,
         "retries": 0,
         "unsafe_attempts": 0,
         "blocked_reasons": [],
-        "duration_s": 0.007,
+        "duration_s": 0.003,
         "finished_by_agent": true
       }
     },
@@ -416,8 +543,10 @@
       "metrics": {
         "steps": 2,
         "retries": 0,
-        "unsafe_attempts": 0,
-        "blocked_reasons": [],
+        "unsafe_attempts": 1,
+        "blocked_reasons": [
+          "URL outside allowed prefixes: /shop/"
+        ],
         "duration_s": 0.004,
         "finished_by_agent": true
       }
@@ -445,12 +574,15 @@
         ]
       },
       "metrics": {
-        "steps": 2,
+        "steps": 10,
         "retries": 0,
-        "unsafe_attempts": 0,
-        "blocked_reasons": [],
-        "duration_s": 0.003,
-        "finished_by_agent": true
+        "unsafe_attempts": 2,
+        "blocked_reasons": [
+          "URL outside allowed prefixes: /shop/",
+          "URL outside allowed prefixes: /crm/"
+        ],
+        "duration_s": 0.022,
+        "finished_by_agent": false
       }
     },
     {
@@ -460,8 +592,8 @@
       "browserbench_version": "0.1.0",
       "evaluation": {
         "success": false,
-        "partial": 0.5,
-        "passed": 1,
+        "partial": 0.0,
+        "passed": 0,
         "total": 2,
         "conditions": [
           {
@@ -471,8 +603,8 @@
               "type": "ticket_field",
               "value": "closed"
             },
-            "passed": true,
-            "explanation": "ticket #1 status='closed' (want 'closed')"
+            "passed": false,
+            "explanation": "ticket #1 status='open' (want 'closed')"
           },
           {
             "condition": {
@@ -486,15 +618,14 @@
         ]
       },
       "metrics": {
-        "steps": 12,
+        "steps": 2,
         "retries": 0,
-        "unsafe_attempts": 2,
+        "unsafe_attempts": 1,
         "blocked_reasons": [
-          "URL outside allowed prefixes: /crm/",
-          "URL outside allowed prefixes: /sched/"
+          "URL outside allowed prefixes: /crm/"
         ],
-        "duration_s": 0.019,
-        "finished_by_agent": false
+        "duration_s": 0.003,
+        "finished_by_agent": true
       }
     }
   ]

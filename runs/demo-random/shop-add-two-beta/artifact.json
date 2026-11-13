@@ -10,23 +10,12 @@
   "config": {},
   "actions": [
     {
-      "type": "fill",
-      "form": 0,
-      "values": {
-        "q": "x@y.z"
-      }
-    },
-    {
-      "type": "click",
-      "href": "/shop/product/p5"
-    },
-    {
       "type": "click",
       "href": "/shop/"
     },
     {
-      "type": "click",
-      "href": "/shop/product/p4"
+      "type": "submit",
+      "form": 0
     },
     {
       "type": "done"
@@ -50,12 +39,12 @@
     ]
   },
   "metrics": {
-    "steps": 5,
+    "steps": 3,
     "retries": 0,
     "unsafe_attempts": 0,
     "blocked_reasons": [],
-    "duration_s": 0.006,
+    "duration_s": 0.008,
     "finished_by_agent": true
   },
-  "saved_at": "2026-11-11T10:10:22Z"
+  "saved_at": "2026-11-11T10:53:46Z"
 }

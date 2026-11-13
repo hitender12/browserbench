@@ -13,10 +13,6 @@
   },
   "actions": [
     {
-      "type": "click",
-      "href": "/crm/"
-    },
-    {
       "type": "done"
     }
   ],
@@ -39,12 +35,12 @@
     ]
   },
   "metrics": {
-    "steps": 2,
+    "steps": 1,
     "retries": 0,
     "unsafe_attempts": 0,
     "blocked_reasons": [],
-    "duration_s": 0.003,
+    "duration_s": 0.002,
     "finished_by_agent": true
   },
-  "saved_at": "2026-11-11T10:11:08Z"
+  "saved_at": "2026-11-11T10:44:41Z"
 }

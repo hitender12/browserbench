@@ -10,14 +10,6 @@
   "config": {},
   "actions": [
     {
-      "type": "click",
-      "href": "/shop/"
-    },
-    {
-      "type": "click",
-      "href": "/sched/book"
-    },
-    {
       "type": "done"
     }
   ],
@@ -39,14 +31,12 @@
     ]
   },
   "metrics": {
-    "steps": 3,
+    "steps": 1,
     "retries": 0,
-    "unsafe_attempts": 1,
-    "blocked_reasons": [
-      "URL outside allowed prefixes: /shop/"
-    ],
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
     "duration_s": 0.003,
     "finished_by_agent": true
   },
-  "saved_at": "2026-11-11T10:10:22Z"
+  "saved_at": "2026-11-11T10:53:46Z"
 }

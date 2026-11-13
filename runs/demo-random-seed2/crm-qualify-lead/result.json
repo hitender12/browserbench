@@ -1,0 +1,29 @@
+{
+  "task_id": "crm-qualify-lead",
+  "evaluation": {
+    "success": false,
+    "partial": 0.0,
+    "passed": 0,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "field": "status",
+          "name": "Grace Hopper",
+          "type": "lead_field",
+          "value": "Qualified"
+        },
+        "passed": false,
+        "explanation": "lead Grace Hopper status='New' (want 'Qualified')"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 2,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.006,
+    "finished_by_agent": true
+  }
+}

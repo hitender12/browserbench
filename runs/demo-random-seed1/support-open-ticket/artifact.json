@@ -1,0 +1,80 @@
+{
+  "format_version": "1.0.0",
+  "task_id": "support-open-ticket",
+  "task_version": "1.0.0",
+  "seed": 1,
+  "agent": {
+    "name": "random-agent",
+    "version": "0.1.0"
+  },
+  "config": {},
+  "actions": [
+    {
+      "type": "click",
+      "href": "/support/tickets/1"
+    },
+    {
+      "type": "fill",
+      "form": 1,
+      "values": {}
+    },
+    {
+      "type": "click",
+      "href": "/sched/"
+    },
+    {
+      "type": "fill",
+      "form": 1,
+      "values": {}
+    },
+    {
+      "type": "click",
+      "href": "/shop/"
+    },
+    {
+      "type": "click",
+      "href": "/crm/"
+    },
+    {
+      "type": "submit",
+      "form": 0
+    },
+    {
+      "type": "submit",
+      "form": 1
+    },
+    {
+      "type": "done"
+    }
+  ],
+  "evaluation": {
+    "success": false,
+    "partial": 0.0,
+    "passed": 0,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "status": "open",
+          "subject": "Login fails on checkout",
+          "type": "ticket_exists"
+        },
+        "passed": false,
+        "explanation": "no ticket 'Login fails on checkout'"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 9,
+    "retries": 0,
+    "unsafe_attempts": 3,
+    "blocked_reasons": [
+      "URL outside allowed prefixes: /sched/",
+      "URL outside allowed prefixes: /shop/",
+      "URL outside allowed prefixes: /crm/"
+    ],
+    "duration_s": 0.015,
+    "finished_by_agent": true
+  },
+  "saved_at": "2026-11-11T10:53:47Z"
+}

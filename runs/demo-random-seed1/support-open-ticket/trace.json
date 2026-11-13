@@ -1,0 +1,613 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "href": "/support/tickets/1"
+      },
+      "url": "http://127.0.0.1:44395/support/tickets/1",
+      "title": "Cannot reset password",
+      "http_status": 200,
+      "latency_ms": 1.1,
+      "timestamp": "2026-11-11T10:53:47.532907+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/support/tickets/1/reply",
+            "method": "post",
+            "fields": [
+              "reply"
+            ],
+            "submit": "Send reply"
+          },
+          {
+            "action": "/support/tickets/1/close",
+            "method": "post",
+            "fields": [],
+            "submit": "Close ticket"
+          }
+        ]
+      },
+      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Category: account The reset link never arrives. Status: open Reply Replies",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "fill",
+        "form": 1,
+        "values": {}
+      },
+      "url": "http://127.0.0.1:44395/support/tickets/1",
+      "title": "Cannot reset password",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:47.533803+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/support/tickets/1/reply",
+            "method": "post",
+            "fields": [
+              "reply"
+            ],
+            "submit": "Send reply"
+          },
+          {
+            "action": "/support/tickets/1/close",
+            "method": "post",
+            "fields": [],
+            "submit": "Close ticket"
+          }
+        ]
+      },
+      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Category: account The reset link never arrives. Status: open Reply Replies",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "click",
+        "href": "/sched/"
+      },
+      "url": "http://127.0.0.1:44395/support/tickets/1",
+      "title": "Cannot reset password",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:47.534835+00:00",
+      "blocked": "URL outside allowed prefixes: /sched/",
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/support/tickets/1/reply",
+            "method": "post",
+            "fields": [
+              "reply"
+            ],
+            "submit": "Send reply"
+          },
+          {
+            "action": "/support/tickets/1/close",
+            "method": "post",
+            "fields": [],
+            "submit": "Close ticket"
+          }
+        ]
+      },
+      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Category: account The reset link never arrives. Status: open Reply Replies",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
+    },
+    {
+      "step": 4,
+      "action": {
+        "type": "fill",
+        "form": 1,
+        "values": {}
+      },
+      "url": "http://127.0.0.1:44395/support/tickets/1",
+      "title": "Cannot reset password",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:47.535652+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/support/tickets/1/reply",
+            "method": "post",
+            "fields": [
+              "reply"
+            ],
+            "submit": "Send reply"
+          },
+          {
+            "action": "/support/tickets/1/close",
+            "method": "post",
+            "fields": [],
+            "submit": "Close ticket"
+          }
+        ]
+      },
+      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Category: account The reset link never arrives. Status: open Reply Replies",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
+    },
+    {
+      "step": 5,
+      "action": {
+        "type": "click",
+        "href": "/shop/"
+      },
+      "url": "http://127.0.0.1:44395/support/tickets/1",
+      "title": "Cannot reset password",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:47.536408+00:00",
+      "blocked": "URL outside allowed prefixes: /shop/",
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/support/tickets/1/reply",
+            "method": "post",
+            "fields": [
+              "reply"
+            ],
+            "submit": "Send reply"
+          },
+          {
+            "action": "/support/tickets/1/close",
+            "method": "post",
+            "fields": [],
+            "submit": "Close ticket"
+          }
+        ]
+      },
+      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Category: account The reset link never arrives. Status: open Reply Replies",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
+    },
+    {
+      "step": 6,
+      "action": {
+        "type": "click",
+        "href": "/crm/"
+      },
+      "url": "http://127.0.0.1:44395/support/tickets/1",
+      "title": "Cannot reset password",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:47.537209+00:00",
+      "blocked": "URL outside allowed prefixes: /crm/",
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/support/tickets/1/reply",
+            "method": "post",
+            "fields": [
+              "reply"
+            ],
+            "submit": "Send reply"
+          },
+          {
+            "action": "/support/tickets/1/close",
+            "method": "post",
+            "fields": [],
+            "submit": "Close ticket"
+          }
+        ]
+      },
+      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Category: account The reset link never arrives. Status: open Reply Replies",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
+    },
+    {
+      "step": 7,
+      "action": {
+        "type": "submit",
+        "form": 0
+      },
+      "url": "http://127.0.0.1:44395/support/tickets/1?replied=1",
+      "title": "Cannot reset password",
+      "http_status": 200,
+      "latency_ms": 2.0,
+      "timestamp": "2026-11-11T10:53:47.540178+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/support/tickets/1/reply",
+            "method": "post",
+            "fields": [
+              "reply"
+            ],
+            "submit": "Send reply"
+          },
+          {
+            "action": "/support/tickets/1/close",
+            "method": "post",
+            "fields": [],
+            "submit": "Close ticket"
+          }
+        ]
+      },
+      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Reply sent. Category: account The reset link never arrives. Status: open Reply Replies",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": [
+              ""
+            ]
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
+    },
+    {
+      "step": 8,
+      "action": {
+        "type": "submit",
+        "form": 1
+      },
+      "url": "http://127.0.0.1:44395/support/tickets/1?closed=1",
+      "title": "Cannot reset password",
+      "http_status": 200,
+      "latency_ms": 1.8,
+      "timestamp": "2026-11-11T10:53:47.542785+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/support/tickets/1/reply",
+            "method": "post",
+            "fields": [
+              "reply"
+            ],
+            "submit": "Send reply"
+          }
+        ]
+      },
+      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Ticket closed. Category: account The reset link never arrives. Status: closed Reply Replies",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "closed",
+            "replies": [
+              ""
+            ]
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
+    },
+    {
+      "step": 9,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:44395/support/tickets/1?closed=1",
+      "title": "Cannot reset password",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:47.544494+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/support/tickets/1/reply",
+            "method": "post",
+            "fields": [
+              "reply"
+            ],
+            "submit": "Send reply"
+          }
+        ]
+      },
+      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Ticket closed. Category: account The reset link never arrives. Status: closed Reply Replies",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "closed",
+            "replies": [
+              ""
+            ]
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:44395/__reset__",
+      "status": 200,
+      "latency_ms": 1.1
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:44395/support/",
+      "status": 200,
+      "latency_ms": 1.0
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:44395/support/tickets/1",
+      "status": 200,
+      "latency_ms": 0.8
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:44395/support/tickets/1/reply",
+      "status": 200,
+      "latency_ms": 1.6
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:44395/support/tickets/1/close",
+      "status": 200,
+      "latency_ms": 1.5
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:44395/__state__?site=support",
+      "status": 200,
+      "latency_ms": 0.7
+    }
+  ]
+}

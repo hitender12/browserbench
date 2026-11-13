@@ -1,0 +1,614 @@
+{
+  "agent": "scripted-agent",
+  "browserbench_version": "0.1.0",
+  "tasks_run": 18,
+  "tasks_passed": 18,
+  "success_rate": 1.0,
+  "mean_partial": 1.0,
+  "total_steps": 82,
+  "total_duration_s": 0.201,
+  "total_unsafe_attempts": 0,
+  "total_retries": 0,
+  "total_cost_usd": null,
+  "results": [
+    {
+      "task_id": "crm-add-note",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 1,
+        "total": 1,
+        "conditions": [
+          {
+            "condition": {
+              "name": "Ada Lovelace",
+              "text": "interested in a demo",
+              "type": "lead_note_contains"
+            },
+            "passed": true,
+            "explanation": "lead Ada Lovelace notes contain 'interested in a demo': True"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 4,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.012,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "crm-create-and-note",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 2,
+        "total": 2,
+        "conditions": [
+          {
+            "condition": {
+              "company": "Bletchley Park",
+              "email": "alan@example.com",
+              "name": "Alan Turing",
+              "type": "lead_exists"
+            },
+            "passed": true,
+            "explanation": "lead Alan Turing exists"
+          },
+          {
+            "condition": {
+              "name": "Alan Turing",
+              "text": "Met at conference",
+              "type": "lead_note_contains"
+            },
+            "passed": true,
+            "explanation": "lead Alan Turing notes contain 'Met at conference': True"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 6,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.012,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "crm-create-lead",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 1,
+        "total": 1,
+        "conditions": [
+          {
+            "condition": {
+              "company": "Bletchley Park",
+              "email": "alan@example.com",
+              "name": "Alan Turing",
+              "type": "lead_exists"
+            },
+            "passed": true,
+            "explanation": "lead Alan Turing exists"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 4,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.008,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "crm-qualify-lead",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 1,
+        "total": 1,
+        "conditions": [
+          {
+            "condition": {
+              "field": "status",
+              "name": "Grace Hopper",
+              "type": "lead_field",
+              "value": "Qualified"
+            },
+            "passed": true,
+            "explanation": "lead Grace Hopper status='Qualified' (want 'Qualified')"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 4,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.008,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "crm-update-status",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 1,
+        "total": 1,
+        "conditions": [
+          {
+            "condition": {
+              "field": "status",
+              "name": "Ada Lovelace",
+              "type": "lead_field",
+              "value": "Contacted"
+            },
+            "passed": true,
+            "explanation": "lead Ada Lovelace status='Contacted' (want 'Contacted')"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 4,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.009,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "sched-book-afternoon",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 1,
+        "total": 1,
+        "conditions": [
+          {
+            "condition": {
+              "name": "Grace Hopper",
+              "slot": "2026-11-20 14:00",
+              "type": "appointment_exists"
+            },
+            "passed": true,
+            "explanation": "appointment at 2026-11-20 14:00 exists"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 4,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.008,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "sched-book-and-verify",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 2,
+        "total": 2,
+        "conditions": [
+          {
+            "condition": {
+              "name": "Grace Hopper",
+              "slot": "2026-11-20 14:00",
+              "type": "appointment_exists"
+            },
+            "passed": true,
+            "explanation": "appointment at 2026-11-20 14:00 exists"
+          },
+          {
+            "condition": {
+              "path": "next_appointment_id",
+              "type": "state_equals",
+              "value": 3
+            },
+            "passed": true,
+            "explanation": "next_appointment_id=3"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 4,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.01,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "sched-book-appointment",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 1,
+        "total": 1,
+        "conditions": [
+          {
+            "condition": {
+              "name": "Alan Turing",
+              "slot": "2026-11-20 10:00",
+              "type": "appointment_exists"
+            },
+            "passed": true,
+            "explanation": "appointment at 2026-11-20 10:00 exists"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 4,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.01,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "sched-cancel-appointment",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 1,
+        "total": 1,
+        "conditions": [
+          {
+            "condition": {
+              "type": "appointment_absent",
+              "id": 1
+            },
+            "passed": true,
+            "explanation": "appointment 1 booked: False"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 3,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.009,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "shop-add-to-cart",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 1,
+        "total": 1,
+        "conditions": [
+          {
+            "condition": {
+              "product": "Widget Alpha",
+              "quantity": 1,
+              "type": "cart_contains"
+            },
+            "passed": true,
+            "explanation": "cart has 1 \u00d7 Widget Alpha (want 1)"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 3,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.009,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "shop-add-two-beta",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 1,
+        "total": 1,
+        "conditions": [
+          {
+            "condition": {
+              "product": "Widget Beta",
+              "quantity": 2,
+              "type": "cart_contains"
+            },
+            "passed": true,
+            "explanation": "cart has 2 \u00d7 Widget Beta (want 2)"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 4,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.008,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "shop-buy-doohickey",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 1,
+        "total": 1,
+        "conditions": [
+          {
+            "condition": {
+              "customer": "Grace Hopper",
+              "product": "Doohickey Epsilon",
+              "type": "order_exists"
+            },
+            "passed": true,
+            "explanation": "order #1 for Doohickey Epsilon exists"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 6,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.014,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "shop-buy-two-checkout",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 2,
+        "total": 2,
+        "conditions": [
+          {
+            "condition": {
+              "customer": "Ada Lovelace",
+              "product": "Widget Alpha",
+              "type": "order_exists"
+            },
+            "passed": true,
+            "explanation": "order #1 for Widget Alpha exists"
+          },
+          {
+            "condition": {
+              "customer": "Ada Lovelace",
+              "product": "Widget Beta",
+              "type": "order_exists"
+            },
+            "passed": true,
+            "explanation": "order #1 for Widget Beta exists"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 9,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.021,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "shop-checkout",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 1,
+        "total": 1,
+        "conditions": [
+          {
+            "condition": {
+              "customer": "Ada Lovelace",
+              "product": "Gadget Gamma",
+              "type": "order_exists"
+            },
+            "passed": true,
+            "explanation": "order #1 for Gadget Gamma exists"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 6,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.018,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "shop-search-add",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 1,
+        "total": 1,
+        "conditions": [
+          {
+            "condition": {
+              "product": "Widget Alpha",
+              "quantity": 1,
+              "type": "cart_contains"
+            },
+            "passed": true,
+            "explanation": "cart has 1 \u00d7 Widget Alpha (want 1)"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 5,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.012,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "support-close-ticket",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 1,
+        "total": 1,
+        "conditions": [
+          {
+            "condition": {
+              "field": "status",
+              "id": 1,
+              "type": "ticket_field",
+              "value": "closed"
+            },
+            "passed": true,
+            "explanation": "ticket #1 status='closed' (want 'closed')"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 3,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.008,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "support-open-ticket",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 1,
+        "total": 1,
+        "conditions": [
+          {
+            "condition": {
+              "status": "open",
+              "subject": "Login fails on checkout",
+              "type": "ticket_exists"
+            },
+            "passed": true,
+            "explanation": "ticket 'Login fails on checkout' exists"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 4,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.009,
+        "finished_by_agent": true
+      }
+    },
+    {
+      "task_id": "support-reply-close",
+      "task_version": "1.0.0",
+      "agent": "scripted-agent",
+      "browserbench_version": "0.1.0",
+      "evaluation": {
+        "success": true,
+        "partial": 1.0,
+        "passed": 2,
+        "total": 2,
+        "conditions": [
+          {
+            "condition": {
+              "field": "status",
+              "id": 1,
+              "type": "ticket_field",
+              "value": "closed"
+            },
+            "passed": true,
+            "explanation": "ticket #1 status='closed' (want 'closed')"
+          },
+          {
+            "condition": {
+              "id": 1,
+              "text": "Reset link sent",
+              "type": "ticket_reply_contains"
+            },
+            "passed": true,
+            "explanation": "ticket #1 replies contain 'Reset link sent': True"
+          }
+        ]
+      },
+      "metrics": {
+        "steps": 5,
+        "retries": 0,
+        "unsafe_attempts": 0,
+        "blocked_reasons": [],
+        "duration_s": 0.016,
+        "finished_by_agent": true
+      }
+    }
+  ]
+}

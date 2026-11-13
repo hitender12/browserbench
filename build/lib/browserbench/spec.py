@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from dataclasses import dataclass, field
 
 from . import yamlmini
@@ -116,12 +117,24 @@ class TaskSpec:
 
 
 def load_tasks(directory: str) -> list[TaskSpec]:
-    """Load every task file under `directory` (recursive), sorted by id."""
+    """Load every task file under `directory` (recursive), sorted by id.
+
+    A malformed file (invalid JSON/YAML, bad seed, unknown site, missing
+    fields, ...) is skipped with a warning on stderr naming the file,
+    and the good tasks still load — one bad file cannot poison the
+    whole suite. A duplicate task id is still a hard error: that is a
+    pack-integrity problem, not a per-file parse problem.
+    """
     specs: list[TaskSpec] = []
     for root, _dirs, files in os.walk(directory):
         for name in sorted(files):
             if name.endswith((".json", ".yaml", ".yml")):
-                specs.append(TaskSpec.from_file(os.path.join(root, name)))
+                path = os.path.join(root, name)
+                try:
+                    specs.append(TaskSpec.from_file(path))
+                except Exception as exc:
+                    print(f"warning: skipping task file {path}: {exc}",
+                          file=sys.stderr)
     specs.sort(key=lambda s: s.id)
     seen: set[str] = set()
     for spec in specs:

@@ -28,18 +28,18 @@ Task registry (versioned JSON/YAML scenarios)
 
 | Module | Responsibility |
 |---|---|
-| `spec.py` | TaskSpec: load/validate JSON + YAML-subset tasks; versioning rules |
+| `spec.py` | TaskSpec: load/validate JSON + YAML-subset tasks; versioning rules; malformed files are skipped with a warning (duplicate ids are a hard error) |
 | `yamlmini.py` | Minimal YAML-subset parser (mappings, sequences, scalars) |
 | `sites.py` | Four synthetic apps + reset/state endpoints; in-memory, deterministic |
 | `dom.py` | HTML → observation snapshot (title, text, links, forms) |
 | `adapter.py` | Agent contract: `act(observation) -> action`; Python + HTTP loading |
 | `agents.py` | Scripted (reference-plan) and random (baseline) agents |
 | `evaluator.py` | State-based conditions; partial credit; no LLM judge |
-| `runner.py` | Reset → observe → act → validate → execute → evaluate; safety boundary |
+| `runner.py` | Reset → observe → act → validate → execute → evaluate; safety boundary; form fills bound to (page URL, form index); out-of-range form indices blocked |
 | `trace.py` | Per-run trace, result, and replayable artifact files (per-step wall-clock timestamps + full state snapshots) |
-| `replay.py` | Re-execute a saved artifact and compare the outcome |
+| `replay.py` | Re-execute a saved artifact and compare the outcome; mirrors the runner's form-value binding |
 | `report.py` | Terminal + Markdown reports; latest-run lookup |
-| `__main__.py` | CLI: `init`, `run`, `report`, `replay` |
+| `__main__.py` | CLI: `init`, `run`, `report`, `replay`; loading errors exit 2 with a clean message, no traceback |
 
 ## The safety boundary (runner)
 
@@ -49,6 +49,10 @@ Every action passes through validation before execution:
 2. The target URL must start with one of the task's `allowed_prefixes`
    and share the test server's host (no external hosts).
 3. `/__state__` and `/__reset__` are never navigable by an agent.
+4. A fill is bound to the (page URL, form index) it was made on —
+   filled values never leak into another page's same-index form.
+5. A fill/submit naming a form index that does not exist on the current
+   page (including a negative or non-integer index) is blocked.
 
 Violations are blocked, counted in `metrics.unsafe_attempts`, recorded in
 the trace with the exact reason, and do not end the run.

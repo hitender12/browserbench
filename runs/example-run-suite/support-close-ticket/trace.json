@@ -6,10 +6,11 @@
         "type": "click",
         "href": "/support/tickets/1"
       },
-      "url": "http://127.0.0.1:43887/support/tickets/1",
+      "url": "http://127.0.0.1:41979/support/tickets/1",
       "title": "Cannot reset password",
       "http_status": 200,
-      "latency_ms": 1.2,
+      "latency_ms": 1.1,
+      "timestamp": "2026-11-11T10:44:39.577916+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -47,7 +48,21 @@
           }
         ]
       },
-      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Category: account The reset link never arrives. Status: open Reply Replies"
+      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Category: account The reset link never arrives. Status: open Reply Replies",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
     },
     {
       "step": 2,
@@ -55,10 +70,11 @@
         "type": "submit",
         "form": 1
       },
-      "url": "http://127.0.0.1:43887/support/tickets/1?closed=1",
+      "url": "http://127.0.0.1:41979/support/tickets/1?closed=1",
       "title": "Cannot reset password",
       "http_status": 200,
       "latency_ms": 1.9,
+      "timestamp": "2026-11-11T10:44:39.580749+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -90,17 +106,32 @@
           }
         ]
       },
-      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Ticket closed. Category: account The reset link never arrives. Status: closed Reply Replies"
+      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Ticket closed. Category: account The reset link never arrives. Status: closed Reply Replies",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "closed",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
     },
     {
       "step": 3,
       "action": {
         "type": "done"
       },
-      "url": "http://127.0.0.1:43887/support/tickets/1?closed=1",
+      "url": "http://127.0.0.1:41979/support/tickets/1?closed=1",
       "title": "Cannot reset password",
       "http_status": 200,
       "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:44:39.581515+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -132,39 +163,53 @@
           }
         ]
       },
-      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Ticket closed. Category: account The reset link never arrives. Status: closed Reply Replies"
+      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Ticket closed. Category: account The reset link never arrives. Status: closed Reply Replies",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "closed",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
     }
   ],
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:43887/__reset__",
-      "status": 200,
-      "latency_ms": 1.0
-    },
-    {
-      "method": "GET",
-      "url": "http://127.0.0.1:43887/support/",
-      "status": 200,
-      "latency_ms": 1.0
-    },
-    {
-      "method": "GET",
-      "url": "http://127.0.0.1:43887/support/tickets/1",
+      "url": "http://127.0.0.1:41979/__reset__",
       "status": 200,
       "latency_ms": 0.9
     },
     {
+      "method": "GET",
+      "url": "http://127.0.0.1:41979/support/",
+      "status": 200,
+      "latency_ms": 0.8
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41979/support/tickets/1",
+      "status": 200,
+      "latency_ms": 0.8
+    },
+    {
       "method": "POST",
-      "url": "http://127.0.0.1:43887/support/tickets/1/close",
+      "url": "http://127.0.0.1:41979/support/tickets/1/close",
       "status": 200,
       "latency_ms": 1.6
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:43887/__state__?site=support",
+      "url": "http://127.0.0.1:41979/__state__?site=support",
       "status": 200,
-      "latency_ms": 0.8
+      "latency_ms": 0.7
     }
   ]
 }

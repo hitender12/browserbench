@@ -4,103 +4,13 @@
       "step": 1,
       "action": {
         "type": "click",
-        "href": "/crm/"
+        "href": "/sched/appointments"
       },
-      "url": "http://127.0.0.1:37037/sched/",
-      "title": "Scheduling",
+      "url": "http://127.0.0.1:40971/sched/appointments",
+      "title": "Appointments",
       "http_status": 200,
-      "latency_ms": 0.0,
-      "blocked": "URL outside allowed prefixes: /crm/",
-      "dom": {
-        "links": [
-          {
-            "text": "Shop",
-            "href": "/shop/"
-          },
-          {
-            "text": "CRM",
-            "href": "/crm/"
-          },
-          {
-            "text": "Scheduling",
-            "href": "/sched/"
-          },
-          {
-            "text": "Support",
-            "href": "/support/"
-          },
-          {
-            "text": "Alan Turing",
-            "href": "/sched/appointments/1"
-          },
-          {
-            "text": "Book an appointment",
-            "href": "/sched/book"
-          },
-          {
-            "text": "All appointments",
-            "href": "/sched/appointments"
-          }
-        ],
-        "forms": []
-      },
-      "text_excerpt": "Scheduling Shop | CRM | Scheduling | Support Scheduling Booked appointments 2026-11-20 09:00 \u2014 Alan Turing Book an appointment All appointments"
-    },
-    {
-      "step": 2,
-      "action": {
-        "type": "click",
-        "href": "/shop/"
-      },
-      "url": "http://127.0.0.1:37037/sched/",
-      "title": "Scheduling",
-      "http_status": 200,
-      "latency_ms": 0.0,
-      "blocked": "URL outside allowed prefixes: /shop/",
-      "dom": {
-        "links": [
-          {
-            "text": "Shop",
-            "href": "/shop/"
-          },
-          {
-            "text": "CRM",
-            "href": "/crm/"
-          },
-          {
-            "text": "Scheduling",
-            "href": "/sched/"
-          },
-          {
-            "text": "Support",
-            "href": "/support/"
-          },
-          {
-            "text": "Alan Turing",
-            "href": "/sched/appointments/1"
-          },
-          {
-            "text": "Book an appointment",
-            "href": "/sched/book"
-          },
-          {
-            "text": "All appointments",
-            "href": "/sched/appointments"
-          }
-        ],
-        "forms": []
-      },
-      "text_excerpt": "Scheduling Shop | CRM | Scheduling | Support Scheduling Booked appointments 2026-11-20 09:00 \u2014 Alan Turing Book an appointment All appointments"
-    },
-    {
-      "step": 3,
-      "action": {
-        "type": "done"
-      },
-      "url": "http://127.0.0.1:37037/sched/",
-      "title": "Scheduling",
-      "http_status": 200,
-      "latency_ms": 0.0,
+      "latency_ms": 1.7,
+      "timestamp": "2026-11-11T10:44:41.941541+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -123,39 +33,113 @@
           {
             "text": "Alan Turing",
             "href": "/sched/appointments/1"
-          },
-          {
-            "text": "Book an appointment",
-            "href": "/sched/book"
-          },
-          {
-            "text": "All appointments",
-            "href": "/sched/appointments"
           }
         ],
         "forms": []
       },
-      "text_excerpt": "Scheduling Shop | CRM | Scheduling | Support Scheduling Booked appointments 2026-11-20 09:00 \u2014 Alan Turing Book an appointment All appointments"
+      "text_excerpt": "Appointments Shop | CRM | Scheduling | Support Appointments 2026-11-20 09:00 \u2014 Alan Turing \u2014 booked",
+      "state_snapshot": {
+        "slots": [
+          "2026-11-20 09:00",
+          "2026-11-20 10:00",
+          "2026-11-20 11:00",
+          "2026-11-20 14:00",
+          "2026-11-21 09:00"
+        ],
+        "appointments": [
+          {
+            "id": 1,
+            "slot": "2026-11-20 09:00",
+            "name": "Alan Turing",
+            "status": "booked"
+          }
+        ],
+        "next_appointment_id": 2,
+        "seed": 1
+      }
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:40971/sched/appointments",
+      "title": "Appointments",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:44:41.942799+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "Alan Turing",
+            "href": "/sched/appointments/1"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Appointments Shop | CRM | Scheduling | Support Appointments 2026-11-20 09:00 \u2014 Alan Turing \u2014 booked",
+      "state_snapshot": {
+        "slots": [
+          "2026-11-20 09:00",
+          "2026-11-20 10:00",
+          "2026-11-20 11:00",
+          "2026-11-20 14:00",
+          "2026-11-21 09:00"
+        ],
+        "appointments": [
+          {
+            "id": 1,
+            "slot": "2026-11-20 09:00",
+            "name": "Alan Turing",
+            "status": "booked"
+          }
+        ],
+        "next_appointment_id": 2,
+        "seed": 1
+      }
     }
   ],
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:37037/__reset__",
+      "url": "http://127.0.0.1:40971/__reset__",
       "status": 200,
-      "latency_ms": 1.1
+      "latency_ms": 1.5
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:37037/sched/",
-      "status": 200,
-      "latency_ms": 1.1
-    },
-    {
-      "method": "GET",
-      "url": "http://127.0.0.1:37037/__state__?site=sched",
+      "url": "http://127.0.0.1:40971/sched/",
       "status": 200,
       "latency_ms": 1.4
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:40971/sched/appointments",
+      "status": 200,
+      "latency_ms": 1.4
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:40971/__state__?site=sched",
+      "status": 200,
+      "latency_ms": 1.1
     }
   ]
 }

@@ -1,0 +1,80 @@
+{
+  "format_version": "1.0.0",
+  "task_id": "crm-create-and-note",
+  "task_version": "1.0.0",
+  "seed": 1,
+  "agent": {
+    "name": "scripted-agent",
+    "version": "0.1.0"
+  },
+  "config": {},
+  "actions": [
+    {
+      "type": "click",
+      "href": "/crm/leads/new"
+    },
+    {
+      "type": "fill",
+      "form": 0,
+      "values": {
+        "company": "Bletchley Park",
+        "email": "alan@example.com",
+        "name": "Alan Turing"
+      }
+    },
+    {
+      "type": "submit",
+      "form": 0
+    },
+    {
+      "type": "fill",
+      "form": 1,
+      "values": {
+        "note": "Met at conference. Interested in a demo."
+      }
+    },
+    {
+      "type": "submit",
+      "form": 1
+    },
+    {
+      "type": "done"
+    }
+  ],
+  "evaluation": {
+    "success": true,
+    "partial": 1.0,
+    "passed": 2,
+    "total": 2,
+    "conditions": [
+      {
+        "condition": {
+          "company": "Bletchley Park",
+          "email": "alan@example.com",
+          "name": "Alan Turing",
+          "type": "lead_exists"
+        },
+        "passed": true,
+        "explanation": "lead Alan Turing exists"
+      },
+      {
+        "condition": {
+          "name": "Alan Turing",
+          "text": "Met at conference",
+          "type": "lead_note_contains"
+        },
+        "passed": true,
+        "explanation": "lead Alan Turing notes contain 'Met at conference': True"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 6,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.015,
+    "finished_by_agent": true
+  },
+  "saved_at": "2026-11-11T10:53:45Z"
+}

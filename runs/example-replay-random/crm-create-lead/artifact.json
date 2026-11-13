@@ -17,27 +17,6 @@
       "href": "/support/"
     },
     {
-      "type": "click",
-      "href": "/crm/leads/new"
-    },
-    {
-      "type": "fill",
-      "form": 0,
-      "values": {
-        "name": "x@y.z",
-        "email": "test",
-        "company": "hello"
-      }
-    },
-    {
-      "type": "click",
-      "href": "/support/"
-    },
-    {
-      "type": "click",
-      "href": "/sched/"
-    },
-    {
       "type": "done"
     }
   ],
@@ -60,16 +39,14 @@
     ]
   },
   "metrics": {
-    "steps": 6,
+    "steps": 2,
     "retries": 0,
-    "unsafe_attempts": 3,
+    "unsafe_attempts": 1,
     "blocked_reasons": [
-      "URL outside allowed prefixes: /support/",
-      "URL outside allowed prefixes: /support/",
-      "URL outside allowed prefixes: /sched/"
+      "URL outside allowed prefixes: /support/"
     ],
     "duration_s": 0.003,
     "finished_by_agent": true
   },
-  "saved_at": "2026-11-11T10:11:08Z"
+  "saved_at": "2026-11-11T10:44:41Z"
 }

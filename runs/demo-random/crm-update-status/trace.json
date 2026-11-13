@@ -3,366 +3,13 @@
     {
       "step": 1,
       "action": {
-        "type": "click",
-        "href": "/crm/leads/new"
-      },
-      "url": "http://127.0.0.1:34563/crm/leads/new",
-      "title": "New lead",
-      "http_status": 200,
-      "latency_ms": 1.2,
-      "blocked": null,
-      "dom": {
-        "links": [
-          {
-            "text": "Shop",
-            "href": "/shop/"
-          },
-          {
-            "text": "CRM",
-            "href": "/crm/"
-          },
-          {
-            "text": "Scheduling",
-            "href": "/sched/"
-          },
-          {
-            "text": "Support",
-            "href": "/support/"
-          }
-        ],
-        "forms": [
-          {
-            "action": "/crm/leads/new",
-            "method": "post",
-            "fields": [
-              "name",
-              "email",
-              "company"
-            ],
-            "submit": "Create lead"
-          }
-        ]
-      },
-      "text_excerpt": "New lead Shop | CRM | Scheduling | Support New lead Name Email Company"
-    },
-    {
-      "step": 2,
-      "action": {
-        "type": "submit",
-        "form": 0
-      },
-      "url": "http://127.0.0.1:34563/crm/leads/3?created=1",
-      "title": "",
-      "http_status": 200,
-      "latency_ms": 2.3,
-      "blocked": null,
-      "dom": {
-        "links": [
-          {
-            "text": "Shop",
-            "href": "/shop/"
-          },
-          {
-            "text": "CRM",
-            "href": "/crm/"
-          },
-          {
-            "text": "Scheduling",
-            "href": "/sched/"
-          },
-          {
-            "text": "Support",
-            "href": "/support/"
-          }
-        ],
-        "forms": [
-          {
-            "action": "/crm/leads/3/status",
-            "method": "post",
-            "fields": [
-              "status"
-            ],
-            "submit": "Update lead"
-          },
-          {
-            "action": "/crm/leads/3/note",
-            "method": "post",
-            "fields": [
-              "note"
-            ],
-            "submit": "Add note"
-          }
-        ]
-      },
-      "text_excerpt": "Shop | CRM | Scheduling | Support Email: Company: Status: New Status New Contacted Qualified Lost Note Notes"
-    },
-    {
-      "step": 3,
-      "action": {
-        "type": "fill",
-        "form": 1,
-        "values": {
-          "note": "42"
-        }
-      },
-      "url": "http://127.0.0.1:34563/crm/leads/3?created=1",
-      "title": "",
-      "http_status": 200,
-      "latency_ms": 0.0,
-      "blocked": null,
-      "dom": {
-        "links": [
-          {
-            "text": "Shop",
-            "href": "/shop/"
-          },
-          {
-            "text": "CRM",
-            "href": "/crm/"
-          },
-          {
-            "text": "Scheduling",
-            "href": "/sched/"
-          },
-          {
-            "text": "Support",
-            "href": "/support/"
-          }
-        ],
-        "forms": [
-          {
-            "action": "/crm/leads/3/status",
-            "method": "post",
-            "fields": [
-              "status"
-            ],
-            "submit": "Update lead"
-          },
-          {
-            "action": "/crm/leads/3/note",
-            "method": "post",
-            "fields": [
-              "note"
-            ],
-            "submit": "Add note"
-          }
-        ]
-      },
-      "text_excerpt": "Shop | CRM | Scheduling | Support Email: Company: Status: New Status New Contacted Qualified Lost Note Notes"
-    },
-    {
-      "step": 4,
-      "action": {
-        "type": "submit",
-        "form": 0
-      },
-      "url": "http://127.0.0.1:34563/crm/leads/3/status",
-      "title": "Error",
-      "http_status": 400,
-      "latency_ms": 1.9,
-      "blocked": null,
-      "dom": {
-        "links": [
-          {
-            "text": "Shop",
-            "href": "/shop/"
-          },
-          {
-            "text": "CRM",
-            "href": "/crm/"
-          },
-          {
-            "text": "Scheduling",
-            "href": "/sched/"
-          },
-          {
-            "text": "Support",
-            "href": "/support/"
-          }
-        ],
-        "forms": []
-      },
-      "text_excerpt": "Error Shop | CRM | Scheduling | Support Error Invalid status."
-    },
-    {
-      "step": 5,
-      "action": {
-        "type": "click",
-        "href": "/shop/"
-      },
-      "url": "http://127.0.0.1:34563/crm/leads/3/status",
-      "title": "Error",
-      "http_status": 400,
-      "latency_ms": 0.0,
-      "blocked": "URL outside allowed prefixes: /shop/",
-      "dom": {
-        "links": [
-          {
-            "text": "Shop",
-            "href": "/shop/"
-          },
-          {
-            "text": "CRM",
-            "href": "/crm/"
-          },
-          {
-            "text": "Scheduling",
-            "href": "/sched/"
-          },
-          {
-            "text": "Support",
-            "href": "/support/"
-          }
-        ],
-        "forms": []
-      },
-      "text_excerpt": "Error Shop | CRM | Scheduling | Support Error Invalid status."
-    },
-    {
-      "step": 6,
-      "action": {
-        "type": "click",
-        "href": "/support/"
-      },
-      "url": "http://127.0.0.1:34563/crm/leads/3/status",
-      "title": "Error",
-      "http_status": 400,
-      "latency_ms": 0.0,
-      "blocked": "URL outside allowed prefixes: /support/",
-      "dom": {
-        "links": [
-          {
-            "text": "Shop",
-            "href": "/shop/"
-          },
-          {
-            "text": "CRM",
-            "href": "/crm/"
-          },
-          {
-            "text": "Scheduling",
-            "href": "/sched/"
-          },
-          {
-            "text": "Support",
-            "href": "/support/"
-          }
-        ],
-        "forms": []
-      },
-      "text_excerpt": "Error Shop | CRM | Scheduling | Support Error Invalid status."
-    },
-    {
-      "step": 7,
-      "action": {
-        "type": "click",
-        "href": "/shop/"
-      },
-      "url": "http://127.0.0.1:34563/crm/leads/3/status",
-      "title": "Error",
-      "http_status": 400,
-      "latency_ms": 0.0,
-      "blocked": "URL outside allowed prefixes: /shop/",
-      "dom": {
-        "links": [
-          {
-            "text": "Shop",
-            "href": "/shop/"
-          },
-          {
-            "text": "CRM",
-            "href": "/crm/"
-          },
-          {
-            "text": "Scheduling",
-            "href": "/sched/"
-          },
-          {
-            "text": "Support",
-            "href": "/support/"
-          }
-        ],
-        "forms": []
-      },
-      "text_excerpt": "Error Shop | CRM | Scheduling | Support Error Invalid status."
-    },
-    {
-      "step": 8,
-      "action": {
-        "type": "click",
-        "href": "/shop/"
-      },
-      "url": "http://127.0.0.1:34563/crm/leads/3/status",
-      "title": "Error",
-      "http_status": 400,
-      "latency_ms": 0.0,
-      "blocked": "URL outside allowed prefixes: /shop/",
-      "dom": {
-        "links": [
-          {
-            "text": "Shop",
-            "href": "/shop/"
-          },
-          {
-            "text": "CRM",
-            "href": "/crm/"
-          },
-          {
-            "text": "Scheduling",
-            "href": "/sched/"
-          },
-          {
-            "text": "Support",
-            "href": "/support/"
-          }
-        ],
-        "forms": []
-      },
-      "text_excerpt": "Error Shop | CRM | Scheduling | Support Error Invalid status."
-    },
-    {
-      "step": 9,
-      "action": {
-        "type": "click",
-        "href": "/support/"
-      },
-      "url": "http://127.0.0.1:34563/crm/leads/3/status",
-      "title": "Error",
-      "http_status": 400,
-      "latency_ms": 0.0,
-      "blocked": "URL outside allowed prefixes: /support/",
-      "dom": {
-        "links": [
-          {
-            "text": "Shop",
-            "href": "/shop/"
-          },
-          {
-            "text": "CRM",
-            "href": "/crm/"
-          },
-          {
-            "text": "Scheduling",
-            "href": "/sched/"
-          },
-          {
-            "text": "Support",
-            "href": "/support/"
-          }
-        ],
-        "forms": []
-      },
-      "text_excerpt": "Error Shop | CRM | Scheduling | Support Error Invalid status."
-    },
-    {
-      "step": 10,
-      "action": {
         "type": "done"
       },
-      "url": "http://127.0.0.1:34563/crm/leads/3/status",
-      "title": "Error",
-      "http_status": 400,
+      "url": "http://127.0.0.1:38057/crm/",
+      "title": "CRM",
+      "http_status": 200,
       "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:46.734689+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -381,49 +28,65 @@
           {
             "text": "Support",
             "href": "/support/"
+          },
+          {
+            "text": "Ada Lovelace",
+            "href": "/crm/leads/1"
+          },
+          {
+            "text": "Grace Hopper",
+            "href": "/crm/leads/2"
+          },
+          {
+            "text": "New lead",
+            "href": "/crm/leads/new"
           }
         ],
         "forms": []
       },
-      "text_excerpt": "Error Shop | CRM | Scheduling | Support Error Invalid status."
+      "text_excerpt": "CRM Shop | CRM | Scheduling | Support CRM Ada Lovelace \u2014 New Grace Hopper \u2014 New New lead",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
     }
   ],
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:34563/__reset__",
-      "status": 200,
-      "latency_ms": 0.9
-    },
-    {
-      "method": "GET",
-      "url": "http://127.0.0.1:34563/crm/",
+      "url": "http://127.0.0.1:38057/__reset__",
       "status": 200,
       "latency_ms": 1.1
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:34563/crm/leads/new",
+      "url": "http://127.0.0.1:38057/crm/",
       "status": 200,
-      "latency_ms": 0.9
-    },
-    {
-      "method": "POST",
-      "url": "http://127.0.0.1:34563/crm/leads/new",
-      "status": 200,
-      "latency_ms": 1.9
-    },
-    {
-      "method": "POST",
-      "url": "http://127.0.0.1:34563/crm/leads/3/status",
-      "status": 400,
-      "latency_ms": 1.7
+      "latency_ms": 1.2
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:34563/__state__?site=crm",
+      "url": "http://127.0.0.1:38057/__state__?site=crm",
       "status": 200,
-      "latency_ms": 1.4
+      "latency_ms": 1.2
     }
   ]
 }

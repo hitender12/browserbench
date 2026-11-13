@@ -128,7 +128,12 @@ def _execute_action(task, client, base_url, observation, action):
         _s, url, _b = client.get(url)
         return url
     if atype == "fill":
-        client.form_values[action.get("form", 0)] = dict(action.get("values", {}))
+        # Same binding as the runner: a fill belongs to the (page URL,
+        # form index) it was made on, so a recorded fill can never leak
+        # into another page's same-index form during replay.
+        client.form_values[(observation.get("url", ""),
+                            action.get("form", 0))] = dict(
+                                action.get("values", {}))
         return None
     if atype == "submit":
         forms = observation.get("forms", [])
@@ -139,7 +144,8 @@ def _execute_action(task, client, base_url, observation, action):
         url = _resolve(base_url, form.get("action") or observation["url"])
         values = {f["name"]: f.get("value", "") for f in form.get("fields", [])
                   if f.get("name")}
-        values.update(client.form_values.pop(index, {}))
+        values.update(client.form_values.pop(
+            (observation.get("url", ""), index), {}))
         if form.get("method", "get") == "post":
             _s, url, _b = client.post_form(url, values)
         else:

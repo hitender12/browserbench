@@ -1,0 +1,304 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "href": "/support/tickets/new"
+      },
+      "url": "http://127.0.0.1:41521/support/tickets/new",
+      "title": "New ticket",
+      "http_status": 200,
+      "latency_ms": 5.5,
+      "timestamp": "2026-11-11T10:54:56.093876+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/support/tickets/new",
+            "method": "post",
+            "fields": [
+              "subject",
+              "category",
+              "description"
+            ],
+            "submit": "Open ticket"
+          }
+        ]
+      },
+      "text_excerpt": "New ticket Shop | CRM | Scheduling | Support New ticket Subject Category billing account technical other Description",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "fill",
+        "form": 0,
+        "values": {
+          "category": "billing",
+          "description": "Customers cannot log in at checkout.",
+          "subject": "Login fails on checkout"
+        }
+      },
+      "url": "http://127.0.0.1:41521/support/tickets/new",
+      "title": "New ticket",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:54:56.097032+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/support/tickets/new",
+            "method": "post",
+            "fields": [
+              "subject",
+              "category",
+              "description"
+            ],
+            "submit": "Open ticket"
+          }
+        ]
+      },
+      "text_excerpt": "New ticket Shop | CRM | Scheduling | Support New ticket Subject Category billing account technical other Description",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "submit",
+        "form": 0
+      },
+      "url": "http://127.0.0.1:41521/support/tickets/2?created=1",
+      "title": "Login fails on checkout",
+      "http_status": 200,
+      "latency_ms": 6.5,
+      "timestamp": "2026-11-11T10:54:56.105600+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/support/tickets/2/reply",
+            "method": "post",
+            "fields": [
+              "reply"
+            ],
+            "submit": "Send reply"
+          },
+          {
+            "action": "/support/tickets/2/close",
+            "method": "post",
+            "fields": [],
+            "submit": "Close ticket"
+          }
+        ]
+      },
+      "text_excerpt": "Login fails on checkout Shop | CRM | Scheduling | Support Login fails on checkout Ticket created. Category: billing Customers cannot log in at checkout. Status: open Reply Replies",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          },
+          {
+            "id": 2,
+            "subject": "Login fails on checkout",
+            "category": "billing",
+            "description": "Customers cannot log in at checkout.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 3,
+        "seed": 1
+      }
+    },
+    {
+      "step": 4,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:41521/support/tickets/2?created=1",
+      "title": "Login fails on checkout",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:54:56.108589+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/support/tickets/2/reply",
+            "method": "post",
+            "fields": [
+              "reply"
+            ],
+            "submit": "Send reply"
+          },
+          {
+            "action": "/support/tickets/2/close",
+            "method": "post",
+            "fields": [],
+            "submit": "Close ticket"
+          }
+        ]
+      },
+      "text_excerpt": "Login fails on checkout Shop | CRM | Scheduling | Support Login fails on checkout Ticket created. Category: billing Customers cannot log in at checkout. Status: open Reply Replies",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          },
+          {
+            "id": 2,
+            "subject": "Login fails on checkout",
+            "category": "billing",
+            "description": "Customers cannot log in at checkout.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 3,
+        "seed": 1
+      }
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:41521/__reset__",
+      "status": 200,
+      "latency_ms": 1.1
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41521/support/",
+      "status": 200,
+      "latency_ms": 1.6
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41521/support/tickets/new",
+      "status": 200,
+      "latency_ms": 4.5
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:41521/support/tickets/new",
+      "status": 200,
+      "latency_ms": 5.6
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41521/__state__?site=support",
+      "status": 200,
+      "latency_ms": 2.9
+    }
+  ]
+}

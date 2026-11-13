@@ -1,0 +1,71 @@
+{
+  "format_version": "1.0.0",
+  "task_id": "shop-add-to-cart",
+  "task_version": "1.0.0",
+  "seed": 1,
+  "agent": {
+    "name": "random-agent",
+    "version": "0.1.0"
+  },
+  "config": {},
+  "actions": [
+    {
+      "type": "fill",
+      "form": 0,
+      "values": {
+        "q": "42"
+      }
+    },
+    {
+      "type": "click",
+      "href": "/crm/"
+    },
+    {
+      "type": "fill",
+      "form": 0,
+      "values": {
+        "q": "test"
+      }
+    },
+    {
+      "type": "click",
+      "href": "/sched/"
+    },
+    {
+      "type": "submit",
+      "form": 0
+    },
+    {
+      "type": "done"
+    }
+  ],
+  "evaluation": {
+    "success": false,
+    "partial": 0.0,
+    "passed": 0,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "product": "Widget Alpha",
+          "quantity": 1,
+          "type": "cart_contains"
+        },
+        "passed": false,
+        "explanation": "cart has 0 \u00d7 Widget Alpha (want 1)"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 6,
+    "retries": 0,
+    "unsafe_attempts": 2,
+    "blocked_reasons": [
+      "URL outside allowed prefixes: /crm/",
+      "URL outside allowed prefixes: /sched/"
+    ],
+    "duration_s": 0.009,
+    "finished_by_agent": true
+  },
+  "saved_at": "2026-11-11T10:53:48Z"
+}

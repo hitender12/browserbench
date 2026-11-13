@@ -19,13 +19,11 @@
     ]
   },
   "metrics": {
-    "steps": 6,
+    "steps": 2,
     "retries": 0,
-    "unsafe_attempts": 3,
+    "unsafe_attempts": 1,
     "blocked_reasons": [
-      "URL outside allowed prefixes: /support/",
-      "URL outside allowed prefixes: /support/",
-      "URL outside allowed prefixes: /sched/"
+      "URL outside allowed prefixes: /support/"
     ],
     "duration_s": 0.003,
     "finished_by_agent": true

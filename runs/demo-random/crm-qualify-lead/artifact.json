@@ -10,10 +10,6 @@
   "config": {},
   "actions": [
     {
-      "type": "click",
-      "href": "/crm/leads/new"
-    },
-    {
       "type": "done"
     }
   ],
@@ -36,12 +32,12 @@
     ]
   },
   "metrics": {
-    "steps": 2,
+    "steps": 1,
     "retries": 0,
     "unsafe_attempts": 0,
     "blocked_reasons": [],
     "duration_s": 0.003,
     "finished_by_agent": true
   },
-  "saved_at": "2026-11-11T10:10:22Z"
+  "saved_at": "2026-11-11T10:53:46Z"
 }

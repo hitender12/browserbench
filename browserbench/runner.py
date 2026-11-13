@@ -13,6 +13,12 @@ Action validation (safety boundary):
 - navigate/click targets must start with one of task.allowed_prefixes
   (relative URLs are resolved against the server base)
 - /__state__ and /__reset__ are never navigable by an agent
+- a fill is bound to the (page URL, form index) it was made on: filling
+  a form on one page and submitting the same index on another page
+  submits the second page's form empty — filled values never leak
+  across pages (see HttpClient.form_values)
+- a fill/submit naming a form index that does not exist on the current
+  page is blocked as an unsafe attempt, never executed
 Blocked attempts are counted in metrics.unsafe_attempts, recorded in the
 trace, and do not end the run — the agent gets the current observation
 again and may continue.
@@ -38,7 +44,11 @@ class HttpClient:
 
     def __init__(self, recorder: trace_mod.TraceRecorder):
         self.recorder = recorder
-        self.form_values: dict[int, dict] = {}  # form index -> filled values
+        # Filled values, keyed by (page URL, form index): a fill belongs
+        # to the form it was made on. Keying by index alone let a fill
+        # made on one page leak into the same-index form of another
+        # page (e.g. a note typed on lead 1 landing on lead 2).
+        self.form_values: dict[tuple[str, int], dict] = {}
 
     def request(self, method: str, url: str, data: bytes | None = None,
                 record: bool = True):
@@ -162,13 +172,19 @@ def run_task(task, agent, base_url: str, out_dir: str, seed: int | None = None,
         elif atype in ("fill", "submit"):
             forms = observation.get("forms", [])
             index = action.get("form", 0)
-            if not isinstance(index, int) or index >= len(forms):
-                metrics["retries"] += 1
-                _record(step_no, action, observation, status, 0.0)
+            if (not isinstance(index, int) or isinstance(index, bool)
+                    or index < 0 or index >= len(forms)):
+                reason = (f"form index {index!r} out of range: this page "
+                          f"has {len(forms)} form(s)")
+                metrics["unsafe_attempts"] += 1
+                metrics["blocked_reasons"].append(reason)
+                _record(step_no, action, observation, status, 0.0,
+                        blocked=reason)
                 continue
             form = forms[index]
             if atype == "fill":
-                client.form_values[index] = dict(action.get("values", {}))
+                client.form_values[(current_url, index)] = dict(
+                    action.get("values", {}))
                 _record(step_no, action, observation, status, 0.0)
                 continue
             target_url = _resolve(base_url, form.get("action") or current_url)
@@ -178,7 +194,7 @@ def run_task(task, agent, base_url: str, out_dir: str, seed: int | None = None,
                 name = field.get("name")
                 if not name or field.get("type") == "hidden":
                     values[name] = field.get("value", "")
-            values.update(client.form_values.pop(index, {}))
+            values.update(client.form_values.pop((current_url, index), {}))
             started_req = time.monotonic()
             if method == "post":
                 status, current_url, body = client.post_form(target_url, values)

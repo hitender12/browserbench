@@ -4,13 +4,14 @@
       "step": 1,
       "action": {
         "type": "click",
-        "href": "/support/tickets/1"
+        "href": "/shop/"
       },
-      "url": "http://127.0.0.1:37183/support/tickets/1",
-      "title": "Cannot reset password",
+      "url": "http://127.0.0.1:43567/support/",
+      "title": "Support",
       "http_status": 200,
-      "latency_ms": 1.3,
-      "blocked": null,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:44:41.140315+00:00",
+      "blocked": "URL outside allowed prefixes: /shop/",
       "dom": {
         "links": [
           {
@@ -28,36 +29,44 @@
           {
             "text": "Support",
             "href": "/support/"
-          }
-        ],
-        "forms": [
-          {
-            "action": "/support/tickets/1/reply",
-            "method": "post",
-            "fields": [
-              "reply"
-            ],
-            "submit": "Send reply"
           },
           {
-            "action": "/support/tickets/1/close",
-            "method": "post",
-            "fields": [],
-            "submit": "Close ticket"
+            "text": "Cannot reset password",
+            "href": "/support/tickets/1"
+          },
+          {
+            "text": "New ticket",
+            "href": "/support/tickets/new"
           }
-        ]
+        ],
+        "forms": []
       },
-      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Category: account The reset link never arrives. Status: open Reply Replies"
+      "text_excerpt": "Support Shop | CRM | Scheduling | Support Support Cannot reset password \u2014 open New ticket",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
     },
     {
       "step": 2,
       "action": {
         "type": "done"
       },
-      "url": "http://127.0.0.1:37183/support/tickets/1",
-      "title": "Cannot reset password",
+      "url": "http://127.0.0.1:43567/support/",
+      "title": "Support",
       "http_status": 200,
       "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:44:41.141342+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -76,52 +85,53 @@
           {
             "text": "Support",
             "href": "/support/"
-          }
-        ],
-        "forms": [
-          {
-            "action": "/support/tickets/1/reply",
-            "method": "post",
-            "fields": [
-              "reply"
-            ],
-            "submit": "Send reply"
           },
           {
-            "action": "/support/tickets/1/close",
-            "method": "post",
-            "fields": [],
-            "submit": "Close ticket"
+            "text": "Cannot reset password",
+            "href": "/support/tickets/1"
+          },
+          {
+            "text": "New ticket",
+            "href": "/support/tickets/new"
           }
-        ]
+        ],
+        "forms": []
       },
-      "text_excerpt": "Cannot reset password Shop | CRM | Scheduling | Support Cannot reset password Category: account The reset link never arrives. Status: open Reply Replies"
+      "text_excerpt": "Support Shop | CRM | Scheduling | Support Support Cannot reset password \u2014 open New ticket",
+      "state_snapshot": {
+        "tickets": [
+          {
+            "id": 1,
+            "subject": "Cannot reset password",
+            "category": "account",
+            "description": "The reset link never arrives.",
+            "status": "open",
+            "replies": []
+          }
+        ],
+        "next_ticket_id": 2,
+        "seed": 1
+      }
     }
   ],
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:37183/__reset__",
+      "url": "http://127.0.0.1:43567/__reset__",
       "status": 200,
       "latency_ms": 1.2
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:37183/support/",
+      "url": "http://127.0.0.1:43567/support/",
       "status": 200,
-      "latency_ms": 2.5
+      "latency_ms": 1.1
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:37183/support/tickets/1",
+      "url": "http://127.0.0.1:43567/__state__?site=support",
       "status": 200,
       "latency_ms": 0.9
-    },
-    {
-      "method": "GET",
-      "url": "http://127.0.0.1:37183/__state__?site=support",
-      "status": 200,
-      "latency_ms": 1.0
     }
   ]
 }

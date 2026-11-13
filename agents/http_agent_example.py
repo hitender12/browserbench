@@ -5,9 +5,10 @@ The runner POSTs observations to /act and expects an action back:
 
 This example is a tiny generic agent: it clicks the first link whose
 text shares a word with the task goal, fills the first form it finds,
-and submits it. It solves a few of the bundled tasks and fails others —
-which is exactly what an example should do. Replace the strategy with
-your own; the protocol stays the same.
+and submits it. It solves exactly one of the 18 bundled tasks
+(sched-cancel-appointment) and fails the rest — which is exactly what
+an example should do. Replace the strategy with your own; the protocol
+stays the same.
 
 Run it, then point the runner at it:
     python3 agents/http_agent_example.py 9000
@@ -15,9 +16,15 @@ Run it, then point the runner at it:
 """
 
 import json
+import os
 import re
 import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+# Allow running as `python3 agents/http_agent_example.py` from the repo
+# root: the script's directory (agents/) is on sys.path, not the root,
+# so make the checkout root importable for `browserbench`.
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from browserbench.adapter import PROTOCOL
 

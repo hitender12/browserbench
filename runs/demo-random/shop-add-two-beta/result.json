@@ -18,11 +18,11 @@
     ]
   },
   "metrics": {
-    "steps": 5,
+    "steps": 3,
     "retries": 0,
     "unsafe_attempts": 0,
     "blocked_reasons": [],
-    "duration_s": 0.006,
+    "duration_s": 0.008,
     "finished_by_agent": true
   }
 }

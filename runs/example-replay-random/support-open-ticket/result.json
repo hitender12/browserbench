@@ -20,15 +20,12 @@
   "metrics": {
     "steps": 10,
     "retries": 0,
-    "unsafe_attempts": 5,
+    "unsafe_attempts": 2,
     "blocked_reasons": [
-      "URL outside allowed prefixes: /crm/",
-      "URL outside allowed prefixes: /sched/",
-      "URL outside allowed prefixes: /crm/",
       "URL outside allowed prefixes: /shop/",
-      "URL outside allowed prefixes: /shop/"
+      "URL outside allowed prefixes: /crm/"
     ],
-    "duration_s": 0.005,
-    "finished_by_agent": true
+    "duration_s": 0.027,
+    "finished_by_agent": false
   }
 }

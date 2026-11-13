@@ -1,0 +1,27 @@
+{
+  "task_id": "sched-cancel-appointment",
+  "evaluation": {
+    "success": true,
+    "partial": 1.0,
+    "passed": 1,
+    "total": 1,
+    "conditions": [
+      {
+        "condition": {
+          "type": "appointment_absent",
+          "id": 1
+        },
+        "passed": true,
+        "explanation": "appointment 1 booked: False"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 3,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.008,
+    "finished_by_agent": true
+  }
+}

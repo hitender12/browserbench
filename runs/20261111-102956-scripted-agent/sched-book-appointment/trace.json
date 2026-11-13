@@ -1,0 +1,319 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "href": "/sched/book"
+      },
+      "url": "http://127.0.0.1:43765/sched/book",
+      "title": "Book an appointment",
+      "http_status": 200,
+      "latency_ms": 1.2,
+      "timestamp": "2026-11-11T10:29:57.103963+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/sched/book",
+            "method": "post",
+            "fields": [
+              "slot",
+              "name"
+            ],
+            "submit": "Book appointment"
+          }
+        ]
+      },
+      "text_excerpt": "Book an appointment Shop | CRM | Scheduling | Support Book an appointment Slot 2026-11-20 10:00 2026-11-20 11:00 2026-11-20 14:00 2026-11-21 09:00 Name",
+      "state_snapshot": {
+        "slots": [
+          "2026-11-20 09:00",
+          "2026-11-20 10:00",
+          "2026-11-20 11:00",
+          "2026-11-20 14:00",
+          "2026-11-21 09:00"
+        ],
+        "appointments": [
+          {
+            "id": 1,
+            "slot": "2026-11-20 09:00",
+            "name": "Alan Turing",
+            "status": "booked"
+          }
+        ],
+        "next_appointment_id": 2,
+        "seed": 1
+      }
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "fill",
+        "form": 0,
+        "values": {
+          "name": "Alan Turing",
+          "slot": "2026-11-20 10:00"
+        }
+      },
+      "url": "http://127.0.0.1:43765/sched/book",
+      "title": "Book an appointment",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:29:57.104990+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/sched/book",
+            "method": "post",
+            "fields": [
+              "slot",
+              "name"
+            ],
+            "submit": "Book appointment"
+          }
+        ]
+      },
+      "text_excerpt": "Book an appointment Shop | CRM | Scheduling | Support Book an appointment Slot 2026-11-20 10:00 2026-11-20 11:00 2026-11-20 14:00 2026-11-21 09:00 Name",
+      "state_snapshot": {
+        "slots": [
+          "2026-11-20 09:00",
+          "2026-11-20 10:00",
+          "2026-11-20 11:00",
+          "2026-11-20 14:00",
+          "2026-11-21 09:00"
+        ],
+        "appointments": [
+          {
+            "id": 1,
+            "slot": "2026-11-20 09:00",
+            "name": "Alan Turing",
+            "status": "booked"
+          }
+        ],
+        "next_appointment_id": 2,
+        "seed": 1
+      }
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "submit",
+        "form": 0
+      },
+      "url": "http://127.0.0.1:43765/sched/?booked=1",
+      "title": "Scheduling",
+      "http_status": 200,
+      "latency_ms": 2.9,
+      "timestamp": "2026-11-11T10:29:57.109068+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "Alan Turing",
+            "href": "/sched/appointments/1"
+          },
+          {
+            "text": "Alan Turing",
+            "href": "/sched/appointments/2"
+          },
+          {
+            "text": "Book an appointment",
+            "href": "/sched/book"
+          },
+          {
+            "text": "All appointments",
+            "href": "/sched/appointments"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Scheduling Shop | CRM | Scheduling | Support Scheduling Appointment booked. Booked appointments 2026-11-20 09:00 \u2014 Alan Turing 2026-11-20 10:00 \u2014 Alan Turing Book an appointment All appointments",
+      "state_snapshot": {
+        "slots": [
+          "2026-11-20 09:00",
+          "2026-11-20 10:00",
+          "2026-11-20 11:00",
+          "2026-11-20 14:00",
+          "2026-11-21 09:00"
+        ],
+        "appointments": [
+          {
+            "id": 1,
+            "slot": "2026-11-20 09:00",
+            "name": "Alan Turing",
+            "status": "booked"
+          },
+          {
+            "id": 2,
+            "slot": "2026-11-20 10:00",
+            "name": "Alan Turing",
+            "status": "booked"
+          }
+        ],
+        "next_appointment_id": 3,
+        "seed": 1
+      }
+    },
+    {
+      "step": 4,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:43765/sched/?booked=1",
+      "title": "Scheduling",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:29:57.110404+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "Alan Turing",
+            "href": "/sched/appointments/1"
+          },
+          {
+            "text": "Alan Turing",
+            "href": "/sched/appointments/2"
+          },
+          {
+            "text": "Book an appointment",
+            "href": "/sched/book"
+          },
+          {
+            "text": "All appointments",
+            "href": "/sched/appointments"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Scheduling Shop | CRM | Scheduling | Support Scheduling Appointment booked. Booked appointments 2026-11-20 09:00 \u2014 Alan Turing 2026-11-20 10:00 \u2014 Alan Turing Book an appointment All appointments",
+      "state_snapshot": {
+        "slots": [
+          "2026-11-20 09:00",
+          "2026-11-20 10:00",
+          "2026-11-20 11:00",
+          "2026-11-20 14:00",
+          "2026-11-21 09:00"
+        ],
+        "appointments": [
+          {
+            "id": 1,
+            "slot": "2026-11-20 09:00",
+            "name": "Alan Turing",
+            "status": "booked"
+          },
+          {
+            "id": 2,
+            "slot": "2026-11-20 10:00",
+            "name": "Alan Turing",
+            "status": "booked"
+          }
+        ],
+        "next_appointment_id": 3,
+        "seed": 1
+      }
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:43765/__reset__",
+      "status": 200,
+      "latency_ms": 0.9
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:43765/sched/",
+      "status": 200,
+      "latency_ms": 0.8
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:43765/sched/book",
+      "status": 200,
+      "latency_ms": 0.9
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:43765/sched/book",
+      "status": 200,
+      "latency_ms": 2.6
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:43765/__state__?site=sched",
+      "status": 200,
+      "latency_ms": 1.1
+    }
+  ]
+}

@@ -6,10 +6,11 @@
         "type": "click",
         "href": "/shop/product/p5"
       },
-      "url": "http://127.0.0.1:42949/shop/product/p5",
+      "url": "http://127.0.0.1:34303/shop/product/p5",
       "title": "Doohickey Epsilon",
       "http_status": 200,
-      "latency_ms": 1.6,
+      "latency_ms": 1.5,
+      "timestamp": "2026-11-11T10:53:46.068953+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -46,7 +47,45 @@
           }
         ]
       },
-      "text_excerpt": "Doohickey Epsilon Shop | CRM | Scheduling | Support Doohickey Epsilon A small doohickey for quick jobs. Price: $9.99 Quantity View cart"
+      "text_excerpt": "Doohickey Epsilon Shop | CRM | Scheduling | Support Doohickey Epsilon A small doohickey for quick jobs. Price: $9.99 Quantity View cart",
+      "state_snapshot": {
+        "products": [
+          {
+            "id": "p1",
+            "name": "Widget Alpha",
+            "price": 19.99,
+            "desc": "A dependable everyday widget."
+          },
+          {
+            "id": "p2",
+            "name": "Widget Beta",
+            "price": 29.99,
+            "desc": "A sturdier widget with a grip."
+          },
+          {
+            "id": "p3",
+            "name": "Gadget Gamma",
+            "price": 49.99,
+            "desc": "A pocket gadget with three modes."
+          },
+          {
+            "id": "p4",
+            "name": "Gizmo Delta",
+            "price": 99.99,
+            "desc": "The flagship gizmo, boxed with accessories."
+          },
+          {
+            "id": "p5",
+            "name": "Doohickey Epsilon",
+            "price": 9.99,
+            "desc": "A small doohickey for quick jobs."
+          }
+        ],
+        "cart": {},
+        "orders": [],
+        "next_order_id": 1,
+        "seed": 1
+      }
     },
     {
       "step": 2,
@@ -54,10 +93,11 @@
         "type": "submit",
         "form": 0
       },
-      "url": "http://127.0.0.1:42949/shop/cart?added=p5",
+      "url": "http://127.0.0.1:34303/shop/cart?added=p5",
       "title": "Cart",
       "http_status": 200,
-      "latency_ms": 7.3,
+      "latency_ms": 4.3,
+      "timestamp": "2026-11-11T10:53:46.074625+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -84,7 +124,47 @@
         ],
         "forms": []
       },
-      "text_excerpt": "Cart Shop | CRM | Scheduling | Support Cart Doohickey Epsilon added to your cart. Doohickey Epsilon \u00d7 1 \u2014 $9.99 Checkout"
+      "text_excerpt": "Cart Shop | CRM | Scheduling | Support Cart Doohickey Epsilon added to your cart. Doohickey Epsilon \u00d7 1 \u2014 $9.99 Checkout",
+      "state_snapshot": {
+        "products": [
+          {
+            "id": "p1",
+            "name": "Widget Alpha",
+            "price": 19.99,
+            "desc": "A dependable everyday widget."
+          },
+          {
+            "id": "p2",
+            "name": "Widget Beta",
+            "price": 29.99,
+            "desc": "A sturdier widget with a grip."
+          },
+          {
+            "id": "p3",
+            "name": "Gadget Gamma",
+            "price": 49.99,
+            "desc": "A pocket gadget with three modes."
+          },
+          {
+            "id": "p4",
+            "name": "Gizmo Delta",
+            "price": 99.99,
+            "desc": "The flagship gizmo, boxed with accessories."
+          },
+          {
+            "id": "p5",
+            "name": "Doohickey Epsilon",
+            "price": 9.99,
+            "desc": "A small doohickey for quick jobs."
+          }
+        ],
+        "cart": {
+          "p5": 1
+        },
+        "orders": [],
+        "next_order_id": 1,
+        "seed": 1
+      }
     },
     {
       "step": 3,
@@ -92,10 +172,11 @@
         "type": "click",
         "href": "/shop/checkout"
       },
-      "url": "http://127.0.0.1:42949/shop/checkout",
+      "url": "http://127.0.0.1:34303/shop/checkout",
       "title": "Checkout",
       "http_status": 200,
-      "latency_ms": 1.7,
+      "latency_ms": 1.6,
+      "timestamp": "2026-11-11T10:53:46.077577+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -128,7 +209,47 @@
           }
         ]
       },
-      "text_excerpt": "Checkout Shop | CRM | Scheduling | Support Checkout Name Address"
+      "text_excerpt": "Checkout Shop | CRM | Scheduling | Support Checkout Name Address",
+      "state_snapshot": {
+        "products": [
+          {
+            "id": "p1",
+            "name": "Widget Alpha",
+            "price": 19.99,
+            "desc": "A dependable everyday widget."
+          },
+          {
+            "id": "p2",
+            "name": "Widget Beta",
+            "price": 29.99,
+            "desc": "A sturdier widget with a grip."
+          },
+          {
+            "id": "p3",
+            "name": "Gadget Gamma",
+            "price": 49.99,
+            "desc": "A pocket gadget with three modes."
+          },
+          {
+            "id": "p4",
+            "name": "Gizmo Delta",
+            "price": 99.99,
+            "desc": "The flagship gizmo, boxed with accessories."
+          },
+          {
+            "id": "p5",
+            "name": "Doohickey Epsilon",
+            "price": 9.99,
+            "desc": "A small doohickey for quick jobs."
+          }
+        ],
+        "cart": {
+          "p5": 1
+        },
+        "orders": [],
+        "next_order_id": 1,
+        "seed": 1
+      }
     },
     {
       "step": 4,
@@ -140,10 +261,11 @@
           "name": "Grace Hopper"
         }
       },
-      "url": "http://127.0.0.1:42949/shop/checkout",
+      "url": "http://127.0.0.1:34303/shop/checkout",
       "title": "Checkout",
       "http_status": 200,
       "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:46.078689+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -176,7 +298,47 @@
           }
         ]
       },
-      "text_excerpt": "Checkout Shop | CRM | Scheduling | Support Checkout Name Address"
+      "text_excerpt": "Checkout Shop | CRM | Scheduling | Support Checkout Name Address",
+      "state_snapshot": {
+        "products": [
+          {
+            "id": "p1",
+            "name": "Widget Alpha",
+            "price": 19.99,
+            "desc": "A dependable everyday widget."
+          },
+          {
+            "id": "p2",
+            "name": "Widget Beta",
+            "price": 29.99,
+            "desc": "A sturdier widget with a grip."
+          },
+          {
+            "id": "p3",
+            "name": "Gadget Gamma",
+            "price": 49.99,
+            "desc": "A pocket gadget with three modes."
+          },
+          {
+            "id": "p4",
+            "name": "Gizmo Delta",
+            "price": 99.99,
+            "desc": "The flagship gizmo, boxed with accessories."
+          },
+          {
+            "id": "p5",
+            "name": "Doohickey Epsilon",
+            "price": 9.99,
+            "desc": "A small doohickey for quick jobs."
+          }
+        ],
+        "cart": {
+          "p5": 1
+        },
+        "orders": [],
+        "next_order_id": 1,
+        "seed": 1
+      }
     },
     {
       "step": 5,
@@ -184,10 +346,11 @@
         "type": "submit",
         "form": 0
       },
-      "url": "http://127.0.0.1:42949/shop/order/1",
+      "url": "http://127.0.0.1:34303/shop/order/1",
       "title": "Order confirmed",
       "http_status": 200,
-      "latency_ms": 4.9,
+      "latency_ms": 3.0,
+      "timestamp": "2026-11-11T10:53:46.083046+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -210,17 +373,66 @@
         ],
         "forms": []
       },
-      "text_excerpt": "Order confirmed Shop | CRM | Scheduling | Support Order confirmed Order confirmed. Thank you, Grace Hopper! Order #1: Doohickey Epsilon \u00d7 1 \u2014 total $9.99."
+      "text_excerpt": "Order confirmed Shop | CRM | Scheduling | Support Order confirmed Order confirmed. Thank you, Grace Hopper! Order #1: Doohickey Epsilon \u00d7 1 \u2014 total $9.99.",
+      "state_snapshot": {
+        "products": [
+          {
+            "id": "p1",
+            "name": "Widget Alpha",
+            "price": 19.99,
+            "desc": "A dependable everyday widget."
+          },
+          {
+            "id": "p2",
+            "name": "Widget Beta",
+            "price": 29.99,
+            "desc": "A sturdier widget with a grip."
+          },
+          {
+            "id": "p3",
+            "name": "Gadget Gamma",
+            "price": 49.99,
+            "desc": "A pocket gadget with three modes."
+          },
+          {
+            "id": "p4",
+            "name": "Gizmo Delta",
+            "price": 99.99,
+            "desc": "The flagship gizmo, boxed with accessories."
+          },
+          {
+            "id": "p5",
+            "name": "Doohickey Epsilon",
+            "price": 9.99,
+            "desc": "A small doohickey for quick jobs."
+          }
+        ],
+        "cart": {},
+        "orders": [
+          {
+            "id": 1,
+            "customer": "Grace Hopper",
+            "address": "45 Test Lane",
+            "items": {
+              "p5": 1
+            },
+            "total": 9.99
+          }
+        ],
+        "next_order_id": 2,
+        "seed": 1
+      }
     },
     {
       "step": 6,
       "action": {
         "type": "done"
       },
-      "url": "http://127.0.0.1:42949/shop/order/1",
+      "url": "http://127.0.0.1:34303/shop/order/1",
       "title": "Order confirmed",
       "http_status": 200,
       "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:46.084326+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -243,49 +455,97 @@
         ],
         "forms": []
       },
-      "text_excerpt": "Order confirmed Shop | CRM | Scheduling | Support Order confirmed Order confirmed. Thank you, Grace Hopper! Order #1: Doohickey Epsilon \u00d7 1 \u2014 total $9.99."
+      "text_excerpt": "Order confirmed Shop | CRM | Scheduling | Support Order confirmed Order confirmed. Thank you, Grace Hopper! Order #1: Doohickey Epsilon \u00d7 1 \u2014 total $9.99.",
+      "state_snapshot": {
+        "products": [
+          {
+            "id": "p1",
+            "name": "Widget Alpha",
+            "price": 19.99,
+            "desc": "A dependable everyday widget."
+          },
+          {
+            "id": "p2",
+            "name": "Widget Beta",
+            "price": 29.99,
+            "desc": "A sturdier widget with a grip."
+          },
+          {
+            "id": "p3",
+            "name": "Gadget Gamma",
+            "price": 49.99,
+            "desc": "A pocket gadget with three modes."
+          },
+          {
+            "id": "p4",
+            "name": "Gizmo Delta",
+            "price": 99.99,
+            "desc": "The flagship gizmo, boxed with accessories."
+          },
+          {
+            "id": "p5",
+            "name": "Doohickey Epsilon",
+            "price": 9.99,
+            "desc": "A small doohickey for quick jobs."
+          }
+        ],
+        "cart": {},
+        "orders": [
+          {
+            "id": 1,
+            "customer": "Grace Hopper",
+            "address": "45 Test Lane",
+            "items": {
+              "p5": 1
+            },
+            "total": 9.99
+          }
+        ],
+        "next_order_id": 2,
+        "seed": 1
+      }
     }
   ],
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:42949/__reset__",
+      "url": "http://127.0.0.1:34303/__reset__",
       "status": 200,
-      "latency_ms": 1.5
+      "latency_ms": 1.2
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:42949/shop/",
+      "url": "http://127.0.0.1:34303/shop/",
       "status": 200,
-      "latency_ms": 1.6
+      "latency_ms": 1.1
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:42949/shop/product/p5",
+      "url": "http://127.0.0.1:34303/shop/product/p5",
       "status": 200,
-      "latency_ms": 1.3
+      "latency_ms": 1.2
     },
     {
       "method": "POST",
-      "url": "http://127.0.0.1:42949/shop/cart/add",
+      "url": "http://127.0.0.1:34303/shop/cart/add",
       "status": 200,
-      "latency_ms": 6.5
+      "latency_ms": 4.0
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:42949/shop/checkout",
+      "url": "http://127.0.0.1:34303/shop/checkout",
       "status": 200,
-      "latency_ms": 1.4
+      "latency_ms": 1.2
     },
     {
       "method": "POST",
-      "url": "http://127.0.0.1:42949/shop/checkout",
+      "url": "http://127.0.0.1:34303/shop/checkout",
       "status": 200,
-      "latency_ms": 4.5
+      "latency_ms": 2.7
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:42949/__state__?site=shop",
+      "url": "http://127.0.0.1:34303/__state__?site=shop",
       "status": 200,
       "latency_ms": 1.1
     }

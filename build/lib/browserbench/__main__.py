@@ -22,7 +22,10 @@ tasks. Explicit flags always win over the config file.
 
 Exit codes (``run``): 0 when the agent passes every task (100% success
 rate), 1 when any task fails, 2 for a usage/loading error. A run below
-100% is a failing run — the exit code says so.
+100% is a failing run — the exit code says so. Loading errors (unknown
+agent, unreadable agent file, malformed task pack, missing/corrupt
+replay artifact) also exit 2, with a one-line message on stderr and no
+traceback — ``replay`` follows the same rule.
 """
 
 from __future__ import annotations
@@ -152,12 +155,22 @@ def cmd_run(args) -> int:
               "Pass --tasks-dir, or run inside a BrowserBench workspace "
               "(browserbench.yaml) or a checkout.", file=sys.stderr)
         return 2
-    tasks = load_tasks(tasks_dir)
+    try:
+        tasks = load_tasks(tasks_dir)
+    except Exception as exc:  # duplicate id or unreadable pack: usage error
+        print(f"browserbench: error: cannot load tasks from {tasks_dir}: "
+              f"{exc}", file=sys.stderr)
+        return 2
     tasks = _select_tasks(tasks, args.tasks)
     if not tasks:
         print("no tasks selected", file=sys.stderr)
         return 2
-    agent = load_agent(agent_spec)
+    try:
+        agent = load_agent(agent_spec)
+    except Exception as exc:  # unknown spec, missing/broken agent file
+        print(f"browserbench: error: cannot load agent {agent_spec!r}: "
+              f"{exc}", file=sys.stderr)
+        return 2
     stamp = time.strftime("%Y%m%d-%H%M%S")
     out_dir = args.out or os.path.join(runs_dir, f"{stamp}-{agent.name}")
     summary = run_suite(tasks, agent, out_dir,
@@ -198,7 +211,15 @@ def cmd_replay(args) -> int:
     from .replay import replay_run
     config = _load_workspace_config()
     tasks_dir = _resolve_tasks_dir(args.tasks_dir, config)
-    result = replay_run(args.run, tasks_dir)
+    try:
+        result = replay_run(args.run, tasks_dir)
+    except (OSError, ValueError, RuntimeError) as exc:
+        # Missing run directory, corrupt artifact.json, unknown format
+        # version, task not found, version drift, unreadable task pack:
+        # all usage errors — one line on stderr, exit 2, no traceback.
+        print(f"browserbench: error: cannot replay {args.run}: {exc}",
+              file=sys.stderr)
+        return 2
     print(f"replay of {result['task_id']} (task v{result['task_version']}):")
     print(f"  original:  {'PASS' if result['original_success'] else 'FAIL'} "
           f"({result['original_passed']} conditions)")

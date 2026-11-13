@@ -1,0 +1,89 @@
+{
+  "format_version": "1.0.0",
+  "task_id": "shop-buy-two-checkout",
+  "task_version": "1.0.0",
+  "seed": 1,
+  "agent": {
+    "name": "scripted-agent",
+    "version": "0.1.0"
+  },
+  "config": {
+    "agent_spec": "scripted"
+  },
+  "actions": [
+    {
+      "type": "click",
+      "href": "/shop/product/p1"
+    },
+    {
+      "type": "submit",
+      "form": 0
+    },
+    {
+      "type": "click",
+      "href": "/shop/"
+    },
+    {
+      "type": "click",
+      "href": "/shop/product/p2"
+    },
+    {
+      "type": "submit",
+      "form": 0
+    },
+    {
+      "type": "click",
+      "href": "/shop/checkout"
+    },
+    {
+      "type": "fill",
+      "form": 0,
+      "values": {
+        "address": "12 Test Street",
+        "name": "Ada Lovelace"
+      }
+    },
+    {
+      "type": "submit",
+      "form": 0
+    },
+    {
+      "type": "done"
+    }
+  ],
+  "evaluation": {
+    "success": true,
+    "partial": 1.0,
+    "passed": 2,
+    "total": 2,
+    "conditions": [
+      {
+        "condition": {
+          "customer": "Ada Lovelace",
+          "product": "Widget Alpha",
+          "type": "order_exists"
+        },
+        "passed": true,
+        "explanation": "order #1 for Widget Alpha exists"
+      },
+      {
+        "condition": {
+          "customer": "Ada Lovelace",
+          "product": "Widget Beta",
+          "type": "order_exists"
+        },
+        "passed": true,
+        "explanation": "order #1 for Widget Beta exists"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 9,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.024,
+    "finished_by_agent": true
+  },
+  "saved_at": "2026-11-11T10:54:56Z"
+}

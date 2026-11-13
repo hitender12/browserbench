@@ -6,10 +6,11 @@
         "type": "click",
         "href": "/sched/appointments/1"
       },
-      "url": "http://127.0.0.1:38721/sched/appointments/1",
+      "url": "http://127.0.0.1:39405/sched/appointments/1",
       "title": "Appointment",
       "http_status": 200,
-      "latency_ms": 1.4,
+      "latency_ms": 1.0,
+      "timestamp": "2026-11-11T10:44:40.372260+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -39,7 +40,26 @@
           }
         ]
       },
-      "text_excerpt": "Appointment Shop | CRM | Scheduling | Support Appointment 2026-11-20 09:00 \u2014 Alan Turing \u2014 booked"
+      "text_excerpt": "Appointment Shop | CRM | Scheduling | Support Appointment 2026-11-20 09:00 \u2014 Alan Turing \u2014 booked",
+      "state_snapshot": {
+        "slots": [
+          "2026-11-20 09:00",
+          "2026-11-20 10:00",
+          "2026-11-20 11:00",
+          "2026-11-20 14:00",
+          "2026-11-21 09:00"
+        ],
+        "appointments": [
+          {
+            "id": 1,
+            "slot": "2026-11-20 09:00",
+            "name": "Alan Turing",
+            "status": "booked"
+          }
+        ],
+        "next_appointment_id": 2,
+        "seed": 1
+      }
     },
     {
       "step": 2,
@@ -47,10 +67,11 @@
         "type": "submit",
         "form": 0
       },
-      "url": "http://127.0.0.1:38721/sched/?cancelled=1",
+      "url": "http://127.0.0.1:39405/sched/?cancelled=1",
       "title": "Scheduling",
       "http_status": 200,
-      "latency_ms": 2.4,
+      "latency_ms": 1.7,
+      "timestamp": "2026-11-11T10:44:40.374740+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -81,17 +102,37 @@
         ],
         "forms": []
       },
-      "text_excerpt": "Scheduling Shop | CRM | Scheduling | Support Scheduling Appointment cancelled. Booked appointments Book an appointment All appointments"
+      "text_excerpt": "Scheduling Shop | CRM | Scheduling | Support Scheduling Appointment cancelled. Booked appointments Book an appointment All appointments",
+      "state_snapshot": {
+        "slots": [
+          "2026-11-20 09:00",
+          "2026-11-20 10:00",
+          "2026-11-20 11:00",
+          "2026-11-20 14:00",
+          "2026-11-21 09:00"
+        ],
+        "appointments": [
+          {
+            "id": 1,
+            "slot": "2026-11-20 09:00",
+            "name": "Alan Turing",
+            "status": "cancelled"
+          }
+        ],
+        "next_appointment_id": 2,
+        "seed": 1
+      }
     },
     {
       "step": 3,
       "action": {
         "type": "done"
       },
-      "url": "http://127.0.0.1:38721/sched/?cancelled=1",
+      "url": "http://127.0.0.1:39405/sched/?cancelled=1",
       "title": "Scheduling",
       "http_status": 200,
       "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:44:40.375461+00:00",
       "blocked": null,
       "dom": {
         "links": [
@@ -122,39 +163,58 @@
         ],
         "forms": []
       },
-      "text_excerpt": "Scheduling Shop | CRM | Scheduling | Support Scheduling Appointment cancelled. Booked appointments Book an appointment All appointments"
+      "text_excerpt": "Scheduling Shop | CRM | Scheduling | Support Scheduling Appointment cancelled. Booked appointments Book an appointment All appointments",
+      "state_snapshot": {
+        "slots": [
+          "2026-11-20 09:00",
+          "2026-11-20 10:00",
+          "2026-11-20 11:00",
+          "2026-11-20 14:00",
+          "2026-11-21 09:00"
+        ],
+        "appointments": [
+          {
+            "id": 1,
+            "slot": "2026-11-20 09:00",
+            "name": "Alan Turing",
+            "status": "cancelled"
+          }
+        ],
+        "next_appointment_id": 2,
+        "seed": 1
+      }
     }
   ],
   "network": [
     {
       "method": "POST",
-      "url": "http://127.0.0.1:38721/__reset__",
+      "url": "http://127.0.0.1:39405/__reset__",
       "status": 200,
-      "latency_ms": 1.2
+      "latency_ms": 1.0
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:38721/sched/",
+      "url": "http://127.0.0.1:39405/sched/",
       "status": 200,
-      "latency_ms": 0.9
+      "latency_ms": 0.8
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:38721/sched/appointments/1",
+      "url": "http://127.0.0.1:39405/sched/appointments/1",
       "status": 200,
-      "latency_ms": 1.2
+      "latency_ms": 0.8
     },
     {
       "method": "POST",
-      "url": "http://127.0.0.1:38721/sched/appointments/1/cancel",
+      "url": "http://127.0.0.1:39405/sched/appointments/1/cancel",
       "status": 200,
-      "latency_ms": 2.1
+      "latency_ms": 1.4
     },
     {
       "method": "GET",
-      "url": "http://127.0.0.1:38721/__state__?site=sched",
+      "url": "http://127.0.0.1:39405/__state__?site=sched",
       "status": 200,
-      "latency_ms": 1.0
+      "latency_ms": 0.6
     }
   ]
 }

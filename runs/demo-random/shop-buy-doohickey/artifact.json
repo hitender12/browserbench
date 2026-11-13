@@ -10,27 +10,12 @@
   "config": {},
   "actions": [
     {
-      "type": "fill",
-      "form": 0,
-      "values": {
-        "q": "test"
-      }
-    },
-    {
       "type": "submit",
       "form": 0
     },
     {
       "type": "click",
-      "href": "/crm/"
-    },
-    {
-      "type": "click",
-      "href": "/sched/"
-    },
-    {
-      "type": "click",
-      "href": "/support/"
+      "href": "/shop/"
     },
     {
       "type": "done"
@@ -54,16 +39,12 @@
     ]
   },
   "metrics": {
-    "steps": 6,
+    "steps": 3,
     "retries": 0,
-    "unsafe_attempts": 3,
-    "blocked_reasons": [
-      "URL outside allowed prefixes: /crm/",
-      "URL outside allowed prefixes: /sched/",
-      "URL outside allowed prefixes: /support/"
-    ],
-    "duration_s": 0.003,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.009,
     "finished_by_agent": true
   },
-  "saved_at": "2026-11-11T10:10:22Z"
+  "saved_at": "2026-11-11T10:53:46Z"
 }

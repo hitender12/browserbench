@@ -22,10 +22,13 @@ receives partial credit equal to the fraction of conditions satisfied.
    run; the state at that point is still scored (partial credit applies).
 4. **Unsafe attempts are blocked, not scored as success.** Navigating
    outside the allowed URL prefixes, hitting harness endpoints
-   (`/__state__`, `/__reset__`), or using a disallowed action type is
-   blocked, counted, and recorded. A run that "succeeds" by peeking at
-   state or skipping the UI cannot score — the evaluator only sees state
-   produced through legitimate actions.
+   (`/__state__`, `/__reset__`), using a disallowed action type, or
+   filling/submitting a form index that does not exist on the current
+   page is blocked, counted, and recorded. A fill is bound to the
+   (page URL, form index) it was made on, so values typed on one page
+   can never leak into another page's form. A run that "succeeds" by
+   peeking at state or skipping the UI cannot score — the evaluator
+   only sees state produced through legitimate actions.
 5. **No single aggregate number.** Reports always show success rate
    alongside mean partial completion, steps, duration, retries, cost
    (when reported), and unsafe attempts. Do not rank agents on success
@@ -33,10 +36,15 @@ receives partial credit equal to the fraction of conditions satisfied.
 6. **Exit codes.** `browserbench run` exits 0 only when the agent
    passes every task (100% success rate), 1 when any task fails, and 2
    for a usage or loading error. A run below 100% is a failing run.
-7. **Retries are failures, not noise.** An agent crash or an invalid
-   action counts as a retry, is recorded in the trace, and is aggregated
-   into the suite summary and report. A run with many retries is not
-   equivalent to a clean run with the same pass count.
+   Loading errors (unknown agent, broken agent file, malformed task
+   pack, missing or corrupt replay artifact) also exit 2, with a
+   one-line message on stderr and no traceback.
+7. **Retries are failures, not noise.** An agent crash counts as a
+   retry, is recorded in the trace, and is aggregated into the suite
+   summary and report. A fill/submit naming a form index that does not
+   exist on the current page is not a retry — it is a blocked (unsafe)
+   attempt. A run with many retries is not equivalent to a clean run
+   with the same pass count.
 8. **Cost is reported when the agent supplies it.** An agent may set
    the `cost_usd` attribute (in-process) or include `cost_usd` in its
    HTTP response envelope (HTTP agents). The runner records it in the
@@ -48,6 +56,9 @@ receives partial credit equal to the fraction of conditions satisfied.
 - Tasks are versioned (`version` field, semver). A published task is
   never silently changed: a change means a new version, and old results
   are labelled with the version they ran against.
+- A malformed task file (invalid JSON/YAML, bad seed, unknown site,
+  missing fields) is skipped with a warning naming the file; the good
+  tasks still load and run. A duplicate task id is still a hard error.
 - Replay refuses artifacts whose task version differs from the current
   task file, and reports the drift instead of guessing.
 - Public development tasks and any hidden evaluation set are separate;

@@ -1,0 +1,37 @@
+{
+  "task_id": "shop-buy-two-checkout",
+  "evaluation": {
+    "success": true,
+    "partial": 1.0,
+    "passed": 2,
+    "total": 2,
+    "conditions": [
+      {
+        "condition": {
+          "customer": "Ada Lovelace",
+          "product": "Widget Alpha",
+          "type": "order_exists"
+        },
+        "passed": true,
+        "explanation": "order #1 for Widget Alpha exists"
+      },
+      {
+        "condition": {
+          "customer": "Ada Lovelace",
+          "product": "Widget Beta",
+          "type": "order_exists"
+        },
+        "passed": true,
+        "explanation": "order #1 for Widget Beta exists"
+      }
+    ]
+  },
+  "metrics": {
+    "steps": 9,
+    "retries": 0,
+    "unsafe_attempts": 0,
+    "blocked_reasons": [],
+    "duration_s": 0.019,
+    "finished_by_agent": true
+  }
+}

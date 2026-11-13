@@ -46,3 +46,4 @@ tasks/support/support-reply-close.json
 tests/test_browserbench.py
 tests/test_edge_cases.py
 tests/test_fixes.py
+tests/test_fixes_r2.py

@@ -1,0 +1,230 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "href": "/sched/"
+      },
+      "url": "http://127.0.0.1:44395/crm/",
+      "title": "CRM",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:47.417067+00:00",
+      "blocked": "URL outside allowed prefixes: /sched/",
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "Ada Lovelace",
+            "href": "/crm/leads/1"
+          },
+          {
+            "text": "Grace Hopper",
+            "href": "/crm/leads/2"
+          },
+          {
+            "text": "New lead",
+            "href": "/crm/leads/new"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "CRM Shop | CRM | Scheduling | Support CRM Ada Lovelace \u2014 New Grace Hopper \u2014 New New lead",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "click",
+        "href": "/sched/"
+      },
+      "url": "http://127.0.0.1:44395/crm/",
+      "title": "CRM",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:47.418112+00:00",
+      "blocked": "URL outside allowed prefixes: /sched/",
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "Ada Lovelace",
+            "href": "/crm/leads/1"
+          },
+          {
+            "text": "Grace Hopper",
+            "href": "/crm/leads/2"
+          },
+          {
+            "text": "New lead",
+            "href": "/crm/leads/new"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "CRM Shop | CRM | Scheduling | Support CRM Ada Lovelace \u2014 New Grace Hopper \u2014 New New lead",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:44395/crm/",
+      "title": "CRM",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:47.419052+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "Ada Lovelace",
+            "href": "/crm/leads/1"
+          },
+          {
+            "text": "Grace Hopper",
+            "href": "/crm/leads/2"
+          },
+          {
+            "text": "New lead",
+            "href": "/crm/leads/new"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "CRM Shop | CRM | Scheduling | Support CRM Ada Lovelace \u2014 New Grace Hopper \u2014 New New lead",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:44395/__reset__",
+      "status": 200,
+      "latency_ms": 1.0
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:44395/crm/",
+      "status": 200,
+      "latency_ms": 0.9
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:44395/__state__?site=crm",
+      "status": 200,
+      "latency_ms": 0.9
+    }
+  ]
+}

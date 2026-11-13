@@ -1,0 +1,517 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "href": "/crm/leads/new"
+      },
+      "url": "http://127.0.0.1:41979/crm/leads/new",
+      "title": "New lead",
+      "http_status": 200,
+      "latency_ms": 1.2,
+      "timestamp": "2026-11-11T10:44:39.383790+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/new",
+            "method": "post",
+            "fields": [
+              "name",
+              "email",
+              "company"
+            ],
+            "submit": "Create lead"
+          }
+        ]
+      },
+      "text_excerpt": "New lead Shop | CRM | Scheduling | Support New lead Name Email Company",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "fill",
+        "form": 0,
+        "values": {
+          "company": "Bletchley Park",
+          "email": "alan@example.com",
+          "name": "Alan Turing"
+        }
+      },
+      "url": "http://127.0.0.1:41979/crm/leads/new",
+      "title": "New lead",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:44:39.384729+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/new",
+            "method": "post",
+            "fields": [
+              "name",
+              "email",
+              "company"
+            ],
+            "submit": "Create lead"
+          }
+        ]
+      },
+      "text_excerpt": "New lead Shop | CRM | Scheduling | Support New lead Name Email Company",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "submit",
+        "form": 0
+      },
+      "url": "http://127.0.0.1:41979/crm/leads/3?created=1",
+      "title": "Alan Turing",
+      "http_status": 200,
+      "latency_ms": 2.4,
+      "timestamp": "2026-11-11T10:44:39.387911+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/3/status",
+            "method": "post",
+            "fields": [
+              "status"
+            ],
+            "submit": "Update lead"
+          },
+          {
+            "action": "/crm/leads/3/note",
+            "method": "post",
+            "fields": [
+              "note"
+            ],
+            "submit": "Add note"
+          }
+        ]
+      },
+      "text_excerpt": "Alan Turing Shop | CRM | Scheduling | Support Alan Turing Email: alan@example.com Company: Bletchley Park Status: New Status New Contacted Qualified Lost Note Notes",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 3,
+            "name": "Alan Turing",
+            "email": "alan@example.com",
+            "company": "Bletchley Park",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 4,
+        "seed": 1
+      }
+    },
+    {
+      "step": 4,
+      "action": {
+        "type": "fill",
+        "form": 1,
+        "values": {
+          "note": "Met at conference. Interested in a demo."
+        }
+      },
+      "url": "http://127.0.0.1:41979/crm/leads/3?created=1",
+      "title": "Alan Turing",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:44:39.388617+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/3/status",
+            "method": "post",
+            "fields": [
+              "status"
+            ],
+            "submit": "Update lead"
+          },
+          {
+            "action": "/crm/leads/3/note",
+            "method": "post",
+            "fields": [
+              "note"
+            ],
+            "submit": "Add note"
+          }
+        ]
+      },
+      "text_excerpt": "Alan Turing Shop | CRM | Scheduling | Support Alan Turing Email: alan@example.com Company: Bletchley Park Status: New Status New Contacted Qualified Lost Note Notes",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 3,
+            "name": "Alan Turing",
+            "email": "alan@example.com",
+            "company": "Bletchley Park",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 4,
+        "seed": 1
+      }
+    },
+    {
+      "step": 5,
+      "action": {
+        "type": "submit",
+        "form": 1
+      },
+      "url": "http://127.0.0.1:41979/crm/leads/3?noted=1",
+      "title": "Alan Turing",
+      "http_status": 200,
+      "latency_ms": 2.1,
+      "timestamp": "2026-11-11T10:44:39.391568+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/3/status",
+            "method": "post",
+            "fields": [
+              "status"
+            ],
+            "submit": "Update lead"
+          },
+          {
+            "action": "/crm/leads/3/note",
+            "method": "post",
+            "fields": [
+              "note"
+            ],
+            "submit": "Add note"
+          }
+        ]
+      },
+      "text_excerpt": "Alan Turing Shop | CRM | Scheduling | Support Alan Turing Note added. Email: alan@example.com Company: Bletchley Park Status: New Status New Contacted Qualified Lost Note Notes Met at conference. Interested in a demo.",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 3,
+            "name": "Alan Turing",
+            "email": "alan@example.com",
+            "company": "Bletchley Park",
+            "status": "New",
+            "notes": [
+              "Met at conference. Interested in a demo."
+            ]
+          }
+        ],
+        "next_lead_id": 4,
+        "seed": 1
+      }
+    },
+    {
+      "step": 6,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:41979/crm/leads/3?noted=1",
+      "title": "Alan Turing",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:44:39.392385+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/3/status",
+            "method": "post",
+            "fields": [
+              "status"
+            ],
+            "submit": "Update lead"
+          },
+          {
+            "action": "/crm/leads/3/note",
+            "method": "post",
+            "fields": [
+              "note"
+            ],
+            "submit": "Add note"
+          }
+        ]
+      },
+      "text_excerpt": "Alan Turing Shop | CRM | Scheduling | Support Alan Turing Note added. Email: alan@example.com Company: Bletchley Park Status: New Status New Contacted Qualified Lost Note Notes Met at conference. Interested in a demo.",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 3,
+            "name": "Alan Turing",
+            "email": "alan@example.com",
+            "company": "Bletchley Park",
+            "status": "New",
+            "notes": [
+              "Met at conference. Interested in a demo."
+            ]
+          }
+        ],
+        "next_lead_id": 4,
+        "seed": 1
+      }
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:41979/__reset__",
+      "status": 200,
+      "latency_ms": 1.2
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41979/crm/",
+      "status": 200,
+      "latency_ms": 0.8
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41979/crm/leads/new",
+      "status": 200,
+      "latency_ms": 0.9
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:41979/crm/leads/new",
+      "status": 200,
+      "latency_ms": 1.9
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:41979/crm/leads/3/note",
+      "status": 200,
+      "latency_ms": 1.6
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41979/__state__?site=crm",
+      "status": 200,
+      "latency_ms": 0.8
+    }
+  ]
+}

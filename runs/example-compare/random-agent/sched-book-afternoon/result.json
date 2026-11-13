@@ -22,7 +22,7 @@
     "retries": 0,
     "unsafe_attempts": 0,
     "blocked_reasons": [],
-    "duration_s": 0.001,
+    "duration_s": 0.003,
     "finished_by_agent": true
   }
 }

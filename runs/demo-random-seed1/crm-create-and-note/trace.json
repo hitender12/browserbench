@@ -1,0 +1,177 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "href": "/crm/leads/1"
+      },
+      "url": "http://127.0.0.1:44395/crm/leads/1",
+      "title": "Ada Lovelace",
+      "http_status": 200,
+      "latency_ms": 1.2,
+      "timestamp": "2026-11-11T10:53:47.405384+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/1/status",
+            "method": "post",
+            "fields": [
+              "status"
+            ],
+            "submit": "Update lead"
+          },
+          {
+            "action": "/crm/leads/1/note",
+            "method": "post",
+            "fields": [
+              "note"
+            ],
+            "submit": "Add note"
+          }
+        ]
+      },
+      "text_excerpt": "Ada Lovelace Shop | CRM | Scheduling | Support Ada Lovelace Email: ada@example.com Company: Analytical Engines Status: New Status New Contacted Qualified Lost Note Notes",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:44395/crm/leads/1",
+      "title": "Ada Lovelace",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:53:47.406416+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/crm/leads/1/status",
+            "method": "post",
+            "fields": [
+              "status"
+            ],
+            "submit": "Update lead"
+          },
+          {
+            "action": "/crm/leads/1/note",
+            "method": "post",
+            "fields": [
+              "note"
+            ],
+            "submit": "Add note"
+          }
+        ]
+      },
+      "text_excerpt": "Ada Lovelace Shop | CRM | Scheduling | Support Ada Lovelace Email: ada@example.com Company: Analytical Engines Status: New Status New Contacted Qualified Lost Note Notes",
+      "state_snapshot": {
+        "leads": [
+          {
+            "id": 1,
+            "name": "Ada Lovelace",
+            "email": "ada@example.com",
+            "company": "Analytical Engines",
+            "status": "New",
+            "notes": []
+          },
+          {
+            "id": 2,
+            "name": "Grace Hopper",
+            "email": "grace@example.com",
+            "company": "Navy Computing",
+            "status": "New",
+            "notes": []
+          }
+        ],
+        "next_lead_id": 3,
+        "seed": 1
+      }
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:44395/__reset__",
+      "status": 200,
+      "latency_ms": 1.1
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:44395/crm/",
+      "status": 200,
+      "latency_ms": 0.9
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:44395/crm/leads/1",
+      "status": 200,
+      "latency_ms": 0.8
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:44395/__state__?site=crm",
+      "status": 200,
+      "latency_ms": 0.9
+    }
+  ]
+}

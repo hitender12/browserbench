@@ -1,0 +1,553 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "action": {
+        "type": "click",
+        "href": "/shop/product/p3"
+      },
+      "url": "http://127.0.0.1:41521/shop/product/p3",
+      "title": "Gadget Gamma",
+      "http_status": 200,
+      "latency_ms": 1.2,
+      "timestamp": "2026-11-11T10:54:56.038133+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "View cart",
+            "href": "/shop/cart"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/shop/cart/add",
+            "method": "post",
+            "fields": [
+              "product",
+              "quantity"
+            ],
+            "submit": "Add to cart"
+          }
+        ]
+      },
+      "text_excerpt": "Gadget Gamma Shop | CRM | Scheduling | Support Gadget Gamma A pocket gadget with three modes. Price: $49.99 Quantity View cart",
+      "state_snapshot": {
+        "products": [
+          {
+            "id": "p1",
+            "name": "Widget Alpha",
+            "price": 19.99,
+            "desc": "A dependable everyday widget."
+          },
+          {
+            "id": "p2",
+            "name": "Widget Beta",
+            "price": 29.99,
+            "desc": "A sturdier widget with a grip."
+          },
+          {
+            "id": "p3",
+            "name": "Gadget Gamma",
+            "price": 49.99,
+            "desc": "A pocket gadget with three modes."
+          },
+          {
+            "id": "p4",
+            "name": "Gizmo Delta",
+            "price": 99.99,
+            "desc": "The flagship gizmo, boxed with accessories."
+          },
+          {
+            "id": "p5",
+            "name": "Doohickey Epsilon",
+            "price": 9.99,
+            "desc": "A small doohickey for quick jobs."
+          }
+        ],
+        "cart": {},
+        "orders": [],
+        "next_order_id": 1,
+        "seed": 1
+      }
+    },
+    {
+      "step": 2,
+      "action": {
+        "type": "submit",
+        "form": 0
+      },
+      "url": "http://127.0.0.1:41521/shop/cart?added=p3",
+      "title": "Cart",
+      "http_status": 200,
+      "latency_ms": 2.2,
+      "timestamp": "2026-11-11T10:54:56.041534+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          },
+          {
+            "text": "Checkout",
+            "href": "/shop/checkout"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Cart Shop | CRM | Scheduling | Support Cart Gadget Gamma added to your cart. Gadget Gamma \u00d7 1 \u2014 $49.99 Checkout",
+      "state_snapshot": {
+        "products": [
+          {
+            "id": "p1",
+            "name": "Widget Alpha",
+            "price": 19.99,
+            "desc": "A dependable everyday widget."
+          },
+          {
+            "id": "p2",
+            "name": "Widget Beta",
+            "price": 29.99,
+            "desc": "A sturdier widget with a grip."
+          },
+          {
+            "id": "p3",
+            "name": "Gadget Gamma",
+            "price": 49.99,
+            "desc": "A pocket gadget with three modes."
+          },
+          {
+            "id": "p4",
+            "name": "Gizmo Delta",
+            "price": 99.99,
+            "desc": "The flagship gizmo, boxed with accessories."
+          },
+          {
+            "id": "p5",
+            "name": "Doohickey Epsilon",
+            "price": 9.99,
+            "desc": "A small doohickey for quick jobs."
+          }
+        ],
+        "cart": {
+          "p3": 1
+        },
+        "orders": [],
+        "next_order_id": 1,
+        "seed": 1
+      }
+    },
+    {
+      "step": 3,
+      "action": {
+        "type": "click",
+        "href": "/shop/checkout"
+      },
+      "url": "http://127.0.0.1:41521/shop/checkout",
+      "title": "Checkout",
+      "http_status": 200,
+      "latency_ms": 1.1,
+      "timestamp": "2026-11-11T10:54:56.043935+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/shop/checkout",
+            "method": "post",
+            "fields": [
+              "name",
+              "address"
+            ],
+            "submit": "Place order"
+          }
+        ]
+      },
+      "text_excerpt": "Checkout Shop | CRM | Scheduling | Support Checkout Name Address",
+      "state_snapshot": {
+        "products": [
+          {
+            "id": "p1",
+            "name": "Widget Alpha",
+            "price": 19.99,
+            "desc": "A dependable everyday widget."
+          },
+          {
+            "id": "p2",
+            "name": "Widget Beta",
+            "price": 29.99,
+            "desc": "A sturdier widget with a grip."
+          },
+          {
+            "id": "p3",
+            "name": "Gadget Gamma",
+            "price": 49.99,
+            "desc": "A pocket gadget with three modes."
+          },
+          {
+            "id": "p4",
+            "name": "Gizmo Delta",
+            "price": 99.99,
+            "desc": "The flagship gizmo, boxed with accessories."
+          },
+          {
+            "id": "p5",
+            "name": "Doohickey Epsilon",
+            "price": 9.99,
+            "desc": "A small doohickey for quick jobs."
+          }
+        ],
+        "cart": {
+          "p3": 1
+        },
+        "orders": [],
+        "next_order_id": 1,
+        "seed": 1
+      }
+    },
+    {
+      "step": 4,
+      "action": {
+        "type": "fill",
+        "form": 0,
+        "values": {
+          "address": "12 Test Street",
+          "name": "Ada Lovelace"
+        }
+      },
+      "url": "http://127.0.0.1:41521/shop/checkout",
+      "title": "Checkout",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:54:56.044973+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": [
+          {
+            "action": "/shop/checkout",
+            "method": "post",
+            "fields": [
+              "name",
+              "address"
+            ],
+            "submit": "Place order"
+          }
+        ]
+      },
+      "text_excerpt": "Checkout Shop | CRM | Scheduling | Support Checkout Name Address",
+      "state_snapshot": {
+        "products": [
+          {
+            "id": "p1",
+            "name": "Widget Alpha",
+            "price": 19.99,
+            "desc": "A dependable everyday widget."
+          },
+          {
+            "id": "p2",
+            "name": "Widget Beta",
+            "price": 29.99,
+            "desc": "A sturdier widget with a grip."
+          },
+          {
+            "id": "p3",
+            "name": "Gadget Gamma",
+            "price": 49.99,
+            "desc": "A pocket gadget with three modes."
+          },
+          {
+            "id": "p4",
+            "name": "Gizmo Delta",
+            "price": 99.99,
+            "desc": "The flagship gizmo, boxed with accessories."
+          },
+          {
+            "id": "p5",
+            "name": "Doohickey Epsilon",
+            "price": 9.99,
+            "desc": "A small doohickey for quick jobs."
+          }
+        ],
+        "cart": {
+          "p3": 1
+        },
+        "orders": [],
+        "next_order_id": 1,
+        "seed": 1
+      }
+    },
+    {
+      "step": 5,
+      "action": {
+        "type": "submit",
+        "form": 0
+      },
+      "url": "http://127.0.0.1:41521/shop/order/1",
+      "title": "Order confirmed",
+      "http_status": 200,
+      "latency_ms": 3.4,
+      "timestamp": "2026-11-11T10:54:56.049671+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Order confirmed Shop | CRM | Scheduling | Support Order confirmed Order confirmed. Thank you, Ada Lovelace! Order #1: Gadget Gamma \u00d7 1 \u2014 total $49.99.",
+      "state_snapshot": {
+        "products": [
+          {
+            "id": "p1",
+            "name": "Widget Alpha",
+            "price": 19.99,
+            "desc": "A dependable everyday widget."
+          },
+          {
+            "id": "p2",
+            "name": "Widget Beta",
+            "price": 29.99,
+            "desc": "A sturdier widget with a grip."
+          },
+          {
+            "id": "p3",
+            "name": "Gadget Gamma",
+            "price": 49.99,
+            "desc": "A pocket gadget with three modes."
+          },
+          {
+            "id": "p4",
+            "name": "Gizmo Delta",
+            "price": 99.99,
+            "desc": "The flagship gizmo, boxed with accessories."
+          },
+          {
+            "id": "p5",
+            "name": "Doohickey Epsilon",
+            "price": 9.99,
+            "desc": "A small doohickey for quick jobs."
+          }
+        ],
+        "cart": {},
+        "orders": [
+          {
+            "id": 1,
+            "customer": "Ada Lovelace",
+            "address": "12 Test Street",
+            "items": {
+              "p3": 1
+            },
+            "total": 49.99
+          }
+        ],
+        "next_order_id": 2,
+        "seed": 1
+      }
+    },
+    {
+      "step": 6,
+      "action": {
+        "type": "done"
+      },
+      "url": "http://127.0.0.1:41521/shop/order/1",
+      "title": "Order confirmed",
+      "http_status": 200,
+      "latency_ms": 0.0,
+      "timestamp": "2026-11-11T10:54:56.050694+00:00",
+      "blocked": null,
+      "dom": {
+        "links": [
+          {
+            "text": "Shop",
+            "href": "/shop/"
+          },
+          {
+            "text": "CRM",
+            "href": "/crm/"
+          },
+          {
+            "text": "Scheduling",
+            "href": "/sched/"
+          },
+          {
+            "text": "Support",
+            "href": "/support/"
+          }
+        ],
+        "forms": []
+      },
+      "text_excerpt": "Order confirmed Shop | CRM | Scheduling | Support Order confirmed Order confirmed. Thank you, Ada Lovelace! Order #1: Gadget Gamma \u00d7 1 \u2014 total $49.99.",
+      "state_snapshot": {
+        "products": [
+          {
+            "id": "p1",
+            "name": "Widget Alpha",
+            "price": 19.99,
+            "desc": "A dependable everyday widget."
+          },
+          {
+            "id": "p2",
+            "name": "Widget Beta",
+            "price": 29.99,
+            "desc": "A sturdier widget with a grip."
+          },
+          {
+            "id": "p3",
+            "name": "Gadget Gamma",
+            "price": 49.99,
+            "desc": "A pocket gadget with three modes."
+          },
+          {
+            "id": "p4",
+            "name": "Gizmo Delta",
+            "price": 99.99,
+            "desc": "The flagship gizmo, boxed with accessories."
+          },
+          {
+            "id": "p5",
+            "name": "Doohickey Epsilon",
+            "price": 9.99,
+            "desc": "A small doohickey for quick jobs."
+          }
+        ],
+        "cart": {},
+        "orders": [
+          {
+            "id": 1,
+            "customer": "Ada Lovelace",
+            "address": "12 Test Street",
+            "items": {
+              "p3": 1
+            },
+            "total": 49.99
+          }
+        ],
+        "next_order_id": 2,
+        "seed": 1
+      }
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:41521/__reset__",
+      "status": 200,
+      "latency_ms": 1.2
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41521/shop/",
+      "status": 200,
+      "latency_ms": 1.0
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41521/shop/product/p3",
+      "status": 200,
+      "latency_ms": 0.9
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:41521/shop/cart/add",
+      "status": 200,
+      "latency_ms": 1.9
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41521/shop/checkout",
+      "status": 200,
+      "latency_ms": 0.8
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:41521/shop/checkout",
+      "status": 200,
+      "latency_ms": 3.1
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:41521/__state__?site=shop",
+      "status": 200,
+      "latency_ms": 0.8
+    }
+  ]
+}
